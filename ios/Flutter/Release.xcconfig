@@ -1,0 +1,7 @@
+#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"
+#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.release-peopleqlik.xcconfig"
+#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.release-paypeopleplus.xcconfig"
+#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"
+#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.profile-peopleqlik.xcconfig"
+#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.profile-paypeopleplus.xcconfig"
+#include "Generated.xcconfig"

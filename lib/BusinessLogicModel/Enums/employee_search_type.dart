@@ -1,0 +1,4 @@
+enum EmployeeSearchType
+{
+  single,multi
+}

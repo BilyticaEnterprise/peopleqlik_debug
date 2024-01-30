@@ -1,0 +1,4 @@
+enum RequestsEnum
+{
+  encashment,speration,generalRequest,generalRequestForm,separationForm,encashmentForm,timeRegulationMisc,timeRegulationMovementSlip,performance
+}

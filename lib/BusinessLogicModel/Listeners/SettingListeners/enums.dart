@@ -1,0 +1,4 @@
+enum SettingPageType
+{
+  setting,mobileBlocking
+}
