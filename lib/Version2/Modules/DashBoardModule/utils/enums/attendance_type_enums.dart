@@ -1,0 +1,4 @@
+enum AttendanceTypesEnum
+{
+  simple,qrCode
+}

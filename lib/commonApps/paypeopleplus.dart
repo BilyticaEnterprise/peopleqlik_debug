@@ -13,7 +13,9 @@ void main(){
     ..apiEndpoint = {"details":""}
   ..groupKey = 'com.bilytica.paypeople_plus.WORK_NOTIFIER'
   ..groupChannelId = 'PaypeoplePlus_Notifier'
-  ..groupChannelName = 'PayPeople Plus';
+    ..applicationAndroidStoreId = 'com.bilytica.peopleqliksapp'
+    ..applicationIOSStoreId = '1605562991'
+    ..groupChannelName = 'PayPeople Plus';
 
   mainCommon(flavorConfig);
 }

@@ -4,7 +4,7 @@ import '../models/mobile_info_model.dart';
 
 abstract class MobilePageRepository
 {
-  MobileBlocPageState currentPageState = PageStateRegister();
+  MobileBlocPageState currentPageState = MobilePageStateFirstRegister();
 
   static final MobilePageRepository _instance = MobilePageRepositoryImpl();
   static MobilePageRepository get instance => _instance;

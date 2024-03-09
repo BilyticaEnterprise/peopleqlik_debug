@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:peopleqlik_debug/UiPages/Reuse_Widgets/dividers.dart';
-import 'package:peopleqlik_debug/src/colors.dart';
-import 'package:peopleqlik_debug/src/fonts.dart';
-import 'package:peopleqlik_debug/src/screen_sizes.dart';
+import 'package:peopleqlik_debug/utils/dividers_screen/dividers.dart';
+import 'package:peopleqlik_debug/configs/colors.dart';
+import 'package:peopleqlik_debug/configs/fonts.dart';
+import 'package:peopleqlik_debug/utils/screen_sizes.dart';
 
-import '../../../../../../../../BusinessLogicModel/Models/call_setting_data.dart';
-import '../../../../../../../../UiPages/Reuse_LogicalWidgets/tick_icon.dart';
-import '../../../../../../../../src/language_codes.dart';
-import '../../../../../domain/models/mobile_info_model.dart';
+import '../../../../../../../../Version1/Models/call_setting_data.dart';
+import '../../../../../../../../utils/Reuse_LogicalWidgets/tick_icon.dart';
+import '../../../../../../../../configs/language_codes.dart';
+import '../../../../../domain/models/device_add_remove_mapper.dart';
 import '../../../../../utils/name_box.dart';
 
 class CurrentMobileWidget extends StatelessWidget {
@@ -26,7 +26,7 @@ class CurrentMobileWidget extends StatelessWidget {
           borderRadius: borderRadius,
           border: Border.all(
               width: 0.8,
-              color: const Color(MyColor.colorGrey7)
+              color: const Color(MyColor.colorBackgroundDark)
           )
       ),
       child: Material(

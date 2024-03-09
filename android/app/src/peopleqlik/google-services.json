@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "723364260267",
+    "project_id": "peopleqlik-303d9",
+    "storage_bucket": "peopleqlik-303d9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723364260267:android:452ed55070064414c1caee",
+        "android_client_info": {
+          "package_name": "com.bilytica.peopleqliksapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmXuoStkaGwiHXUIvYfCPJC2DadnGmUcU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

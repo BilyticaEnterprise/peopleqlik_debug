@@ -13,6 +13,8 @@ void main(){
     ..apiEndpoint = {"details":""}
   ..groupKey = 'com.bilytica.peopleqlik.WORK_NOTIFIER'
   ..groupChannelId = 'PeopleQlik_Bilytica'
+    ..applicationAndroidStoreId = 'com.bilytica.peopleqliksapp'
+    ..applicationIOSStoreId = '1605562991'
   ..groupChannelName = 'PeopleQlik Bilytica';
 
 

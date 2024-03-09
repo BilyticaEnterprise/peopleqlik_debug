@@ -14,3 +14,12 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+For testing profile mode please use the following commands in terminal:
+
+For PeopleQlik: [ flutter run —profile -t lib/commonApps/peopleqlik.dart --flavor peopleqlik ]
+
+For release bundle please use the following commands in terminal:
+
+For PeopleQlik: [ flutter build appbundle --flavor peopleqlik -t lib/commonApps/peopleqlik.dart ]
+For Ojoor: [ flutter build appbundle --flavor ojoor -t lib/commonApps/ojoor.dart ]

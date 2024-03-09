@@ -3,20 +3,38 @@ abstract class MobileBlocPageState
 
 }
 
-class PageStateRegister<T> extends MobileBlocPageState
+class MobilePageStateFirstRegister<T> extends MobileBlocPageState
 {
   T? data;
-  PageStateRegister({this.data});
+  MobilePageStateFirstRegister({this.data});
 }
 
-class PageStateNotRegister<T> extends MobileBlocPageState
+class MobilePageStateNotRegister<T> extends MobileBlocPageState
 {
   T? data;
-  PageStateNotRegister({this.data});
+  MobilePageStateNotRegister({this.data});
 }
 
-class PageStateDeactivateRegister<T> extends MobileBlocPageState
+class MobilePageStateAutoApproveDeactivateAndRegister<T> extends MobileBlocPageState
 {
   T? data;
-  PageStateDeactivateRegister({this.data});
+  MobilePageStateAutoApproveDeactivateAndRegister({this.data});
+}
+
+class MobilePageStateLimitReached<T> extends MobileBlocPageState
+{
+  T? data;
+  MobilePageStateLimitReached({this.data});
+}
+
+class MobilePageStateAskAdminToApprove<T> extends MobileBlocPageState
+{
+  T? data;
+  MobilePageStateAskAdminToApprove({this.data});
+}
+
+class MobilePageStateMobileBlocked<T> extends MobileBlocPageState
+{
+  T? data;
+  MobilePageStateMobileBlocked({this.data});
 }

@@ -2,6 +2,7 @@ plugins {
     id "com.android.application"
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
+    id "com.google.gms.google-services"
 }
 
 def localProperties = new Properties()
@@ -72,8 +73,8 @@ android {
         peopleqlik {
             dimension "app"
             applicationId "com.bilytica.peopleqliksapp"
-            versionCode 20
-            versionName "1.2.0"
+            versionCode 21
+            versionName "1.2.1"
             signingConfig signingConfigs.peopleqlik
         }
         paypeopleplus {

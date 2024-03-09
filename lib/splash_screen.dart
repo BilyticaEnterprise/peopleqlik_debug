@@ -3,12 +3,12 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
-import 'package:peopleqlik_debug/BusinessLogicModel/Listeners/SettingListeners/settings_listeners.dart';
-import 'package:peopleqlik_debug/BusinessLogicModel/internet_connection.dart';
+import 'package:peopleqlik_debug/Version2/Modules/ModuleSetting/domain/repoImpl/settings_listeners.dart';
+import 'package:peopleqlik_debug/utils/internetConnectionChecker/internet_connection.dart';
 import 'package:peopleqlik_debug/mainCommon.dart';
-import 'package:peopleqlik_debug/src/colors.dart';
-import 'package:peopleqlik_debug/src/pages_name.dart';
-import 'package:peopleqlik_debug/src/screen_sizes.dart';
+import 'package:peopleqlik_debug/configs/colors.dart';
+import 'package:peopleqlik_debug/configs/routing/pages_name.dart';
+import 'package:peopleqlik_debug/utils/screen_sizes.dart';
 import 'package:provider/provider.dart';
 
 class SplashScreen extends StatefulWidget {

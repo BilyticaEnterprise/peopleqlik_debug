@@ -13,6 +13,8 @@ class FlavorConfig {
   Map<String, String>? apiEndpoint;
   String imageLocation;
   String imageSvgIcon;
+  String applicationAndroidStoreId;
+  String applicationIOSStoreId;
   late ThemeData theme;
 
   FlavorConfig({
@@ -23,7 +25,9 @@ class FlavorConfig {
     this.groupChannelName = 'PeopleQlik Bilytica',
     this.appsNames = AppsNames.peopleQlik,
     this.imageSvgIcon = 'assets/avatar.png',
-    this.imageLocation = 'assets/avatar.png'
+    this.imageLocation = 'assets/avatar.png',
+    this.applicationAndroidStoreId = 'com.bilytica.peopleqliksapp',
+    this.applicationIOSStoreId = ''
   })
   {
     theme = ThemeData.light();

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_calendar_carousel/classes/event.dart';
 import 'package:flutter_calendar_carousel/classes/event_list.dart';
 
-import '../../../BusinessLogicModel/AbstractClasses/overrided_change_notifier.dart';
-import '../../../BusinessLogicModel/Enums/apistatus_enum.dart';
-import '../../../UiPages/BottomBarPages/TimeSheet/calender_view.dart';
-import '../../../src/colors.dart';
+import '../../../utils/provider_logic_utils/overrided_change_notifier.dart';
+import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
+import '../../../Version1/views/BottomBarPages/TimeSheet/calender_view.dart';
+import '../../../configs/colors.dart';
 
 class CalendarCollector extends GetChangeNotifier
 {

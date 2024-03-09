@@ -18,5 +18,4 @@ class MobilePageRepositoryImpl extends MobilePageRepository
   MobileBlocPageState getCurrentPage() {
     return currentPageState;
   }
-
 }

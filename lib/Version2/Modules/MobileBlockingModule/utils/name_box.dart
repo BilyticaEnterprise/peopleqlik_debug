@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:peopleqlik_debug/src/colors.dart';
+import 'package:peopleqlik_debug/configs/colors.dart';
 
-import '../../../../src/fonts.dart';
-import '../../../../src/screen_sizes.dart';
+import '../../../../configs/fonts.dart';
+import '../../../../utils/screen_sizes.dart';
 
 
 class NameBox extends StatelessWidget {

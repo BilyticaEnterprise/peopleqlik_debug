@@ -4,15 +4,13 @@ import 'package:flutter_calendar_carousel/flutter_calendar_carousel.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:intl/intl.dart';
 import 'package:peopleqlik_debug/Packages/CalendarWidget/Listeners/calendar_listener.dart';
-import 'package:peopleqlik_debug/src/prints_logs.dart';
 import 'package:provider/provider.dart';
 
-import '../../../BusinessLogicModel/Enums/apistatus_enum.dart';
-import '../../../UiPages/Reuse_Widgets/circular_indicator_customized.dart';
-import '../../../src/colors.dart';
-import '../../../src/fonts.dart';
-import '../../../src/icons.dart';
-import '../../../src/screen_sizes.dart';
+import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
+import '../../../configs/colors.dart';
+import '../../../configs/fonts.dart';
+import '../../../configs/icons.dart';
+import '../../../utils/screen_sizes.dart';
 
 class CalendarWidget extends StatelessWidget {
   final Function(dynamic) onDayPressedDate;

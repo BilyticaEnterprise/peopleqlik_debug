@@ -1,45 +1,67 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lottie/lottie.dart';
+import 'package:peopleqlik_debug/utils/dividers_screen/dividers.dart';
 
-import '../../../../../../utils/bloc_logic_utils/bloc_provider_extended.dart';
-import '../../../../utils/page_state.dart';
-import '../../../bloc/current_page_bloc.dart';
+import 'package:peopleqlik_debug/utils/Buttons/buttons.dart';
+import '../../../../../../../configs/colors.dart';
+import '../../../../../../../configs/fonts.dart';
+import '../../../../../../../utils/screen_sizes.dart';
 
-class MobilePrompt extends StatelessWidget {
-  const MobilePrompt({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ExtendedMultiBlocProvider(
-      providers: [
-        BlocProvider<CurrentMobileBlockModulePage>(create: (_) => CurrentMobileBlockModulePage(PageStateRegister()))
-      ],
-      builder: (context) {
-        return BlocConsumer<CurrentMobileBlockModulePage,MobileBlocPageState>(
-          listener: (context,data){},
-          builder: (context, data) {
-            if(data is PageStateRegister)
-              {
-                return PromptView();
-              }
-            else
-              {
-                return const Placeholder();
-              }
-          }
-        );
-      }
-    );
-  }
-}
 class PromptView extends StatelessWidget {
-  const PromptView({super.key});
+  final String header;
+  final String description;
+  final String anim;
+  final Function()? doneTap;
+  final Function()? extraTap;
+  final String? doneTapText;
+  final String? extraTapText;
+  const PromptView({required this.header,required this.description,required this.anim,this.doneTap,this.extraTap,this.doneTapText,this.extraTapText,super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        Lottie.asset(anim,fit: BoxFit.fitHeight,height: ScreenSize(context).heightOnly(30),repeat: true),
+        const DividerByHeight(2),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: ScreenSize(context).widthOnly( 6.6)),
+          child: Text(
+            header,
+            style: GetFont.get(
+                context,
+                fontWeight: FontWeight.w600,
+                fontSize: 2.2,
+                color: MyColor.colorBlack
+            ),
+            textAlign: TextAlign.center,
+          ),
+        ),
+        const DividerByHeight(2),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: ScreenSize(context).widthOnly( 6.6)),
+          child: Text(
+            description,
+            style: GetFont.get(
+                context,
+                fontWeight: FontWeight.w400,
+                fontSize: 1.8,
+                color: MyColor.colorBlack
+            ),
+            textAlign: TextAlign.center,
+          ),
+        ),
+        const DividerByHeight(4),
+        if(doneTap != null)...[
+          ButtonWidget(onPressed: doneTap!, text: doneTapText??'',width: ScreenSize(context).heightOnly( 23),height: 6.0,weight: FontWeight.w600,textSize: 1.8,),
+          const DividerByHeight(2),
+        ],
+        if(extraTap != null)...[
+          ButtonWidget(onPressed: extraTap!, text: extraTapText??'',width: ScreenSize(context).heightOnly( 20),height: 6.0,buttonColor: MyColor.colorBlack,textColor: MyColor.colorWhite,weight: FontWeight.w600,textSize: 1.8,),
+          const DividerByHeight(2),
+        ],
+        const DividerByHeight(8),
 
       ],
     );
