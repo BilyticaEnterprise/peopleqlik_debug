@@ -154,6 +154,7 @@ class BodyDataNow extends StatelessWidget {
           ],
 
           SizedBox(height: ScreenSize(context).heightOnly( 10),),
+
         ],
       ),
     );
