@@ -8,7 +8,7 @@ import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
 import 'package:peopleqlik_debug/Version1/Models/RequestsModel/get_request_separation_form_model.dart';
 import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
 import 'package:peopleqlik_debug/utils/internetConnectionChecker/internet_connection.dart';
-import 'package:peopleqlik_debug/Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/EncashmentRequestLeaveEncashment/EncashmentFormWidgets/special_textfield_widget.dart';
+import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/subModules/ModuleEncashment/subModules/encashmentFormModule/utils/special_textfield_widget.dart';
 import 'package:peopleqlik_debug/Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/SeperationRequestPages/SeparationFormWidgets/datepicker_widget.dart';
 import 'package:peopleqlik_debug/utils/Buttons/buttons.dart';
 import 'package:peopleqlik_debug/utils/ScreenLoader/circular_indicator_customized.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:peopleqlik_debug/Version1/viewModel/Requests/RequestSubListListeners/RequestLeaveEncashmentListeners/request_balance_listener.dart';
-import 'package:peopleqlik_debug/Version1/viewModel/Requests/RequestSubListListeners/RequestLeaveEncashmentListeners/request_encashment_form_listener.dart';
+import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/subModules/ModuleEncashment/subModules/encashmentFormModule/presentation/listener/request_balance_listener.dart';
+import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/subModules/ModuleEncashment/subModules/encashmentFormModule/presentation/listener/request_encashment_form_listener.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/Requests/RequestSubListListeners/request_attachment_collector.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
 
@@ -10,11 +10,11 @@ import 'package:peopleqlik_debug/Version1/Models/RequestsModel/get_request_form_
 import 'package:peopleqlik_debug/Version1/Models/RequestsModel/EncashmentsModels/get_request_encashment_balance_model.dart';
 import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
 import 'package:peopleqlik_debug/utils/internetConnectionChecker/internet_connection.dart';
-import 'package:peopleqlik_debug/Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/EncashmentRequestLeaveEncashment/EncashmentFormWidgets/special_dropdown_widgets.dart';
-import 'package:peopleqlik_debug/Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/EncashmentRequestLeaveEncashment/EncashmentFormWidgets/special_textfield_widget.dart';
+import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/subModules/ModuleEncashment/subModules/encashmentFormModule/utils/special_dropdown_widgets.dart';
+import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/subModules/ModuleEncashment/subModules/encashmentFormModule/utils/special_textfield_widget.dart';
 import 'package:peopleqlik_debug/Version1/views/BottomBarPages/RequestApprovalsPage/SearchEmployeePanelPages/panel_header.dart';
 import 'package:peopleqlik_debug/Version1/views/BottomBarPages/TimeOffPage/TimeOffSubPages/AddEditTimeOffPages/attachmentfiles.dart';
-import '../../../../../../utils/Appbars/app_bar.dart';
+import '../../../../../../../../../utils/Appbars/app_bar.dart';
 import 'package:peopleqlik_debug/utils/Buttons/buttons.dart';
 import 'package:peopleqlik_debug/utils/ScreenLoader/circular_indicator_customized.dart';
 import 'package:peopleqlik_debug/utils/ErrorsUi/not_available.dart';
@@ -27,12 +27,12 @@ import 'package:peopleqlik_debug/utils/screen_sizes.dart';
 import 'package:peopleqlik_debug/utils/strings.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../../../Version1/viewModel/EmployeeSearchController/global_selected_employee/global_selected_employee_controller.dart';
-import '../../../../../../Version1/Models/RequestsModel/request_data_taker.dart';
-import '../../../../../../utils/Appbars/generic_app_bar.dart';
-import '../../../../../../utils/Reuse_LogicalWidgets/current_employee_name_note.dart';
-import '../../../../../../../../utils/Default_Screens/scafold_screens/default_screens.dart';
-import '../../../GlobalEmployeeSearchUi/call_employee_search_ui.dart';
+import '../../../../../../../../../Version1/viewModel/EmployeeSearchController/global_selected_employee/global_selected_employee_controller.dart';
+import '../../../../../../../../../Version1/Models/RequestsModel/request_data_taker.dart';
+import '../../../../../../../../../utils/Appbars/generic_app_bar.dart';
+import '../../../../../../../../../utils/Reuse_LogicalWidgets/current_employee_name_note.dart';
+import '../../../../../../../../../../../utils/Default_Screens/scafold_screens/default_screens.dart';
+import '../../../../../../../../../Version1/views/BottomBarPages/GlobalEmployeeSearchUi/call_employee_search_ui.dart';
 
 
 class RequestEncashmentFormPage extends StatelessWidget {
@@ -52,8 +52,8 @@ class RequestEncashmentFormPage extends StatelessWidget {
         providers: [
           ChangeNotifierProvider<TimeOffAddEditAttachments>(create: (_) => TimeOffAddEditAttachments()),
           ChangeNotifierProvider<RequestAttachments>(create: (_) => RequestAttachments()),
-          ChangeNotifierProvider<RequestSpecialFormListener>(create: (_) => RequestSpecialFormListener()),
-          ChangeNotifierProvider<RequestSpecialBalanceListener>(create: (_) => RequestSpecialBalanceListener()),
+          ChangeNotifierProvider<RequestEncashmentFormListener>(create: (_) => RequestEncashmentFormListener()),
+          ChangeNotifierProvider<RequestEcashmentBalanceListener>(create: (_) => RequestEcashmentBalanceListener()),
           ChangeNotifierProvider<EncashmentTypeList>(create: (_) => EncashmentTypeList())
         ],
         child: GestureDetector(
@@ -73,15 +73,15 @@ class RequestEncashmentFormPage extends StatelessWidget {
                           context,
                               (employeeInfoMapper)
                           {
-                            Provider.of<RequestSpecialBalanceListener>(context,listen: false).resetBalance();
-                            Provider.of<RequestSpecialFormListener>(context,listen: false).start(context);
+                            Provider.of<RequestEcashmentBalanceListener>(context,listen: false).resetBalance();
+                            Provider.of<RequestEncashmentFormListener>(context,listen: false).start(context);
                           }
                       );
                     },
                     removeEmployeeTap: () async {
                       await employeeData.resetEmployee();
-                      Provider.of<RequestSpecialBalanceListener>(context,listen: false).resetBalance();
-                      Provider.of<RequestSpecialFormListener>(context,listen: false).start(context);
+                      Provider.of<RequestEcashmentBalanceListener>(context,listen: false).resetBalance();
+                      Provider.of<RequestEncashmentFormListener>(context,listen: false).start(context);
                     },
                     hidePlusButton: true,
                     employeeInfoMapper: employeeData.getEmployee(),
@@ -94,8 +94,8 @@ class RequestEncashmentFormPage extends StatelessWidget {
                     context,
                         (employeeInfoMapper)
                     {
-                      Provider.of<RequestSpecialBalanceListener>(context,listen: false).resetBalance();
-                      Provider.of<RequestSpecialFormListener>(context,listen: false).start(context);
+                      Provider.of<RequestEcashmentBalanceListener>(context,listen: false).resetBalance();
+                      Provider.of<RequestEncashmentFormListener>(context,listen: false).start(context);
                     }
                 );
               }
@@ -120,12 +120,12 @@ class _BodyNowState extends State<BodyNow> {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       //RequestDataTaker? requestDataTaker = RequestDataTaker(widget.requestDataTaker!.id, widget.requestDataTaker!.title,requestsEnum: RequestsEnum.encashmentForm);
       //Provider.of<EmployeeSearchController>(context,listen: false).requestDataTaker = requestDataTaker;
-      Provider.of<RequestSpecialFormListener>(context,listen: false).start(context);
+      Provider.of<RequestEncashmentFormListener>(context,listen: false).start(context);
     });
   }
   @override
   Widget build(BuildContext context) {
-    return Consumer<RequestSpecialFormListener>(
+    return Consumer<RequestEncashmentFormListener>(
         builder: (context, data, child) {
           if(data.apiStatus == ApiStatus.done)
           {
@@ -162,7 +162,7 @@ class BodyData extends StatelessWidget {
           CurrentEmployeeNoteWidget(),
           SizedBox(height: ScreenSize(context).heightOnly(2),),
           SpecialRequestDropDownField(RequestEnCashmentData(index: 0,title: CallLanguageKeyWords.get(context, LanguageCodes.LeaveType)??'',data: specialRequestResultSet?.employeeLeaveType,isEnable: true,isRequired: true,callBack: callback),key: const Key('0drop'),),
-          Consumer<RequestSpecialBalanceListener>(
+          Consumer<RequestEcashmentBalanceListener>(
               builder: (context,dataBalance,child) {
                 if(dataBalance.apiStatus == ApiStatus.done)
                 {
@@ -197,8 +197,8 @@ class BodyData extends StatelessWidget {
   {
     if(requestEnCashmentCallBack.index == 0)
     {
-      Provider.of<RequestSpecialBalanceListener>(buildContext,listen: false).apiStatus = ApiStatus.nothing;
-      Provider.of<RequestSpecialFormListener>(buildContext,listen: false).startApi(buildContext, requestEnCashmentCallBack.data);
+      Provider.of<RequestEcashmentBalanceListener>(buildContext,listen: false).apiStatus = ApiStatus.nothing;
+      Provider.of<RequestEncashmentFormListener>(buildContext,listen: false).startApi(buildContext, requestEnCashmentCallBack.data);
     }
   }
 
@@ -262,7 +262,7 @@ class _BalanceBodyState extends State<BalanceBody> {
   }
   void picturesCallBack(List<GetFileType> file)
   {
-    Provider.of<RequestSpecialFormListener>(context,listen: false).updateFileData(file);
+    Provider.of<RequestEncashmentFormListener>(context,listen: false).updateFileData(file);
   }
   void callback(RequestEnCashmentCallBack requestEnCashmentCallBack)
   {
@@ -270,27 +270,27 @@ class _BalanceBodyState extends State<BalanceBody> {
     {
       if(requestEnCashmentCallBack.data == 0)
         {
-          Provider.of<RequestSpecialFormListener>(context,listen: false).saveSpecialRequestFormMapper?.typeID = '1';
+          Provider.of<RequestEncashmentFormListener>(context,listen: false).saveSpecialRequestFormMapper?.typeID = '1';
         }
       else
         {
-          Provider.of<RequestSpecialFormListener>(context,listen: false).saveSpecialRequestFormMapper?.typeID = '2';
-          Provider.of<RequestSpecialFormListener>(context,listen: false).saveSpecialRequestFormMapper?.encashmentUnit = null;
+          Provider.of<RequestEncashmentFormListener>(context,listen: false).saveSpecialRequestFormMapper?.typeID = '2';
+          Provider.of<RequestEncashmentFormListener>(context,listen: false).saveSpecialRequestFormMapper?.encashmentUnit = null;
 
         }
       Provider.of<EncashmentTypeList>(context,listen: false).indexId(requestEnCashmentCallBack.data);
     }
     if(requestEnCashmentCallBack.index == 5)
       {
-        Provider.of<RequestSpecialFormListener>(context,listen: false).saveSpecialRequestFormMapper?.encashmentUnit = requestEnCashmentCallBack.data;
+        Provider.of<RequestEncashmentFormListener>(context,listen: false).saveSpecialRequestFormMapper?.encashmentUnit = requestEnCashmentCallBack.data;
       }
     if(requestEnCashmentCallBack.index == 6)
     {
-      Provider.of<RequestSpecialFormListener>(context,listen: false).saveSpecialRequestFormMapper?.paymentTypeID = requestEnCashmentCallBack.data.typeID.toString();
+      Provider.of<RequestEncashmentFormListener>(context,listen: false).saveSpecialRequestFormMapper?.paymentTypeID = requestEnCashmentCallBack.data.typeID.toString();
     }
   }
   void confirmPressed()
   {
-    Provider.of<RequestSpecialFormListener>(context,listen: false).fillData(context);
+    Provider.of<RequestEncashmentFormListener>(context,listen: false).fillData(context);
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:peopleqlik_debug/Version1/viewModel/Requests/RequestSubListListeners/RequestLeaveEncashmentListeners/request_encashment_detail_listener.dart';
+import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/subModules/ModuleEncashment/subModules/encashmentDetailModule/presentation/listener/request_encashment_detail_listener.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
 import 'package:peopleqlik_debug/Version1/Models/RequestsModel/EncashmentsModels/get_request_encashment_detail_model.dart';
 import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
@@ -7,8 +7,8 @@ import 'package:peopleqlik_debug/utils/internetConnectionChecker/internet_connec
 import 'package:peopleqlik_debug/Version1/views/BottomBarPages/RequestApprovalsPage/ApprovalsSubPages/ApprovalsAcceptance/approval_acceptance_rejection_page.dart' as approval_page;
 import 'package:peopleqlik_debug/Version1/views/BottomBarPages/RequestApprovalsPage/ApprovalsSubPages/ApprovalsAcceptance/approval_acceptance_rejection_page.dart';
 import 'package:peopleqlik_debug/Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/SeperationRequestPages/request_separation_detail_page.dart';
-import '../../../../../../configs/get_assets.dart';
-import '../../../../../../utils/Appbars/app_bar.dart';
+import '../../../../../../../../../configs/get_assets.dart';
+import '../../../../../../../../../utils/Appbars/app_bar.dart';
 import 'package:peopleqlik_debug/utils/ScreenLoader/circular_indicator_customized.dart';
 import 'package:peopleqlik_debug/utils/ErrorsUi/not_available.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
@@ -19,8 +19,8 @@ import 'package:peopleqlik_debug/utils/screen_sizes.dart';
 import 'package:peopleqlik_debug/utils/strings.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../../../Version1/Models/RequestsModel/EncashmentsModels/encashment_detail_mapper.dart';
-import '../../ApprovalsSubPages/ApprovalsAcceptance/CommonWidgets/approval_list_widget.dart';
+import '../../../../../../../../../Version1/Models/RequestsModel/EncashmentsModels/encashment_detail_mapper.dart';
+import '../../../../../../../../../Version1/views/BottomBarPages/RequestApprovalsPage/ApprovalsSubPages/ApprovalsAcceptance/CommonWidgets/approval_list_widget.dart';
 
 class RequestEncashmentDetailPage extends StatelessWidget {
   RequestEncashmentDetailPage({Key? key}) : super(key: key);

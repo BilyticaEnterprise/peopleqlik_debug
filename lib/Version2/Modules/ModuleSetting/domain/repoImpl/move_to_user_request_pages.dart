@@ -34,7 +34,7 @@ extension MoveToUserRequestPages on SettingsModelListener
             Navigator.pushNamed(context, CurrentPage.RequestSeparationDetailPage,arguments: RequestSeparationDetailData(notificationReceivedModel?.extraData?.documentNo));
             break;
           case AppConstants.requestTimeRegulationScreenID:
-            Navigator.pushNamed(context, CurrentPage.TimeRegulationDetailPage,arguments: TimeRegulationDetailMapper(id: notificationReceivedModel?.extraData?.documentNo, title: ''));
+            Navigator.pushNamed(context, CurrentPage.TimeRegulationAndMovementDetailPage,arguments: TimeRegulationDetailMapper(id: notificationReceivedModel?.extraData?.documentNo, title: ''));
             break;
           case AppConstants.requestOverTimeScreenID:
             Navigator.pushNamed(context, CurrentPage.OvertimeDetailPage,arguments: RequestDataTaker('',extraData: notificationReceivedModel?.extraData?.documentNo));

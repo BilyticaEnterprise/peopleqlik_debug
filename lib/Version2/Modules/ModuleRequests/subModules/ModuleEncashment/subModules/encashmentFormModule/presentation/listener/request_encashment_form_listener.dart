@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:peopleqlik_debug/Version1/viewModel/Requests/RequestSubListListeners/RequestLeaveEncashmentListeners/request_balance_listener.dart';
+import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/subModules/ModuleEncashment/subModules/encashmentFormModule/presentation/listener/request_balance_listener.dart';
 import 'package:peopleqlik_debug/utils/loader_utils/loader_class.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/usecase/apis_url_caller.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/model/show_error.dart';
@@ -25,10 +25,10 @@ import 'package:peopleqlik_debug/utils/strings.dart';
 import 'package:provider/provider.dart';
 import 'package:peopleqlik_debug/utils/provider_logic_utils/overrided_change_notifier.dart';
 
-import '../../../EmployeeSearchController/global_selected_employee/employee_info_mapper.dart';
-import '../../../EmployeeSearchController/global_selected_employee/global_selected_employee_controller.dart';
+import '../../../../../../../../../Version1/viewModel/EmployeeSearchController/global_selected_employee/employee_info_mapper.dart';
+import '../../../../../../../../../Version1/viewModel/EmployeeSearchController/global_selected_employee/global_selected_employee_controller.dart';
 
-class RequestSpecialFormListener extends GetChangeNotifier with GetLoader
+class RequestEncashmentFormListener extends GetChangeNotifier with GetLoader
 {
   ApiStatus apiStatus = ApiStatus.nothing;
   //LoginResultSet? loginResultSet;
@@ -69,7 +69,7 @@ class RequestSpecialFormListener extends GetChangeNotifier with GetLoader
     saveSpecialRequestFormMapper?.calendarCode = employeeLeaveType.calendarCode;
 
     /// Calling User leave balance api
-    Provider.of<RequestSpecialBalanceListener>(context,listen: false).start(context, employeeLeaveType.calendarCode!, employeeLeaveType.typeCode!);
+    Provider.of<RequestEcashmentBalanceListener>(context,listen: false).start(context, employeeLeaveType.calendarCode!, employeeLeaveType.typeCode!);
   }
 
   void updateFileData(List<GetFileType> file) {
@@ -83,7 +83,7 @@ class RequestSpecialFormListener extends GetChangeNotifier with GetLoader
         saveSpecialRequestFormMapper?.typeID!=null
     )
       {
-        RequestSpecialBalanceListener specialBalanceListener = Provider.of<RequestSpecialBalanceListener>(context,listen: false);
+        RequestEcashmentBalanceListener specialBalanceListener = Provider.of<RequestEcashmentBalanceListener>(context,listen: false);
         saveSpecialRequestFormMapper?.balanceUnit = specialBalanceListener.specialRequestBalanceResultSet?[0].balance.toString();
         saveSpecialRequestFormMapper?.maxEncashmentUnit = specialBalanceListener.specialRequestBalanceResultSet?[0].maxEncashmentUnit.toString();
         saveSpecialRequestFormMapper?.approvalStatusID = 1;

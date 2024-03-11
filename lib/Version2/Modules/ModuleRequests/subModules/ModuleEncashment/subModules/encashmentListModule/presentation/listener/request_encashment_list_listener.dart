@@ -13,9 +13,9 @@ import 'package:peopleqlik_debug/utils/strings.dart';
 import 'package:peopleqlik_debug/utils/provider_logic_utils/overrided_change_notifier.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../../Version2/Modules/ApiModule/domain/model/show_error.dart';
-import '../../../EmployeeSearchController/global_selected_employee/employee_info_mapper.dart';
-import '../../../EmployeeSearchController/global_selected_employee/global_selected_employee_controller.dart';
+import '../../../../../../../ApiModule/domain/model/show_error.dart';
+import '../../../../../../../../../Version1/viewModel/EmployeeSearchController/global_selected_employee/employee_info_mapper.dart';
+import '../../../../../../../../../Version1/viewModel/EmployeeSearchController/global_selected_employee/global_selected_employee_controller.dart';
 
 class GetEncashmentRequestListListener extends GetChangeNotifier
 {

@@ -69,7 +69,8 @@ class _SplashScreenState extends State<SplashScreen> {
                       width: ScreenSize(context).heightOnly(34),
                       // width: MediaQuery.of(GetNavigatorStateContext.navigatorKey.currentState!.context).size.height/100*34,
                       child: Image.asset(
-                        'assets/logo.png',fit: BoxFit.fitHeight,
+                        'assets/logo.png',
+                        fit: BoxFit.fitHeight,
                       ),
                     ),
                   ),

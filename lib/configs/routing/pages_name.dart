@@ -39,7 +39,7 @@ class CurrentPage
   static const String MoveSlipFormPage = '/MoveSlipFormPage';
   static const String TimeRegulationFormPage = '/TimeRegulationFormPage';
   static const String AcceptanceTimeRegulationPage = '/AcceptanceTimeRegulationPage';
-  static const String TimeRegulationDetailPage = '/TimeRegulationDetailPage';
+  static const String TimeRegulationAndMovementDetailPage = '/TimeRegulationAndMovementDetailPage';
   static const String OverTimeTeamRequestPage = '/OverTimeTeamRequestPage';
   static const String OverTimeFormPage = '/OverTimeFormPage';
   static const String OverTimeListPage = '/OverTimeListPage';

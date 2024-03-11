@@ -54,7 +54,7 @@ import '../../../ModuleRequests/subModules/ModuleLeave/subModules/LeaveApplyForm
 import '../../../ModuleRequests/subModules/ModuleLeave/subModules/LeaveApplyFormModule/domain/models/time_off_leave_balance.dart';
 import '../../../ModuleRequests/subModules/ModuleLeave/subModules/LeaveApplyFormModule/domain/models/time_off_model.dart';
 import '../../../../../Version1/Models/TimeRegulationModels/date_select_movement_slip_model.dart';
-import '../../../../../Version1/Models/TimeRegulationModels/time_regulation_approval_detail_model.dart';
+// import '../../../../../Version1/Models/TimeRegulationModels/time_regulation_movement_detail_model.dart';
 import '../../../../../Version1/Models/TimeRegulationModels/time_regulation_model.dart';
 import '../../../../../Version1/Models/TimeRegulationModels/time_regulation_monthly_model.dart';
 import '../../../../../Version1/Models/TimeRegulationModels/time_regulation_movement_submitted_model.dart';
@@ -138,10 +138,10 @@ class UseCaseGetApisUrlCaller
   {
     return await GlobalApiCallerRepo.instance.callApi(context,endPoint: RequestType.getApprovalsDetails,checkTypes: CheckTypes.includeData,isPost: false,urlParameters: parameters, type: ClassType<GetApprovalDetailJson>(GetApprovalDetailJson.fromJson));
   }
-  Future<ApiResponse> getTimeRegularizationApprovalDetailsApiCall(BuildContext context,dynamic parameters)async
-  {
-    return await GlobalApiCallerRepo.instance.callApi(context,endPoint: RequestType.getApprovalsDetails,checkTypes: CheckTypes.includeData,isPost: false,urlParameters: parameters, type: ClassType<TimeRegulationApprovalDetailModel>(TimeRegulationApprovalDetailModel.fromJson));
-  }
+  // Future<ApiResponse> getTimeRegularizationApprovalDetailsApiCall(BuildContext context,dynamic parameters)async
+  // {
+  //   return await GlobalApiCallerRepo.instance.callApi(context,endPoint: RequestType.getApprovalsDetails,checkTypes: CheckTypes.includeData,isPost: false,urlParameters: parameters, type: ClassType<TimeRegulationApprovalDetailModel>(TimeRegulationApprovalDetailModel.fromJson));
+  // }
 
   ///
   Future<ApiResponse> getRequestListApiCall(BuildContext context,dynamic parameters)async

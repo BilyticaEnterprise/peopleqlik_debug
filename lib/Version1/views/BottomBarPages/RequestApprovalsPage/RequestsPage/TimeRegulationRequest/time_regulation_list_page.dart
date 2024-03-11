@@ -147,7 +147,7 @@ class _BodyDataState extends State<BodyData> {
 
                       widget.requestDataTaker?.extraData = data.dataList?[index];
                       widget.requestDataTaker?.documentNumber = data.dataList?[index].requestMID;
-                      Navigator.pushNamed(context, CurrentPage.TimeRegulationDetailPage,arguments: TimeRegulationDetailMapper(id: widget.requestDataTaker?.id.toString(), title: widget.requestDataTaker?.title));
+                      Navigator.pushNamed(context, CurrentPage.TimeRegulationAndMovementDetailPage,arguments: TimeRegulationDetailMapper(id: widget.requestDataTaker?.id.toString(), title: widget.requestDataTaker?.title));
 
                       },);
                   },

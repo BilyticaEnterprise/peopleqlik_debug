@@ -26,9 +26,9 @@ import '../../Version1/views/BottomBarPages/RequestApprovalsPage/ApprovalsSubPag
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/ApprovalsSubPages/approvals_page.dart';
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/PayslipPages/paslip_list_page.dart';
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/PayslipPages/payslip_month_page.dart';
-import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/EncashmentRequestLeaveEncashment/request_encashment_detail_page.dart';
-import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/EncashmentRequestLeaveEncashment/request_encashment_form_page.dart';
-import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/EncashmentRequestLeaveEncashment/request_encashment_list_page.dart';
+import '../../Version2/Modules/ModuleRequests/subModules/ModuleEncashment/subModules/encashmentDetailModule/presentation/ui/request_encashment_detail_page.dart';
+import '../../Version2/Modules/ModuleRequests/subModules/ModuleEncashment/subModules/encashmentFormModule/presentation/ui/request_encashment_form_page.dart';
+import '../../Version2/Modules/ModuleRequests/subModules/ModuleEncashment/subModules/encashmentListModule/presentation/ui/request_encashment_list_page.dart';
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/OvertimePages/OverTimeDashBoardTeamRequest/overtime_team_request_list_page.dart';
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/OvertimePages/OvertimeFormPages/overtime_form_page.dart';
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/OvertimePages/UiWidgets/overtime_detail_page.dart';
@@ -46,7 +46,7 @@ import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/Sh
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/TimeRegulationRequest/MovementSlipForm/movement_slip_form_page.dart';
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/TimeRegulationRequest/TimeRegulationFormPage/TimeRegulationFetchDateListPages/time_regulation_fetch_date_list_page.dart';
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/TimeRegulationRequest/TimeRegulationFormPage/TimeRegulationFormPages/time_regulation_form_page.dart';
-import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/TimeRegulationRequest/time_regulation_detail_page.dart';
+import '../../Version2/Modules/ModuleRequests/subModules/ModuleTimeRegulationAndMovement/subModules/timeRegulationModule/subModules/timeRegulationAndMovementDetailModule/presentation/ui/time_regulation_and_movement_detail_page.dart';
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/TimeRegulationRequest/time_regulation_list_page.dart';
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/RequestSubPages/request_detail_page.dart';
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/request_main_page.dart';
@@ -120,7 +120,7 @@ var routes = {
   CurrentPage.TimeRegulationFetchDateListPage: (context) => TimeRegulationFetchDateListPage(),
   CurrentPage.TimeRegulationFormPage: (context) => TimeRegulationFormPage(),
   CurrentPage.AcceptanceTimeRegulationPage: (context) => AcceptanceTimeRegulationPage(),
-  CurrentPage.TimeRegulationDetailPage: (context) => TimeRegulationDetailPage(),
+  CurrentPage.TimeRegulationAndMovementDetailPage: (context) => TimeRegulationAndMovementDetailPage(),
   CurrentPage.OverTimeTeamRequestPage: (context) => OverTimeTeamRequestPage(),
   CurrentPage.OverTimeListPage: (context) => OverTimeListPage(),
   CurrentPage.OverTimeFormPage: (context) => OverTimeFormPage(),

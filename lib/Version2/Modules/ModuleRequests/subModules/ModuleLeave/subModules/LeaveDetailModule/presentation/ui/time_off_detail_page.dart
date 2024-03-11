@@ -36,7 +36,6 @@ import '../../domain/models/time_off_detail_mapper.dart';
 
 class TimeOffDetailPage extends StatelessWidget {
   late AllRequestDetailMapper allRequestDetailMapper;
-  // PanelController panelController = PanelController();
   TimeOffDetailPage({Key? key}) : super(key: key);
 
   @override

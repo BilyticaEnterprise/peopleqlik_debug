@@ -13,10 +13,10 @@ import 'package:peopleqlik_debug/utils/snackbar_design.dart';
 import 'package:peopleqlik_debug/utils/strings.dart';
 import 'package:peopleqlik_debug/utils/provider_logic_utils/overrided_change_notifier.dart';
 
-import '../../../../../Version2/Modules/ApiModule/domain/usecase/apis_url_caller.dart';
-import '../../../../../Version2/Modules/ApiModule/domain/model/show_error.dart';
-import '../../../../../Version2/Modules/ApiModule/domain/model/api_global_model.dart';
-import '../../../Approvals/get_approval_list.dart';
+import '../../../../../../../ApiModule/domain/usecase/apis_url_caller.dart';
+import '../../../../../../../ApiModule/domain/model/show_error.dart';
+import '../../../../../../../ApiModule/domain/model/api_global_model.dart';
+import '../../../../../../../../../Version1/viewModel/Approvals/get_approval_list.dart';
 
 class GetRequestEncashmentDetailListener extends GetChangeNotifier
 {
