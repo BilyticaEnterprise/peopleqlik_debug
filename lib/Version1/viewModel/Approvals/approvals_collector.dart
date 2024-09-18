@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:peopleqlik_debug/utils/pagination_logic_utils/pagination_classes.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
-import 'package:peopleqlik_debug/Version1/Models/ApprovalsModel/get_approvals_list.dart';
+import 'package:peopleqlik_debug/Version1/models/ApprovalsModel/get_approvals_list.dart';
 import 'package:peopleqlik_debug/utils/calendars/calender_time_widget.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/configs/routing/pages_name.dart';
@@ -14,6 +14,7 @@ import 'package:sliding_up_panel/sliding_up_panel.dart';
 import '../../../Version2/Modules/ApiModule/domain/usecase/apis_url_caller.dart';
 import '../../../Version2/Modules/ApiModule/domain/model/show_error.dart';
 import '../../../Version2/Modules/ApiModule/domain/model/api_global_model.dart';
+import '../../../utils/AppConstants/app_constants.dart';
 
 class ApprovalCollector extends GetChangeNotifier with GetPaginationClasses
 {
@@ -50,7 +51,7 @@ class ApprovalCollector extends GetChangeNotifier with GetPaginationClasses
   }
 
   @override
-  passInitialData() {
+  resetInitialData() {
     /// This method get called from start method
     dataList ??= List<ApprovalResultSet>.empty(growable: true); /// If list null then create list
     receiveInitialData(dataList,ApprovalResultSet()); /// pass this list to Pagination Mixin class
@@ -59,7 +60,7 @@ class ApprovalCollector extends GetChangeNotifier with GetPaginationClasses
   @override
   start(BuildContext context,ApiStatus status)
   async {
-    passInitialData();
+    resetInitialData();
 
     apiStatus = status;
     incrementPage(); ///Whenever user hit the api default page number we set is 0. So to increment that page to 1 we call this method. Why? because our every list API start getting list from page number 1 so if this api again get called then it will increment to 1,2,3... ;
@@ -202,6 +203,43 @@ class ApprovalCollector extends GetChangeNotifier with GetPaginationClasses
   checkIfApiHitsAlready()
   {
     return apiStatus != ApiStatus.started;
+  }
+
+  String getPageName(int? screenID)
+  {
+    if(screenID == GetVariable.requestScreenId)
+      {
+        return CurrentPage.RequestDetailPage;
+      }
+    else if(screenID == AppConstants.requestEnCashmentScreenID)
+    {
+      return CurrentPage.RequestEncashmentDetailPage;
+    }
+    else if(screenID == AppConstants.requestSeparationScreenID)
+    {
+      return CurrentPage.RequestSeparationDetailPage;
+    }
+    else if(screenID == AppConstants.requestTimeRegulationScreenID)
+    {
+      return CurrentPage.TimeRegulationAndMovementDetailPage;
+    }
+    else if(screenID == AppConstants.requestOverTimeScreenID)
+    {
+      return CurrentPage.OvertimeDetailPage;
+    }
+    else if(screenID == AppConstants.requestShiftScreenID)
+    {
+      return CurrentPage.ShiftDetailPage;
+    }
+    else if(screenID == AppConstants.requestLeaveScreenID)
+    {
+      return CurrentPage.TimeOffDetailPage;
+    }
+    else
+      {
+        return CurrentPage.ApprovalAcceptanceRejectionPage;
+      }
+
   }
 }
 enum ApprovalPageEnum

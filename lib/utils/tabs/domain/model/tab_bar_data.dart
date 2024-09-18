@@ -1,5 +1,6 @@
-class TabOptionData
+class TabOptionData<T>
 {
   String title;
-  TabOptionData({required this.title});
+  T? extraData;
+  TabOptionData({required this.title,this.extraData});
 }

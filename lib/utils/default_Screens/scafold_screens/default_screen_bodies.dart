@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../Version1/Models/call_setting_data.dart';
+import '../../../../Version1/models/call_setting_data.dart';
 import '../../internetConnectionChecker/internet_connection.dart';
 import '../../../../configs/get_assets.dart';
 import '../../../../configs/language_codes.dart';
 import '../../../../configs/prints_logs.dart';
 import '../../../../utils/screen_sizes.dart';
-import 'package:peopleqlik_debug/utils/ErrorsUi/no_internet_found.dart';
+import 'package:peopleqlik_debug/utils/errorsUi/no_internet_found.dart';
 
 class GetBodyWidgetWithScrollView extends StatelessWidget {
   final double paddingHorizontally;

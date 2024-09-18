@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/Approvals/approvals_collector.dart';
-import 'package:peopleqlik_debug/Version1/Models/ApprovalsModel/get_approvals_list.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
+import 'package:peopleqlik_debug/Version1/models/ApprovalsModel/get_approvals_list.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
 import 'package:peopleqlik_debug/utils/internetConnectionChecker/internet_connection.dart';
 import 'package:peopleqlik_debug/Version1/views/BottomBarPages/RequestApprovalsPage/ApprovalsSubPages/ApprovalThreePages/approved_approvals.dart';
 import 'package:peopleqlik_debug/Version1/views/BottomBarPages/RequestApprovalsPage/ApprovalsSubPages/ApprovalThreePages/pending_approvals.dart';
@@ -10,8 +10,8 @@ import 'package:peopleqlik_debug/Version1/views/BottomBarPages/RequestApprovalsP
 import 'package:peopleqlik_debug/Version1/views/BottomBarPages/RequestApprovalsPage/ApprovalsSubPages/panel_body_approvals.dart';
 import 'package:peopleqlik_debug/Version1/views/BottomBarPages/RequestApprovalsPage/ApprovalsSubPages/panel_header_approval.dart';
 import 'package:peopleqlik_debug/utils/tabs/presentation/ui/custom_tabs_header.dart';
-import 'package:peopleqlik_debug/utils/ScreenLoader/circular_indicator_customized.dart';
-import 'package:peopleqlik_debug/utils/ErrorsUi/not_available.dart';
+import 'package:peopleqlik_debug/utils/screenLoader/circular_indicator_customized.dart';
+import 'package:peopleqlik_debug/utils/errorsUi/not_available.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/configs/language_codes.dart';
 import 'package:peopleqlik_debug/configs/prints_logs.dart';

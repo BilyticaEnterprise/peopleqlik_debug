@@ -7,7 +7,7 @@ import 'package:peopleqlik_debug/utils/loader_utils/loader_class.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/model/show_error.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/model/api_global_model.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
-import 'package:peopleqlik_debug/Version1/Models/AuthModels/company_url_get_model.dart';
+import 'package:peopleqlik_debug/Version1/models/AuthModels/company_url_get_model.dart';
 import 'package:peopleqlik_debug/utils/SharedPrefs/company_urls_prefs.dart';
 import 'package:peopleqlik_debug/configs/routing/pages_name.dart';
 import 'package:peopleqlik_debug/utils/provider_logic_utils/overrided_change_notifier.dart';
@@ -15,7 +15,7 @@ import 'package:peopleqlik_debug/utils/provider_logic_utils/overrided_change_not
 import '../../../configs/prints_logs.dart';
 import '../../../utils/strings.dart';
 import '../../../Version2/Modules/ApiModule/domain/usecase/apis_url_caller.dart';
-import '../../Models/make_urls.dart';
+import '../../models/make_urls.dart';
 import 'initial_cookie_listener.dart';
 
 

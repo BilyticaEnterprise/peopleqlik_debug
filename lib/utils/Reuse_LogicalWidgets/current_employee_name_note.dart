@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../Version1/viewModel/EmployeeSearchController/global_selected_employee/global_selected_employee_controller.dart';
-import '../../Version1/Models/call_setting_data.dart';
+import '../../Version1/models/call_setting_data.dart';
 import '../../configs/colors.dart';
 import '../../configs/fonts.dart';
 import '../../configs/language_codes.dart';

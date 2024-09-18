@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/model/model_decider.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/model/validation_api_data.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/AuthListeners/save_cookie_globally.dart';
-import 'package:peopleqlik_debug/Version1/Models/AuthModels/cookie_model.dart';
+import 'package:peopleqlik_debug/Version1/models/AuthModels/cookie_model.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/repo/api_client_repo.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/utils/headers.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
@@ -15,9 +15,9 @@ import 'package:provider/provider.dart';
 import '../../../../../configs/language_codes.dart';
 import '../../../../../configs/prints_logs.dart';
 import '../../../../../utils/strings.dart';
-import '../../../../../Version1/Models/AuthModels/login_model.dart';
-import '../../../../../Version1/Models/call_setting_data.dart';
-import '../../../../../Version1/Models/make_urls.dart';
+import '../../../../../Version1/models/AuthModels/login_model.dart';
+import '../../../../../Version1/models/call_setting_data.dart';
+import '../../../../../Version1/models/make_urls.dart';
 import 'package:peopleqlik_debug/utils/SharedPrefs/login_prefs.dart';
 import '../../../../../utils/internetConnectionChecker/internet_connection.dart';
 import '../../domain/model/api_global_model.dart';
@@ -54,7 +54,7 @@ class GlobalApiCallerRepoImpl<T> extends GlobalApiCallerRepo
         }
       }
 
-      // PrintLogs.printLogs('authashjdbasb ${GetHeaders().getAuthHeader(context,loginResultSet)}');
+      PrintLogs.printLogs('authashjdbasb ${urlParameters} ||| $parameters');
       try{
         if(isPost==true)
         {
@@ -85,7 +85,7 @@ class GlobalApiCallerRepoImpl<T> extends GlobalApiCallerRepo
         {
           if(checkCookies==true)
           {
-            PrintLogs.printLogs('ApisCallsscookie ${jsonEncode(response.data)}');
+           // PrintLogs.printLogs('ApisCallsscookie ${jsonEncode(response.data)}');
             CookieJson? cookieJson = getCookieClass(response);
 
             if(cookieJson!=null)
@@ -112,6 +112,10 @@ class GlobalApiCallerRepoImpl<T> extends GlobalApiCallerRepo
           {
             return ValidationApiData().includeListData(apiResponse);
           }
+          else if(checkTypes == CheckTypes.includeRequestChecks)
+            {
+              return ValidationApiData().includeRequestChecks(apiResponse);
+            }
           else if(checkTypes == CheckTypes.includeListInsideData)
           {
             return ValidationApiData().includeListInsideData(apiResponse);

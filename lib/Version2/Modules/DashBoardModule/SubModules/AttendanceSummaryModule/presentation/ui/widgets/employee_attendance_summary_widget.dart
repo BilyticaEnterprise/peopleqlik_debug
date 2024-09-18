@@ -1,11 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
 import 'package:peopleqlik_debug/utils/dividers_screen/dividers.dart';
 import 'package:peopleqlik_debug/utils/lines_widget/horizontal_vertical_line.dart';
 import 'package:peopleqlik_debug/configs/language_codes.dart';
-import 'package:peopleqlik_debug/utils/CommonUis/common_container.dart';
-import 'package:peopleqlik_debug/utils/cached_image_getter/cache_image.dart';
+import 'package:peopleqlik_debug/utils/commonUis/common_container.dart';
+import 'package:peopleqlik_debug/utils/image_getter/cache_image.dart';
 import 'package:peopleqlik_debug/utils/strings.dart';
 
 import '../../../../../../../../configs/colors.dart';

@@ -4,7 +4,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/subModules/ModuleLeave/subModules/LeaveApplyFormModule/presentation/listener/time_off_add_edit_attachments_collector.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/UploadFileListener/upload_file_listener.dart';
-import 'package:peopleqlik_debug/Version1/Models/uploaded_file_model.dart';
+import 'package:peopleqlik_debug/Version1/models/uploaded_file_model.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/configs/fonts.dart';
 import 'package:peopleqlik_debug/configs/prints_logs.dart';

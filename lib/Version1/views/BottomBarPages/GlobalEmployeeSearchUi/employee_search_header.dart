@@ -3,7 +3,7 @@ import 'package:peopleqlik_debug/utils/snackbar_design.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../Version1/viewModel/EmployeeSearchController/employee_search_bottom_sheet_listener.dart';
-import '../../../../Version1/Models/call_setting_data.dart';
+import '../../../../Version1/models/call_setting_data.dart';
 import '../../../../configs/colors.dart';
 import '../../../../configs/fonts.dart';
 import '../../../../utils/hide_keyboard.dart';

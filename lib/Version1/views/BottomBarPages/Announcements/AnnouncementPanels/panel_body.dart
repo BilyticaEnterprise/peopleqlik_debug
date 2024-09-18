@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/FileDownloaderListener/file_downloader_listener.dart';
-import 'package:peopleqlik_debug/Version1/viewModel/NotifcationsListeners/announcements_detail_listener.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
+import 'package:peopleqlik_debug/Version1/viewModel/AnnouncementListeners/announcements_detail_listener.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
 import 'package:peopleqlik_debug/Version1/views/BottomBarPages/Announcements/AnnouncementPanels/permission_page.dart';
-import 'package:peopleqlik_debug/utils/Buttons/buttons.dart';
-import 'package:peopleqlik_debug/utils/ScreenLoader/circular_indicator_customized.dart';
+import 'package:peopleqlik_debug/utils/buttons/buttons.dart';
+import 'package:peopleqlik_debug/utils/screenLoader/circular_indicator_customized.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/configs/fonts.dart';
 import 'package:peopleqlik_debug/configs/language_codes.dart';
@@ -28,7 +28,7 @@ class _PanelHeaderAnnouncementState extends State<PanelHeaderAnnouncement> {
 
   @override
   void initState() {
-    WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       Provider.of<FileDownloaderListener>(context,listen: false).stater();
     });
     super.initState();

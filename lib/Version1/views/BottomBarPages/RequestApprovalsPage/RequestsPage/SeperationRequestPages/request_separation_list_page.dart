@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:peopleqlik_debug/Version1/viewModel/Requests/RequestSubListListeners/RequestSeparationListener/request_separation_detail_listener.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/Requests/RequestSubListListeners/RequestSeparationListener/request_separation_list_listener.dart';
+import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/domain/models/all_requests_detail_mapper.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
 
-import 'package:peopleqlik_debug/Version1/Models/RequestsModel/get_request_separation_list_model.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
-import 'package:peopleqlik_debug/utils/ScreenLoader/circular_indicator_customized.dart';
-import 'package:peopleqlik_debug/utils/ErrorsUi/not_available.dart';
+import 'package:peopleqlik_debug/Version1/models/RequestsModel/get_request_separation_list_model.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
+import 'package:peopleqlik_debug/utils/screenLoader/circular_indicator_customized.dart';
+import 'package:peopleqlik_debug/utils/errorsUi/not_available.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/utils/date_formats.dart';
 import 'package:peopleqlik_debug/configs/fonts.dart';
@@ -20,7 +20,7 @@ import 'package:provider/provider.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 import '../../../../../../Version1/viewModel/EmployeeSearchController/global_selected_employee/global_selected_employee_controller.dart';
-import '../../../../../../Version1/Models/RequestsModel/request_data_taker.dart';
+import '../../../../../../Version1/models/RequestsModel/request_data_taker.dart';
 import '../../../../../../utils/Appbars/generic_app_bar.dart';
 import '../../../../../../../../utils/Default_Screens/scafold_screens/default_screens.dart';
 import '../../../../../../../utils/Reuse_LogicalWidgets/approve_reject_pending_text_widget.dart';
@@ -200,7 +200,8 @@ class RequestSeparationListWidget extends StatelessWidget {
           child: InkWell(
             splashColor: const Color(MyColor.colorGrey0),
             onTap: (){
-              Navigator.pushNamed(context, CurrentPage.RequestSeparationDetailPage,arguments: RequestSeparationDetailData(getSeparationDataList?.iD));
+              Navigator.pushNamed(context, CurrentPage.RequestSeparationDetailPage,arguments: AllRequestDetailMapper(documentNumber: getSeparationDataList?.documentNo.toString(),companyCode: getSeparationDataList?.companyCode.toString(),screenID: getSeparationDataList?.screenID.toString(),isApprovalScreen: false));
+
             },
             child: Padding(
                 padding: EdgeInsets.all(ScreenSize(context).heightOnly( 1.5)),

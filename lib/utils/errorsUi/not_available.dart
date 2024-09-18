@@ -141,7 +141,7 @@ class NotAvailableIcon extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         SizedBox(height: ScreenSize(context).heightOnly( topMargin??0),),
-        GetIcons(icon: icon??SvgPicturesData.alert,size: 12,iconColor: MyColor.colorBlack,backgroundColor: MyColor.colorA5,opacity: 0.6,),
+        GetIcons(icon: icon??SvgPicturesData.alert,size: 12,color: MyColor.colorBlack,backgroundColor: MyColor.colorA5,opacity: 0.6,),
         SizedBox(height: ScreenSize(context).heightOnly(4),),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: ScreenSize(context).widthOnly( 8.6)),

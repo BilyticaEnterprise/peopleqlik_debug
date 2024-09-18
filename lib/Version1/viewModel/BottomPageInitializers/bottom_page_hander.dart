@@ -3,11 +3,10 @@ import 'dart:convert';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/TimeOffEnCashListners/SummaryListeners/leave_calender_model_listener.dart';
+import 'package:peopleqlik_debug/Version2/Modules/AllNotificationModules/subModule/FCMModule/domain/repo/fcm_payload_dealer_repo.dart';
 import 'package:peopleqlik_debug/utils/loader_utils/loader_class.dart';
-import 'package:peopleqlik_debug/utils/provider_logic_utils/overrided_change_notifier.dart';
 import 'package:provider/provider.dart';
 
-import '../../../Version2/Modules/FCMModule/domain/repo/fcm_payload_dealer_repo.dart';
 import '../../../Version2/Modules/ModuleAppVersion/presentation/bloc/version_checker_bloc.dart';
 import '../../../utils/internetConnectionChecker/internet_connection.dart';
 
@@ -34,6 +33,7 @@ class BottomPageHandler with GetLoader
   async {
     return await FirebaseMessaging.instance.getInitialMessage();
   }
+
   Future<void> _handleInitialNotification(RemoteMessage initialMessage) async {
 
     print('Opened app from notification! ${initialMessage.data['payload']}');

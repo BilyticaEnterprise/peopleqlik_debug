@@ -5,8 +5,8 @@ import '../../../Version2/Modules/ApiModule/domain/usecase/apis_url_caller.dart'
 import '../../../Version2/Modules/ApiModule/domain/model/show_error.dart';
 import '../../../Version2/Modules/ApiModule/domain/model/api_global_model.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
-import '../../Models/TeamModel/get_employee_leave_balance_mapper.dart';
-import '../../Models/TeamModel/leave_balance_model.dart';
+import '../../models/TeamModel/get_employee_leave_balance_mapper.dart';
+import '../../models/TeamModel/leave_balance_model.dart';
 
 class GetEmployeeLeaveBalanceListener extends GetChangeNotifier
 {

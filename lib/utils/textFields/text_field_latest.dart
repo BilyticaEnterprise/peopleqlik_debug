@@ -5,7 +5,7 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'package:provider/provider.dart';
 
 import '../../../Version1/viewModel/LanguageListeners/language_listener.dart';
-import '../../../Version1/Models/call_setting_data.dart';
+import '../../../Version1/models/call_setting_data.dart';
 import '../../../configs/colors.dart';
 import '../../../configs/fonts.dart';
 import '../../../configs/icons.dart';

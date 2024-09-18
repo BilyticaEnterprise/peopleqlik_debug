@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
-import 'package:peopleqlik_debug/utils/Buttons/bottom_single_button.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
+import 'package:peopleqlik_debug/utils/buttons/bottom_single_button.dart';
 import 'package:peopleqlik_debug/utils/dividers_screen/dividers.dart';
 import 'package:peopleqlik_debug/configs/language_codes.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../../../../../Version1/viewModel/EmployeeSearchController/global_selected_employee/global_selected_employee_controller.dart';
 import '../../../../../../../../utils/Default_Screens/scafold_screens/default_screens.dart';
-import 'package:peopleqlik_debug/utils/DropDowns/drop_down_header.dart';
-import '../../../../../../../../utils/ScreenLoader/circular_indicator_customized.dart';
+import 'package:peopleqlik_debug/utils/dropDowns/drop_down_header.dart';
+import '../../../../../../../../utils/screenLoader/circular_indicator_customized.dart';
 import '../../listeners/company_change_listener.dart';
 
 class ChangeCompanyPage extends StatelessWidget {

@@ -5,4 +5,6 @@ import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/domain/models/a
 abstract class AllRequestDetailApiClientRepo
 {
   getData(BuildContext context,AllRequestDetailMapper allRequestDetailMapper,ClassType classType);
+  approveRejectRequest(BuildContext context, {required AllRequestDetailMapper allRequestDetailMapper,required String remarks,required int approveOrReject});
+
 }

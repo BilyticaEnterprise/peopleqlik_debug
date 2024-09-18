@@ -4,10 +4,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:peopleqlik_debug/utils/loader_utils/loader_class.dart';
 
-import 'package:peopleqlik_debug/Version1/Models/AuthModels/login_model.dart';
-import 'package:peopleqlik_debug/Version1/Models/RequestsModel/get_request_separation_form_model.dart';
-import 'package:peopleqlik_debug/Version1/Models/RequestsModel/post_separation_form_mapper.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
+import 'package:peopleqlik_debug/Version1/models/AuthModels/login_model.dart';
+import 'package:peopleqlik_debug/Version1/models/RequestsModel/get_request_separation_form_model.dart';
+import 'package:peopleqlik_debug/Version1/models/RequestsModel/post_separation_form_mapper.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
 import 'package:peopleqlik_debug/utils/SharedPrefs/login_prefs.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/utils/date_formats.dart';

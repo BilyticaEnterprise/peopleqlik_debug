@@ -12,8 +12,8 @@ import 'package:peopleqlik_debug/Version2/Modules/ModuleSetting/domain/repoImpl/
 import 'package:peopleqlik_debug/Version2/Modules/ModuleSetting/domain/model/settings_model.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../../../../Version1/Models/AuthModels/login_model.dart';
-import 'package:peopleqlik_debug/utils/DropDowns/drop_down_header.dart';
+import '../../../../../../../Version1/models/AuthModels/login_model.dart';
+import 'package:peopleqlik_debug/utils/dropDowns/drop_down_header.dart';
 
 class CompanyChangeListener extends GetChangeNotifier with GetLoader
 {

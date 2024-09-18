@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:peopleqlik_debug/Version1/Models/PaysSlipApprovalsRequest/request_list_form_model.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
+import 'package:peopleqlik_debug/Version1/models/PaysSlipApprovalsRequest/request_list_form_model.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/Requests/RequestSubListListeners/request_form_get_listener.dart';
 import 'package:peopleqlik_debug/utils/TextFields/LegacyTextFields/text_widgets.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';

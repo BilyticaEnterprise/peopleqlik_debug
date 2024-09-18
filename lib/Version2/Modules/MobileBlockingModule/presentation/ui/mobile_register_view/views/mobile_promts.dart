@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:peopleqlik_debug/utils/dividers_screen/dividers.dart';
 
-import 'package:peopleqlik_debug/utils/Buttons/buttons.dart';
+import 'package:peopleqlik_debug/utils/buttons/buttons.dart';
 import '../../../../../../../configs/colors.dart';
 import '../../../../../../../configs/fonts.dart';
 import '../../../../../../../utils/screen_sizes.dart';

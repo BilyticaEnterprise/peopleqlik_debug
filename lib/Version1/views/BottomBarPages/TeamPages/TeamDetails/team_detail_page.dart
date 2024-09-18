@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:ui';
 
 import 'package:cached_network_image/cached_network_image.dart';
@@ -7,13 +6,13 @@ import 'package:flutter_svg/svg.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/LanguageListeners/language_listener.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/TeamGetListeners/team_detail_listener.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/utils/Urls/urls.dart';
-import 'package:peopleqlik_debug/Version1/Models/TeamModel/get_team_model.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
+import 'package:peopleqlik_debug/Version1/models/TeamModel/get_team_model.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
 import 'package:peopleqlik_debug/utils/internetConnectionChecker/internet_connection.dart';
-import 'package:peopleqlik_debug/utils/ErrorsUi/not_available.dart';
+import 'package:peopleqlik_debug/utils/errorsUi/not_available.dart';
 import 'package:peopleqlik_debug/utils/dividers_screen/dividers.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
-import 'package:peopleqlik_debug/utils/Headers/header_large.dart';
+import 'package:peopleqlik_debug/utils/headers/header_large.dart';
 import 'package:peopleqlik_debug/utils/date_formats.dart';
 import 'package:peopleqlik_debug/configs/fonts.dart';
 import 'package:peopleqlik_debug/configs/icons.dart';

@@ -3,15 +3,15 @@ import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/EmployeeSearchController/global_selected_employee/global_selected_employee_controller.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../Version1/Models/call_setting_data.dart';
+import '../../../../Version1/models/call_setting_data.dart';
 import '../../../../configs/colors.dart';
 import '../../../../utils/Appbars/app_bar.dart';
 import '../../../../utils/hide_keyboard.dart';
 import '../../../../configs/language_codes.dart';
 import '../../lottie_anims_utils/lottie_string.dart';
 import '../../../../utils/screen_sizes.dart';
-import 'package:peopleqlik_debug/utils/ErrorsUi/not_available.dart';
-import '../../Buttons/buttons.dart';
+import 'package:peopleqlik_debug/utils/errorsUi/not_available.dart';
+import '../../buttons/buttons.dart';
 import 'default_screen_bodies.dart';
 
 

@@ -27,6 +27,12 @@ class AppStateEmpty<T> extends AppState
   AppStateEmpty({this.data});
 }
 
+class AppStatePagination<T> extends AppState
+{
+  T? data;
+  AppStatePagination({this.data});
+}
+
 class AppStateNothing extends AppState
 {
 

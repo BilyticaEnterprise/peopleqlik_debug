@@ -4,15 +4,14 @@ import 'package:peopleqlik_debug/utils/provider_logic_utils/overrided_change_not
 
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:peopleqlik_debug/Version1/ApiCalls/get_request_form_api.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
 
 import 'package:peopleqlik_debug/Version1/viewModel/Requests/save_request_form_listener.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/subModules/ModuleLeave/subModules/LeaveApplyFormModule/presentation/listener/time_off_add_edit_attachments_collector.dart';
-import 'package:peopleqlik_debug/Version1/Models/AuthModels/login_model.dart';
-import 'package:peopleqlik_debug/Version1/Models/PaysSlipApprovalsRequest/request_list_form_model.dart';
-import 'package:peopleqlik_debug/Version1/Models/RequestsModel/submit_request_model.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
+import 'package:peopleqlik_debug/Version1/models/AuthModels/login_model.dart';
+import 'package:peopleqlik_debug/Version1/models/PaysSlipApprovalsRequest/request_list_form_model.dart';
+import 'package:peopleqlik_debug/Version1/models/RequestsModel/submit_request_model.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
 import 'package:peopleqlik_debug/utils/SharedPrefs/login_prefs.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/utils/date_formats.dart';
@@ -500,13 +499,31 @@ class GetRequestFormListener extends GetChangeNotifier
       submitRequestJson.admRequestValue = admRequestValueList;
       submitRequestJson.admRequestFile = admRequestFileList;
 
-      Provider.of<SaveRequestFormListener>(context,listen: false).start(context, submitRequestJson.toJson());
+      bool check = await Provider.of<SaveRequestFormListener>(context,listen: false).start(context, submitRequestJson.toJson());
+      if(check == true)
+        {
+
+          disposeAll();
+          Navigator.pop(context,true);
+        }
+
     }
     //   }
     // else
     //   {
     //     PrintLogs.print('Request code cannot be null');
     //   }
+  }
+
+  disposeAll()
+  {
+    getFiles?.clear();
+    requestFormResultSet = null;
+    loginResultSet = null;
+    getFiles = null;
+    apiStatus = ApiStatus.nothing;
+    formList.clear();
+    encodedRequest = null;
   }
 
   Future<ReqDetail?> updateInitialSelected(AdmRequestManagerDt admRequestManagerDt, List<ReqDetail>? reqDetail, UiTypes? uiType)async {

@@ -3,7 +3,12 @@ import 'package:peopleqlik_debug/Version2/Modules/AccountModule/AccountSubModule
 import 'package:peopleqlik_debug/Version2/Modules/AccountModule/AccountSubModules/ProfileModule/SubModule/CompensationEditModule/presentation/ui/compensation_edit_page.dart';
 import 'package:peopleqlik_debug/Version2/Modules/AccountModule/AccountSubModules/ProfileModule/SubModule/ExperienceEditModule/presentation/ui/experience_edit_page.dart';
 import 'package:peopleqlik_debug/Version2/Modules/AccountModule/AccountSubModules/ProfileModule/SubModule/FamilyEditModule/presentation/ui/family_edit_module.dart';
+import 'package:peopleqlik_debug/Version2/Modules/AllNotificationModules/subModule/NotificationViewModule/presentation/ui/notification_view_page.dart';
+import 'package:peopleqlik_debug/Version2/Modules/DocumentPolicyModule/subModules/documentDetailPage/presentation/ui/document_detail_page.dart';
+import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/subModules/ModuleTimeRegulationAndMovement/subModules/timeRegulationMovementModule/subModules/timeRegulationAndMovementDetailModule/presentation/ui/time_regulation_and_movement_detail_page.dart';
+import 'package:peopleqlik_debug/Version2/Modules/OrganizationHeirarchyModule/presentation/ui/organization_chart_page.dart';
 import 'package:peopleqlik_debug/configs/routing/pages_name.dart';
+import 'package:peopleqlik_debug/utils/image_getter/image_zoom/image_zoom.dart';
 
 import '../../Version1/views/AuthPages/company_name.dart';
 import '../../Version1/views/AuthPages/login_page.dart';
@@ -15,14 +20,6 @@ import '../../Version2/Modules/AccountModule/AccountSubModules/LanguageChangeMod
 import '../../Version2/Modules/AccountModule/AccountSubModules/PoliciesURLModule/presentation/ui/policies_page.dart';
 import '../../Version1/views/BottomBarPages/Announcements/announcement_detail_page.dart';
 import '../../Version1/views/BottomBarPages/Notifications/notification_detail.dart';
-import '../../Version1/views/BottomBarPages/Notifications/notification_page.dart';
-import '../../Version1/views/BottomBarPages/RequestApprovalsPage/ApprovalsSubPages/ApprovalsAcceptance/approval_acceptance_encashment_page.dart';
-import '../../Version1/views/BottomBarPages/RequestApprovalsPage/ApprovalsSubPages/ApprovalsAcceptance/approval_acceptance_rejection_page.dart';
-import '../../Version1/views/BottomBarPages/RequestApprovalsPage/ApprovalsSubPages/ApprovalsAcceptance/approval_acceptance_separation_page.dart';
-import '../../Version1/views/BottomBarPages/RequestApprovalsPage/ApprovalsSubPages/ApprovalsAcceptance/approval_acceptance_time_regulation_page.dart';
-import '../../Version1/views/BottomBarPages/RequestApprovalsPage/ApprovalsSubPages/ApprovalsAcceptance/approval_appceptance_leave_request_page.dart';
-import '../../Version1/views/BottomBarPages/RequestApprovalsPage/ApprovalsSubPages/ApprovalsAcceptance/approval_overtime_page.dart';
-import '../../Version1/views/BottomBarPages/RequestApprovalsPage/ApprovalsSubPages/ApprovalsAcceptance/approval_shift_page.dart';
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/ApprovalsSubPages/approvals_page.dart';
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/PayslipPages/paslip_list_page.dart';
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/PayslipPages/payslip_month_page.dart';
@@ -30,25 +27,24 @@ import '../../Version2/Modules/ModuleRequests/subModules/ModuleEncashment/subMod
 import '../../Version2/Modules/ModuleRequests/subModules/ModuleEncashment/subModules/encashmentFormModule/presentation/ui/request_encashment_form_page.dart';
 import '../../Version2/Modules/ModuleRequests/subModules/ModuleEncashment/subModules/encashmentListModule/presentation/ui/request_encashment_list_page.dart';
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/OvertimePages/OverTimeDashBoardTeamRequest/overtime_team_request_list_page.dart';
-import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/OvertimePages/OvertimeFormPages/overtime_form_page.dart';
-import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/OvertimePages/UiWidgets/overtime_detail_page.dart';
-import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/OvertimePages/overtime_list_page.dart';
+import '../../Version2/Modules/ModuleRequests/subModules/ModuleOverTime/subModules/overtimeFormModule/presentation/ui/overtime_form_page.dart';
+import '../../Version2/Modules/ModuleRequests/subModules/ModuleOverTime/subModules/overtimeDetailModule/presentation/ui/overtime_detail_page.dart';
+import '../../Version2/Modules/ModuleRequests/subModules/ModuleOverTime/subModules/overtimeListModule/presentation/ui/overtime_list_page.dart';
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/PerformanceWebView/performance_page.dart';
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/RequestSubPages/request_add_form_page.dart';
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/RequestSubPages/request_list_sub_page.dart';
-import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/SeperationRequestPages/request_separation_detail_page.dart';
+import '../../Version2/Modules/ModuleRequests/subModules/ModuleSeparation/submodule/separationDetail/presentaion/ui/request_separation_detail_page.dart';
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/SeperationRequestPages/request_separation_form_page.dart';
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/SeperationRequestPages/request_separation_list_page.dart';
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/SeperationRequestPages/separation_calendar_page.dart';
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/ShiftPages/ShiftFormPages/shift_form_page.dart';
-import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/ShiftPages/ShiftListPages/shift_detail_page.dart';
+import '../../Version2/Modules/ModuleRequests/subModules/ModuleShift/subModules/shiftDetaiApprovalModule/presentation/ui/shift_detail_page.dart';
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/ShiftPages/ShiftListPages/shift_list_page.dart';
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/TimeRegulationRequest/MovementSlipForm/movement_slip_form_page.dart';
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/TimeRegulationRequest/TimeRegulationFormPage/TimeRegulationFetchDateListPages/time_regulation_fetch_date_list_page.dart';
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/TimeRegulationRequest/TimeRegulationFormPage/TimeRegulationFormPages/time_regulation_form_page.dart';
-import '../../Version2/Modules/ModuleRequests/subModules/ModuleTimeRegulationAndMovement/subModules/timeRegulationModule/subModules/timeRegulationAndMovementDetailModule/presentation/ui/time_regulation_and_movement_detail_page.dart';
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/TimeRegulationRequest/time_regulation_list_page.dart';
-import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/RequestSubPages/request_detail_page.dart';
+import '../../Version2/Modules/ModuleRequests/subModules/ModuleGenericRequests/subModules/genericDetailModule/presentation/ui/request_detail_page.dart';
 import '../../Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/request_main_page.dart';
 import '../../Version1/views/BottomBarPages/TeamPages/TeamDetails/leave_balance_page.dart';
 import '../../Version1/views/BottomBarPages/TeamPages/TeamDetails/team_detail_page.dart';
@@ -56,7 +52,6 @@ import '../../Version2/Modules/ModuleRequests/subModules/ModuleLeave/subModules/
 import '../../Version2/Modules/ModuleRequests/subModules/ModuleLeave/subModules/LeaveDetailModule/presentation/ui/time_off_detail_page.dart';
 import '../../Version1/views/BottomBarPages/TimeOffPage/time_off_main_page.dart';
 import '../../Version1/views/BottomBarPages/TimeSheet/time_sheet_page.dart';
-import '../../utils/cached_image_getter/image_zoom.dart';
 import '../../Version1/views/main_bottombar_page.dart';
 import '../../Version2/Modules/AccountModule/AccountSubModules/ProfileModule/SubModule/ContactEditModule/presentation/ui/contact_edit_page.dart';
 import '../../Version2/Modules/AccountModule/AccountSubModules/ProfileModule/SubModule/DocumentEditModule/presentation/ui/document_edit_page.dart';
@@ -65,7 +60,7 @@ import '../../Version2/Modules/AccountModule/AccountSubModules/ProfileModule/Sub
 import '../../Version2/Modules/AccountModule/AccountSubModules/ProfileModule/SubModule/QualificationEditModule/presentation/ui/qualification_edit_page.dart';
 import '../../Version2/Modules/AccountModule/AccountSubModules/ProfileModule/presentation/ui/profile_page.dart';
 import '../../Version2/Modules/DashBoardModule/SubModules/AttendanceSummaryModule/presentation/ui/attendance_summary_page.dart';
-import '../../Version2/Modules/DashBoardModule/SubModules/DocumentModule/presentation/ui/document_main_page.dart';
+import '../../Version2/Modules/DocumentPolicyModule/presentation/ui/document_main_list_page.dart';
 import '../../Version2/Modules/DashBoardModule/SubModules/TodoModule/presentation/ui/todo_main_page.dart';
 import '../../Version2/Modules/MobileBlockingModule/presentation/ui/mobile_blocking_page.dart';
 import '../../Version2/Modules/MobileBlockingModule/presentation/ui/mobile_register_view/views/inactive_and_register_page.dart';
@@ -84,10 +79,10 @@ var routes = {
   CurrentPage.MainBottomBarPage: (BuildContext context) => const MainBottomBarPage(),
   CurrentPage.TimeOffPage: (context) => TimeOffPage(),
   CurrentPage.CompanyPage: (context) => const CompanyPage(),
-  CurrentPage.NotificationPage: (context) => const NotificationPage(),
+  CurrentPage.NotificationPage: (context) => const NotificationListViewPage(),
   CurrentPage.LoginPage: (context) => const LoginPage(),
   CurrentPage.TimeOffAddEdit: (context) => TimeOffAddEdit(),
-  CurrentPage.ApprovalRequestFormPage: (context) => ApprovalRequestFormPage(),
+  // CurrentPage.ApprovalRequestFormPage: (context) => ApprovalRequestFormPage(),
   CurrentPage.ApprovalPage: (context) => const ApprovalPage(),
   CurrentPage.RequestPage: (context) => const RequestPage(),
   CurrentPage.RequestListSubPage: (context) => RequestListSubPage(),
@@ -96,7 +91,7 @@ var routes = {
   CurrentPage.PaySlipMonthPage: (context) => PaySlipMonthPage(),
   CurrentPage.SettingsPage: (context) => const SettingsPage(),
   CurrentPage.AnnouncementDetailPage: (context) => AnnouncementDetailPage(),
-  CurrentPage.ApprovalAcceptanceRejectionPage: (context) => const ApprovalAcceptanceRejectionPage(),
+  // CurrentPage.ApprovalAcceptanceRejectionPage: (context) => const ApprovalAcceptanceRejectionPage(),
   CurrentPage.LanguagePage: (context) => const LanguagePage(),
   CurrentPage.ProductImageZoom: (context) => ProductImageZoom(),
   CurrentPage.RequestDetailPage: (context) => RequestDetailPage(),
@@ -111,15 +106,15 @@ var routes = {
   CurrentPage.RequestSeparationFormPage: (context) => RequestSeparationFormPage(),
   CurrentPage.RequestSeparationDetailPage: (context) => RequestSeparationDetailPage(),
   CurrentPage.RequestEncashmentDetailPage: (context) => RequestEncashmentDetailPage(),
-  CurrentPage.ApprovalAcceptanceRejectionEncashmentPage: (context) => ApprovalAcceptanceRejectionEncashmentPage(),
-  CurrentPage.ApprovalAcceptanceRejectionSeparationPage: (context) => ApprovalAcceptanceRejectionSeparationPage(),
+  // CurrentPage.ApprovalAcceptanceRejectionEncashmentPage: (context) => ApprovalAcceptanceRejectionEncashmentPage(),
+  // CurrentPage.ApprovalAcceptanceRejectionSeparationPage: (context) => ApprovalAcceptanceRejectionSeparationPage(),
   CurrentPage.SeparationCalendarPage: (context) => SeparationCalendarPage(),
   CurrentPage.TeamDetailPage: (context) => TeamDetailPage(),
   CurrentPage.TimeRegulationListPage: (context) => TimeRegulationListPage(),
   CurrentPage.MoveSlipFormPage: (context) => MoveSlipFormPage(),
   CurrentPage.TimeRegulationFetchDateListPage: (context) => TimeRegulationFetchDateListPage(),
   CurrentPage.TimeRegulationFormPage: (context) => TimeRegulationFormPage(),
-  CurrentPage.AcceptanceTimeRegulationPage: (context) => AcceptanceTimeRegulationPage(),
+  // CurrentPage.AcceptanceTimeRegulationPage: (context) => AcceptanceTimeRegulationPage(),
   CurrentPage.TimeRegulationAndMovementDetailPage: (context) => TimeRegulationAndMovementDetailPage(),
   CurrentPage.OverTimeTeamRequestPage: (context) => OverTimeTeamRequestPage(),
   CurrentPage.OverTimeListPage: (context) => OverTimeListPage(),
@@ -128,9 +123,9 @@ var routes = {
   CurrentPage.ShiftFormPage: (context) => ShiftFormPage(),
   CurrentPage.ChangeCompanyPage: (context) => ChangeCompanyPage(),
   CurrentPage.OvertimeDetailPage: (context) => OvertimeDetailPage(),
-  CurrentPage.ApprovalOvertimeDetailPage: (context) => ApprovalOvertimeDetailPage(),
+  // CurrentPage.ApprovalOvertimeDetailPage: (context) => OvertimeDetailPage(),
   CurrentPage.ShiftDetailPage: (context) => ShiftDetailPage(),
-  CurrentPage.ApprovalShiftDetailPage: (context) => ApprovalShiftDetailPage(),
+  // CurrentPage.ApprovalShiftDetailPage: (context) => ApprovalShiftDetailPage(),
   CurrentPage.PerformancePage: (context) => PerformancePage(),
   CurrentPage.leaveBalancePage: (context) => LeaveBalancePage(),
   CurrentPage.mobileBlockingPage: (context) => MobileBlockingPage(),
@@ -151,5 +146,7 @@ var routes = {
   CurrentPage.createNewPasswordPage: (context) => CreateNewPasswordPage(),
   CurrentPage.documentMainPage: (context) => DocumentMainPage(),
   CurrentPage.todoMainPage: (context) => TodoMainPage(),
-  CurrentPage.attendanceSummaryPage: (context) => AttendanceSummaryPage()
+  CurrentPage.attendanceSummaryPage: (context) => AttendanceSummaryPage(),
+  CurrentPage.organizationChartPage: (context) => OrganizationChartPage(),
+  CurrentPage.documentDetailPage: (context) => DocumentDetailPage(),
 };

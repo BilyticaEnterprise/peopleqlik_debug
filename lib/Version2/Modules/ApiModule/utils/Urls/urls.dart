@@ -4,12 +4,14 @@ class RequestType
   static String? baseUrl;
   static String? attachmentsUrl;
   static String? profileUrl;
+  static String? documentUrl;
   static String? fileUrl;
   static String? fileName = '/files/';
   static String? requestUrl;
   static String? requestName = '/files/RequestDocument/';
   static String? profilePicture = '/files/Profile/';
   static String documentNames = '/files/AnnouncementDocument/';
+  static String documentPolicy = '/files/Document/';
   static const String privacyPolicy = 'https://www.peopleqlik.com/privacy-policy/';
   static const String termsOfUse = 'https://www.peopleqlik.com/terms-of-service/';
 
@@ -80,11 +82,11 @@ class RequestType
   static const String getNotificationSettings = '/api/Mobile/Requests/GetNotificationSetting';
 
   static const String getAllRequestDetailApi = '/api/Mobile/Requests/GetALLRequestDetails';
+  static const String notificationReadUrl = '/api/Mobile/Notifications/ReadNotification';
 
-  // static const String t = '';
-  // static const String t = '';
-  // static const String t = '';
-  // static const String t = '';
+  static const String getOrgHierarchy = '/api/Mobile/Requests/GetOrganogramHierarchy';
+  static const String getDocumentPolicyList = '/api/Mobile/Documents/Pagination';
+  static const String acknowledgeDocument = '/api/Mobile/Documents/AddAcknowledgement';
   // static const String t = '';
   // static const String t = '';
   // static const String t = '';

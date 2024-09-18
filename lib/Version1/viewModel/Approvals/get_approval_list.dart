@@ -1,4 +1,4 @@
-import '../../Models/ApprovalsModel/get_approvals_detail_model.dart';
+import '../../models/ApprovalsModel/get_approvals_detail_model.dart';
 
 getApprovalHistory(List<ApprovalHistory>? history)
 {

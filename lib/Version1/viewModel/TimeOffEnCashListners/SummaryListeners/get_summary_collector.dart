@@ -7,7 +7,7 @@ import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/model/show_er
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/model/api_global_model.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/TimeOffEnCashListners/SummaryListeners/leave_calender_model_listener.dart';
-import 'package:peopleqlik_debug/Version1/Models/TimeOffAndEnCashModel/leave_summary_model.dart';
+import 'package:peopleqlik_debug/Version1/models/TimeOffAndEnCashModel/leave_summary_model.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ModuleSetting/domain/model/settings_model.dart';
 import 'package:peopleqlik_debug/configs/prints_logs.dart';
 import 'package:provider/provider.dart';

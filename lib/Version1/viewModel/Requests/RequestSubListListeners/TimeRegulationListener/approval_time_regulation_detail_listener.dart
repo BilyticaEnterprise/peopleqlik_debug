@@ -3,13 +3,13 @@
 // import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/usecase/apis_url_caller.dart';
 // import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/model/show_error.dart';
 // import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/model/api_global_model.dart';
-// import 'package:peopleqlik_debug/Version1/Models/ApprovalsModel/get_approvals_list.dart';
+// import 'package:peopleqlik_debug/Version1/models/ApprovalsModel/get_approvals_list.dart';
 //
 // import 'package:peopleqlik_debug/utils/AppConstants/app_constants.dart';
 // import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
-// import '../../../../Models/ApprovalsModel/approval_detail_mapper.dart';
-// import '../../../../Models/ApprovalsModel/get_approvals_detail_model.dart';
-// import '../../../../Models/TimeRegulationModels/time_regulation_movement_detail_model.dart';
+// import '../../../../models/ApprovalsModel/approval_detail_mapper.dart';
+// import '../../../../models/ApprovalsModel/get_approvals_detail_model.dart';
+// import '../../../../models/TimeRegulationModels/time_regulation_movement_detail_model.dart';
 //
 // class ApprovalAcceptanceTimeRegulationListener extends GetChangeNotifier
 // {

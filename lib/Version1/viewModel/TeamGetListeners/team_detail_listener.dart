@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:peopleqlik_debug/Version1/Models/TeamModel/get_team_model.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
+import 'package:peopleqlik_debug/Version1/models/TeamModel/get_team_model.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
 import 'package:peopleqlik_debug/configs/icons.dart';
 import 'package:peopleqlik_debug/configs/language_codes.dart';
 import 'package:peopleqlik_debug/utils/provider_logic_utils/overrided_change_notifier.dart';
@@ -8,7 +8,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../../../configs/routing/pages_name.dart';
 import '../../../utils/snackbar_design.dart';
-import '../../Models/TeamModel/get_employee_leave_balance_mapper.dart';
+import '../../models/TeamModel/get_employee_leave_balance_mapper.dart';
 
 class TeamDetailListener extends GetChangeNotifier
 {

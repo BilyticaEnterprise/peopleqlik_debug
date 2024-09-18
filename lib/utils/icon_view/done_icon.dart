@@ -14,18 +14,13 @@ class DoneIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return SizedBox(
-    //     height: ScreenSize(context).heightOnly(2.5),
-    //     width: ScreenSize(context).heightOnly(2.5),
-    //     child: Icon(isSelected==true?MdiIcons.checkCircle:MdiIcons.circleOutline,color: Color(isSelected==true?MyColor.colorPrimary:MyColor.colorPrimary),size: ScreenSize(context).heightOnly(2.6),)
-    // );
     return GetIcons(
       onTap: onTap,
       icon: isSelected==false?SvgPicturesData.notChecked:SvgPicturesData.checked,
       size: size??2.5,
       noPadding: onTap!=null?false:true,
       noColor: isSelected,
-      iconColor: isSelected==false?MyColor.colorGrey2:MyColor.colorPrimary,
+      color: isSelected==false?MyColor.colorGrey2:MyColor.colorPrimary,
     );
   }
 }

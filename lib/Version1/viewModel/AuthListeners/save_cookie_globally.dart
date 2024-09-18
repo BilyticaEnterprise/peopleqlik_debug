@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:peopleqlik_debug/configs/prints_logs.dart';
 
-import '../../Models/AuthModels/cookie_model.dart';
+import '../../models/AuthModels/cookie_model.dart';
 
 class SaveCookieGlobally
 {
@@ -24,11 +24,11 @@ getCookieClass(Response? response)
   final cookies = response?.headers.map['set-cookie'];
   if (cookies!=null && cookies.isNotEmpty) {
     try{
-      PrintLogs.printLogs('cokasdasdas ${cookies}');
+      // PrintLogs.printLogs('cokasdasdas ${cookies}');
       var cookie = cookies.where((element) => element.contains('XRF_TOKEN'));
-      PrintLogs.printLogs('cokasdasdas2 ${cookie}');
+      // PrintLogs.printLogs('cokasdasdas2 ${cookie}');
       final authToken = cookie.toString().split(';')[0].split('=')[1]; //it depends on how your server sending cookie
-      PrintLogs.printLogs('cokasdasdas3 ${authToken}');
+      // PrintLogs.printLogs('cokasdasdas3 ${authToken}');
       return CookieJson(cookie: authToken);
     }catch(e){
       return null;

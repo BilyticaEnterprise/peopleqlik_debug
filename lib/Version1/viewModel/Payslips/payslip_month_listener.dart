@@ -5,7 +5,7 @@ import 'package:peopleqlik_debug/utils/provider_logic_utils/overrided_change_not
 
 import 'package:flutter/material.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
-import 'package:peopleqlik_debug/Version1/Models/PaysSlipApprovalsRequest/get_payslip_month.dart';
+import 'package:peopleqlik_debug/Version1/models/PaysSlipApprovalsRequest/get_payslip_month.dart';
 import 'package:provider/provider.dart';
 
 import '../../../Version2/Modules/ApiModule/domain/usecase/apis_url_caller.dart';

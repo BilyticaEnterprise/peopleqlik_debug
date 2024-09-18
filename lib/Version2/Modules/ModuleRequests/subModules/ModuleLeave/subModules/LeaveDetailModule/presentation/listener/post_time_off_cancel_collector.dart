@@ -3,10 +3,9 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/subModules/ModuleLeave/subModules/LeaveDetailModule/domain/models/leave_detail_model.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
 import 'package:peopleqlik_debug/utils/loader_utils/loader_class.dart';
-import 'package:peopleqlik_debug/Version1/ApiCalls/post_timeoff_cancel_api.dart';
-import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/subModules/ModuleLeave/subModules/LeaveDetailModule/domain/models/get_leave_detail_model.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/subModules/ModuleLeave/subModules/LeaveDetailModule/domain/models/time_off_cancel_mapper.dart';
 import 'package:peopleqlik_debug/utils/date_formats.dart';
 import 'package:peopleqlik_debug/utils/snackbar_design.dart';
@@ -22,13 +21,13 @@ class TimeOffCancelCollector with GetLoader
   {
     cancelLeaveJson = CancelLeaveMapper();
   }
-  fillData(BuildContext context, ObjLeaveApplication? objLeaveApplication,)async
+  fillData(BuildContext context, LeaveDetailResult? leaveDetailResult, )async
   {
     var list = [];
     cancelLeaveJson?.cancelLeaveDate = GetDateFormats().getMonthFormatDay(DateTime.now());
-    cancelLeaveJson?.employeeCode = objLeaveApplication?.employeeCode;
-    cancelLeaveJson?.companyCode = objLeaveApplication?.companyCode;
-    cancelLeaveJson?.applicationCode = objLeaveApplication?.applicationCode;
+    cancelLeaveJson?.employeeCode = leaveDetailResult?.employeeCode;
+    cancelLeaveJson?.companyCode = leaveDetailResult?.companyCode;
+    cancelLeaveJson?.applicationCode = leaveDetailResult?.applicationCode;
     cancelLeaveJson?.cultureID = 1;
     cancelLeaveJson?.laLeaveApplicationDocument = "";
     cancelLeaveJson?.laLeaveApplicationTimeoff = "";

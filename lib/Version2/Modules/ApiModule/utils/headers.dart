@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/EmployeeSearchController/global_selected_employee/global_selected_employee_controller.dart';
-import 'package:peopleqlik_debug/Version1/Models/AuthModels/login_model.dart';
+import 'package:peopleqlik_debug/Version1/models/AuthModels/login_model.dart';
 import 'package:provider/provider.dart';
 
 class GetHeaders

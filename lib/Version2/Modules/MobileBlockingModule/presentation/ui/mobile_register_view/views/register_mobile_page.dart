@@ -5,11 +5,11 @@ import 'package:peopleqlik_debug/Version2/Modules/MobileBlockingModule/domain/mo
 import 'package:peopleqlik_debug/configs/routing/pages_name.dart';
 import 'package:peopleqlik_debug/mainCommon.dart';
 
-import '../../../../../../../Version1/Models/call_setting_data.dart';
+import '../../../../../../../Version1/models/call_setting_data.dart';
 import '../../../../../ModuleSetting/domain/model/settings_model.dart';
-import 'package:peopleqlik_debug/utils/Buttons/bottom_twin_buttons.dart';
-import 'package:peopleqlik_debug/utils/Default_Screens/scafold_screens/default_screens.dart';
-import '../../../../../../../utils/ScreenLoader/circular_indicator_customized.dart';
+import 'package:peopleqlik_debug/utils/buttons/bottom_twin_buttons.dart';
+import 'package:peopleqlik_debug/utils/default_Screens/scafold_screens/default_screens.dart';
+import '../../../../../../../utils/screenLoader/circular_indicator_customized.dart';
 import '../../../../../../../utils/dividers_screen/dividers.dart';
 import '../../../../../../../configs/language_codes.dart';
 import '../../../../../../../utils/States/app_state.dart';

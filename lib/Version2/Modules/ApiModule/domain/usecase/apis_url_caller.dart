@@ -5,63 +5,59 @@ import 'package:flutter/material.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/repo/api_client_repo.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/subModules/ModuleLeave/subModules/LeaveDetailModule/domain/models/time_off_cancel_model.dart';
 import 'package:peopleqlik_debug/configs/prints_logs.dart';
-import '../../../DashBoardModule/domain/model/attendance_model.dart';
+import '../../../DashBoardModule/data/model/attendance_model.dart';
 import '../../../MobileBlockingModule/domain/models/mobile_update_reject_model.dart';
 import '../../../NotificationPermissionSettingModule/domain/models/notification_permission_get_model.dart';
-import '../../../DashBoardModule/domain/model/dashboard_attendance_model.dart';
-import '../../../../../Version1/Models/AuthModels/company_url_get_model.dart';
-import '../../../../../Version1/Models/AuthModels/cookie_model.dart';
-import '../../../../../Version1/Models/AuthModels/login_model.dart';
-import '../../../../../Version1/Models/FCMModels/fcm_result_model.dart';
-import '../../../../../Version1/Models/Language/update_language_model.dart';
-import '../../../../../Version1/Models/Notifications/announcement_detail_model.dart';
-import '../../../../../Version1/Models/Notifications/announcement_list_model.dart';
-import '../../../../../Version1/Models/Notifications/notification_model.dart';
-import '../../../../../Version1/Models/RequestsModel/get_request_detail_model.dart';
-import '../../../../../Version1/Models/RequestsModel/EncashmentsModels/get_request_encashment_balance_model.dart';
-import '../../../../../Version1/Models/RequestsModel/EncashmentsModels/get_request_encashment_list_model.dart';
-import '../../../../../Version1/Models/RequestsModel/get_request_form_data.dart';
-import '../../../../../Version1/Models/RequestsModel/get_request_list_model.dart';
-import '../../../../../Version1/Models/RequestsModel/get_request_name_model.dart';
-import '../../../../../Version1/Models/RequestsModel/get_request_separation_detail_model.dart';
-import '../../../../../Version1/Models/RequestsModel/get_request_separation_form_model.dart';
-import '../../../../../Version1/Models/RequestsModel/get_request_separation_list_model.dart';
-import '../../../../../Version1/Models/RequestsModel/post_encashment_request_model.dart';
-import '../../../../../Version1/Models/RequestsModel/post_request_model.dart';
-import '../../../../../Version1/Models/RequestsModel/post_separation_from_model.dart';
-import '../../../../../Version1/Models/RequestsModel/save_request_separation_calendar_model.dart';
-import '../../../../../Version1/Models/ApprovalsModel/get_approvals_detail_model.dart';
-import '../../../../../Version1/Models/ApprovalsModel/get_approvals_list.dart';
-import '../../../../../Version1/Models/PaysSlipApprovalsRequest/get_payslip_list.dart';
-import '../../../../../Version1/Models/PaysSlipApprovalsRequest/get_payslip_month.dart';
-import '../../../../../Version1/Models/RequestsModel/EncashmentsModels/get_request_encashment_detail_model.dart';
-import '../../../../../Version1/Models/ApprovalsModel/post_approval_model.dart';
-import '../../../../../Version1/Models/PaysSlipApprovalsRequest/request_list_form_model.dart';
-import '../../../../../Version1/Models/TeamModel/get_team_model.dart';
-import '../../../../../Version1/Models/TeamModel/leave_balance_model.dart';
-import '../../../../../Version1/Models/TimeOffAndEnCashModel/apply_leave_model.dart';
-import '../../../../../Version1/Models/TimeOffAndEnCashModel/get_holidays_model.dart';
-import '../../../ModuleRequests/subModules/ModuleLeave/subModules/LeaveDetailModule/domain/models/get_leave_detail_model.dart';
-import '../../../../../Version1/Models/TimeOffAndEnCashModel/leave_summary_model.dart';
-import '../../../../../Version1/Models/TimeOffAndEnCashModel/overtime_detail_model.dart';
-import '../../../../../Version1/Models/TimeOffAndEnCashModel/overtime_list_model.dart';
-import '../../../../../Version1/Models/TimeOffAndEnCashModel/overtime_submit_model.dart';
-import '../../../../../Version1/Models/TimeOffAndEnCashModel/overtime_team_model.dart';
-import '../../../../../Version1/Models/TimeOffAndEnCashModel/overtime_time_range_model.dart';
-import '../../../../../Version1/Models/TimeOffAndEnCashModel/shift_detail_model.dart';
-import '../../../../../Version1/Models/TimeOffAndEnCashModel/shift_list_model.dart';
+import '../../../DashBoardModule/data/model/dashboard_attendance_model.dart';
+import '../../../../../Version1/models/AuthModels/company_url_get_model.dart';
+import '../../../../../Version1/models/AuthModels/cookie_model.dart';
+import '../../../../../Version1/models/AuthModels/login_model.dart';
+import '../../../../../Version1/models/FCMModels/fcm_result_model.dart';
+import '../../../../../Version1/models/Language/update_language_model.dart';
+import '../../../../../Version1/models/Notifications/announcement_detail_model.dart';
+import '../../../../../Version1/models/Notifications/announcement_list_model.dart';
+import '../../../../../Version1/models/RequestsModel/EncashmentsModels/get_request_encashment_balance_model.dart';
+import '../../../../../Version1/models/RequestsModel/EncashmentsModels/get_request_encashment_list_model.dart';
+import '../../../../../Version1/models/RequestsModel/get_request_form_data.dart';
+import '../../../../../Version1/models/RequestsModel/get_request_list_model.dart';
+import '../../../../../Version1/models/RequestsModel/get_request_name_model.dart';
+import '../../../../../Version1/models/RequestsModel/get_request_separation_detail_model.dart';
+import '../../../../../Version1/models/RequestsModel/get_request_separation_form_model.dart';
+import '../../../../../Version1/models/RequestsModel/get_request_separation_list_model.dart';
+import '../../../../../Version1/models/RequestsModel/post_encashment_request_model.dart';
+import '../../../../../Version1/models/RequestsModel/post_request_model.dart';
+import '../../../../../Version1/models/RequestsModel/post_separation_from_model.dart';
+import '../../../../../Version1/models/RequestsModel/save_request_separation_calendar_model.dart';
+import '../../../../../Version1/models/ApprovalsModel/get_approvals_detail_model.dart';
+import '../../../../../Version1/models/ApprovalsModel/get_approvals_list.dart';
+import '../../../../../Version1/models/PaysSlipApprovalsRequest/get_payslip_list.dart';
+import '../../../../../Version1/models/PaysSlipApprovalsRequest/get_payslip_month.dart';
+import '../../../../../Version1/models/RequestsModel/EncashmentsModels/get_request_encashment_detail_model.dart';
+import '../../../../../Version1/models/ApprovalsModel/post_approval_model.dart';
+import '../../../../../Version1/models/PaysSlipApprovalsRequest/request_list_form_model.dart';
+import '../../../../../Version1/models/TeamModel/get_team_model.dart';
+import '../../../../../Version1/models/TeamModel/leave_balance_model.dart';
+import '../../../../../Version1/models/TimeOffAndEnCashModel/apply_leave_model.dart';
+import '../../../../../Version1/models/TimeOffAndEnCashModel/get_holidays_model.dart';
+import '../../../../../Version1/models/TimeOffAndEnCashModel/leave_summary_model.dart';
+import '../../../../../Version1/models/TimeOffAndEnCashModel/overtime_detail_model.dart';
+import '../../../../../Version1/models/TimeOffAndEnCashModel/overtime_list_model.dart';
+import '../../../../../Version1/models/TimeOffAndEnCashModel/overtime_submit_model.dart';
+import '../../../../../Version1/models/TimeOffAndEnCashModel/overtime_team_model.dart';
+import '../../../../../Version1/models/TimeOffAndEnCashModel/overtime_time_range_model.dart';
+import '../../../../../Version1/models/TimeOffAndEnCashModel/shift_detail_model.dart';
+import '../../../../../Version1/models/TimeOffAndEnCashModel/shift_list_model.dart';
 import '../../../ModuleRequests/subModules/ModuleLeave/subModules/LeaveApplyFormModule/domain/models/time_off_get_form_mapper.dart';
 import '../../../ModuleRequests/subModules/ModuleLeave/subModules/LeaveApplyFormModule/domain/models/time_off_leave_balance.dart';
 import '../../../ModuleRequests/subModules/ModuleLeave/subModules/LeaveApplyFormModule/domain/models/time_off_model.dart';
-import '../../../../../Version1/Models/TimeRegulationModels/date_select_movement_slip_model.dart';
-// import '../../../../../Version1/Models/TimeRegulationModels/time_regulation_movement_detail_model.dart';
-import '../../../../../Version1/Models/TimeRegulationModels/time_regulation_model.dart';
-import '../../../../../Version1/Models/TimeRegulationModels/time_regulation_monthly_model.dart';
-import '../../../../../Version1/Models/TimeRegulationModels/time_regulation_movement_submitted_model.dart';
-import '../../../../../Version1/Models/TimeRegulationModels/timeregulation_detail_model.dart';
-import '../../../../../Version1/Models/TimeSheetModel/get_time_sheet_model.dart';
+import '../../../../../Version1/models/TimeRegulationModels/date_select_movement_slip_model.dart';
+// import '../../../../../Version1/models/TimeRegulationModels/time_regulation_movement_detail_model.dart';
+import '../../../../../Version1/models/TimeRegulationModels/time_regulation_model.dart';
+import '../../../../../Version1/models/TimeRegulationModels/time_regulation_monthly_model.dart';
+import '../../../../../Version1/models/TimeRegulationModels/time_regulation_movement_submitted_model.dart';
+import '../../../../../Version1/models/TimeSheetModel/get_time_sheet_model.dart';
 import '../../../ModuleSetting/domain/model/settings_model.dart';
-import '../../../../../Version1/Models/uploaded_file_model.dart';
+import '../../../../../Version1/models/uploaded_file_model.dart';
 import 'package:peopleqlik_debug/utils/SharedPrefs/login_prefs.dart';
 import '../model/api_global_model.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/utils/Urls/urls.dart';
@@ -188,10 +184,10 @@ class UseCaseGetApisUrlCaller
   {
     return await GlobalApiCallerRepo.instance.callApi(context,endPoint: RequestType.getSpecialRequestBalance,checkTypes: CheckTypes.includeListData,isPost: false,urlParameters: parameters, type: ClassType<GetEncashmentRequestBalanceJson>(GetEncashmentRequestBalanceJson.fromJson));
   }
-  Future<ApiResponse> getTimeRegulationDetailsApiCall(BuildContext context,dynamic parameters)async
-  {
-    return await GlobalApiCallerRepo.instance.callApi(context,endPoint: RequestType.getTimeRegulationDetails,checkTypes: CheckTypes.includeData,isPost: false,urlParameters: parameters, type: ClassType<TimeRegulationDetailsModel>(TimeRegulationDetailsModel.fromJson));
-  }
+  // Future<ApiResponse> getTimeRegulationDetailsApiCall(BuildContext context,dynamic parameters)async
+  // {
+  //   return await GlobalApiCallerRepo.instance.callApi(context,endPoint: RequestType.getTimeRegulationDetails,checkTypes: CheckTypes.includeData,isPost: false,urlParameters: parameters, type: ClassType<TimeRegulationDetailsModel>(TimeRegulationDetailsModel.fromJson));
+  // }
   Future<ApiResponse> getTeamOverTime(BuildContext context,dynamic parameters)async
   {
     return await GlobalApiCallerRepo.instance.callApi(context,endPoint: RequestType.getMyTeamOvertime,checkTypes: CheckTypes.includeListInsideData,isPost: false,urlParameters: parameters, type: ClassType<OvertimeTeamListMapper>(OvertimeTeamListMapper.fromJson));
@@ -238,26 +234,26 @@ class UseCaseGetApisUrlCaller
   {
     return await GlobalApiCallerRepo.instance.callApi(context,endPoint: RequestType.holidays,checkTypes: CheckTypes.includeListInsideData,isPost: false,urlParameters: parameters, type: ClassType<GetHolidaysJson>(GetHolidaysJson.fromJson));
   }
-  Future<ApiResponse> getNotificationList(BuildContext context,dynamic parameters)async
-  {
-    return await GlobalApiCallerRepo.instance.callApi(context,endPoint: RequestType.getNotificationsUrl,checkTypes: CheckTypes.includeListData,isPost: false,urlParameters: parameters, type: ClassType<NotificationJson>(NotificationJson.fromJson));
-  }
+  // Future<ApiResponse> getNotificationList(BuildContext context,dynamic parameters)async
+  // {
+  //   return await GlobalApiCallerRepo.instance.callApi(context,endPoint: RequestType.getNotificationsUrl,checkTypes: CheckTypes.includeListData,isPost: false,urlParameters: parameters, type: ClassType<NotificationJson>(NotificationJson.fromJson));
+  // }
   Future<ApiResponse> getPaySlipByMonthApi(BuildContext context,dynamic parameters)async
   {
     return await GlobalApiCallerRepo.instance.callApi(context,endPoint: RequestType.getPayslip,checkTypes: CheckTypes.includeListData,isPost: false,urlParameters: parameters, type: ClassType<GetPaySlipMonthJson>(GetPaySlipMonthJson.fromJson));
   }
-  Future<ApiResponse> getLeaveDetailApi(BuildContext context,dynamic parameters)async
-  {
-    return await GlobalApiCallerRepo.instance.callApi(context,endPoint: RequestType.getLeaveDetailUrl,checkTypes: CheckTypes.includeData,isPost: false,urlParameters: parameters, type: ClassType<GetLeaveDetailsJson>(GetLeaveDetailsJson.fromJson));
-  }
+  // Future<ApiResponse> getLeaveDetailApi(BuildContext context,dynamic parameters)async
+  // {
+  //   return await GlobalApiCallerRepo.instance.callApi(context,endPoint: RequestType.getLeaveDetailUrl,checkTypes: CheckTypes.includeData,isPost: false,urlParameters: parameters, type: ClassType<GetLeaveDetailsJson>(GetLeaveDetailsJson.fromJson));
+  // }
   Future<ApiResponse> getEncashmentDetail(BuildContext context,dynamic parameters)async
   {
     return await GlobalApiCallerRepo.instance.callApi(context,endPoint: RequestType.getEncashmentRequestDetailApi,checkTypes: CheckTypes.includeData,isPost: false,urlParameters: parameters, type: ClassType<GetRequestEncashmentDetailsJson>(GetRequestEncashmentDetailsJson.fromJson));
   }
-  Future<ApiResponse> getRequestDetailApi(BuildContext context,dynamic parameters)async
-  {
-    return await GlobalApiCallerRepo.instance.callApi(context,endPoint: RequestType.requestDetailUrl,checkTypes: CheckTypes.includeData,isPost: false,urlParameters: parameters, type: ClassType<GetRequestDetailsJson>(GetRequestDetailsJson.fromJson));
-  }
+  // Future<ApiResponse> getRequestDetailApi(BuildContext context,dynamic parameters)async
+  // {
+  //   return await GlobalApiCallerRepo.instance.callApi(context,endPoint: RequestType.requestDetailUrl,checkTypes: CheckTypes.includeData,isPost: false,urlParameters: parameters, type: ClassType<GetRequestDetailsJson>(GetRequestDetailsJson.fromJson));
+  // }
   Future<ApiResponse> getRequestFormApi(BuildContext context,dynamic parameters)async
   {
     return await GlobalApiCallerRepo.instance.callApi(context,endPoint: RequestType.getRequestForm,checkTypes: CheckTypes.includeData,isPost: false,urlParameters: parameters, type: ClassType<GetRequestFormJson>(GetRequestFormJson.fromJson));

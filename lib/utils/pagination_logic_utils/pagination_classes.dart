@@ -3,15 +3,6 @@ import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
 
-// mixin PaginationClasses
-// {
-//
-//   start(BuildContext context,ApiStatus status);
-//   updateStep(bool event,BuildContext context);
-//   updatedResponseAtReachedEndList();
-//   reachedEndList(bool reached);
-// }
-
 mixin GetPaginationClasses<T>
 {
 
@@ -20,8 +11,8 @@ mixin GetPaginationClasses<T>
   List<T>? dataList;
   late T type;
 
-  passInitialData();
-  start(BuildContext context,ApiStatus status);
+  resetInitialData();
+  start(BuildContext context, ApiStatus status);
   reachedEndList(bool reached);
 
   receiveInitialData(List<T>? dataList,T type)
@@ -38,6 +29,7 @@ mixin GetPaginationClasses<T>
       start(context,ApiStatus.pagination);
     }
   }
+
   updatedResponseAtReachedEndList(ApiStatus apiStatus){
     int? length = dataList?.length;
     if(apiStatus==ApiStatus.pagination&&length!=null&&length>0)
@@ -46,17 +38,20 @@ mixin GetPaginationClasses<T>
     }
     reachedEndPage(false);
   }
+
   makeListNull()
   {
     dataList = null;
     decrementPage();
   }
+
   resetList()
   {
     reachedEndPage(false);
     page = 1 ;
     dataList?.clear();
   }
+
   clearList()
   {
     dataList?.clear();

@@ -12,7 +12,7 @@ import 'package:provider/provider.dart';
 
 import '../../../../../utils/pagination_logic_utils/pagination_classes.dart';
 import '../../../../../Version2/Modules/ApiModule/domain/model/show_error.dart';
-import '../../../../Models/TimeRegulationModels/time_regulation_model.dart';
+import '../../../../models/TimeRegulationModels/time_regulation_model.dart';
 import '../../../EmployeeSearchController/global_selected_employee/global_selected_employee_controller.dart';
 
 
@@ -28,7 +28,7 @@ class TimeRegulationListListener extends GetChangeNotifier with GetPaginationCla
   }
 
   @override
-  passInitialData() {
+  resetInitialData() {
     /// This method get called from start method
     dataList ??= List<TimeRegulationDataList>.empty(growable: true); /// If list null then create list
     receiveInitialData(dataList,TimeRegulationDataList()); /// pass this list to Pagination Mixin class
@@ -37,7 +37,7 @@ class TimeRegulationListListener extends GetChangeNotifier with GetPaginationCla
   @override
   start(BuildContext context, ApiStatus status)async {
 
-    passInitialData();
+    resetInitialData();
 
     apiStatus = status;
     incrementPage(); ///Whenever user hit the api default page number we set is 0. So to increment that page to 1 we call this method. Why? because our every list API start getting list from page number 1 so if this api again get called then it will increment to 1,2,3... ;
@@ -55,7 +55,7 @@ class TimeRegulationListListener extends GetChangeNotifier with GetPaginationCla
       {
         updatedResponseAtReachedEndList(apiStatus); /// Because when user reached to End of Page we show a empty CARD view then we have to remove that Empty card so we are removing that card here;
         apiStatus = ApiStatus.done;
-        addAllList(apiResponse.data!.resultSet!.dataList!.reversed.toList()); /// New data is inserting in list
+        addAllList(apiResponse.data!.resultSet!.dataList!.toList()); /// New data is inserting in list
         notifyListeners();
 
       }

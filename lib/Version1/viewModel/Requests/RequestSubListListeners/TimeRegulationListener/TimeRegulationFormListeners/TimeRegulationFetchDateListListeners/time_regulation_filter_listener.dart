@@ -6,7 +6,7 @@ import 'package:peopleqlik_debug/Version2/Modules/ModuleSetting/domain/repoImpl/
 import 'package:peopleqlik_debug/configs/prints_logs.dart';
 import 'package:provider/provider.dart';
 
-import 'package:peopleqlik_debug/utils/DropDowns/drop_down_header.dart';
+import 'package:peopleqlik_debug/utils/dropDowns/drop_down_header.dart';
 import '../../../../../../../utils/date_formats.dart';
 import '../../../../../../../utils/snackbar_design.dart';
 import '../../../../../../../Version2/Modules/ModuleSetting/domain/model/settings_model.dart';

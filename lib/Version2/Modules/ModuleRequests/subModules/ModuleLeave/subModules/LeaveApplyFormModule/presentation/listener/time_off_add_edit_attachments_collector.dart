@@ -1,6 +1,6 @@
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:peopleqlik_debug/Version1/Models/uploaded_file_model.dart';
+import 'package:peopleqlik_debug/Version1/models/uploaded_file_model.dart';
 import 'package:peopleqlik_debug/utils/provider_logic_utils/overrided_change_notifier.dart';
 
 class TimeOffAddEditAttachments extends GetChangeNotifier

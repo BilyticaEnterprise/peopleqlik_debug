@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:peopleqlik_debug/utils/Default_Screens/scafold_screens/default_screens.dart';
+import 'package:peopleqlik_debug/utils/default_Screens/scafold_screens/default_screens.dart';
 import 'package:peopleqlik_debug/utils/dividers_screen/dividers.dart';
 import 'package:peopleqlik_debug/Version2/Modules/AccountModule/AccountSubModules/ProfileModule/presentation/ui/widgets/floating_action_button_view.dart';
 import 'package:peopleqlik_debug/Version2/Modules/AccountModule/AccountSubModules/ProfileModule/presentation/ui/widgets/tab_and_page_view/profile_page_view.dart';

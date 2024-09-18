@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:peopleqlik_debug/configs/prints_logs.dart';
 import 'package:peopleqlik_debug/utils/loader_utils/loader_class.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/model/model_decider.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/domain/models/all_requests_detail_mapper.dart';
@@ -20,13 +21,13 @@ class GetLeaveDetailRepoImpl extends GetLeaveDetailRepo with GetLoader
 
   @override
   Future<AppState> fetchLeaveDetail(BuildContext context, AllRequestDetailMapper allRequestDetailMapper) async {
-    initLoader();
     AppState appState = await apiClientRepo.getData(context, allRequestDetailMapper, ClassType<LeaveDetailModel>(LeaveDetailModel.fromJson));
-    await closeLoader();
     if(appState is AppStateDone)
       {
         LeaveDetailModel model = appState.data as LeaveDetailModel;
         _leaveDetailResult = model.resultSet?.data?.result;
+        PrintLogs.printLogs('statususus ${model.resultSet?.data?.statusID}');
+        canAdminApprove = model.resultSet?.data?.statusID;
         if(model.resultSet?.data?.approvalList != null && model.resultSet!.data!.approvalList!.isNotEmpty)
           {
             _approvalsList = getApprovalList(model.resultSet!.data!.approvalList!);
@@ -43,6 +44,14 @@ class GetLeaveDetailRepoImpl extends GetLeaveDetailRepo with GetLoader
   @override
   LeaveDetailResult? getLeaveDetailResult() {
     return _leaveDetailResult;
+  }
+
+  @override
+  Future<AppState> approveRejectRequest(BuildContext context, {required AllRequestDetailMapper allRequestDetailMapper, required String remarks, required int approveOrReject}) async {
+    initLoader();
+    AppState appState = await apiClientRepo.approveRejectRequest(context, allRequestDetailMapper: allRequestDetailMapper, remarks: remarks, approveOrReject: approveOrReject);
+    await closeLoader();
+    return appState;
   }
 
 }

@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:peopleqlik_debug/utils/pagination_logic_utils/pagination_classes.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
-import 'package:peopleqlik_debug/Version1/Models/TimeOffAndEnCashModel/get_holidays_model.dart';
+import 'package:peopleqlik_debug/Version1/models/TimeOffAndEnCashModel/get_holidays_model.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/subModules/ModuleLeave/subModules/LeaveApplyFormModule/domain/models/time_off_model.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/configs/routing/pages_name.dart';
@@ -23,7 +23,7 @@ class HolidaysModelListener extends GetChangeNotifier with GetPaginationClasses
 
 
   @override
-  passInitialData() {
+  resetInitialData() {
     /// This method get called from start method
     dataList ??= List<HolidayDataList>.empty(growable: true); /// If list null then create list
     receiveInitialData(dataList,HolidayDataList()); /// pass this list to Pagination Mixin class
@@ -33,7 +33,7 @@ class HolidaysModelListener extends GetChangeNotifier with GetPaginationClasses
   Future? start(BuildContext context, ApiStatus status)
   async {
 
-    passInitialData();
+    resetInitialData();
 
     apiStatus = status;
     incrementPage(); ///Whenever user hit the api default page number we set is 0. So to increment that page to 1 we call this method. Why? because our every list API start getting list from page number 1 so if this api again get called then it will increment to 1,2,3... ;

@@ -1,3 +1,4 @@
+import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/domain/models/applied_for_employee.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/domain/models/approval_list_model.dart';
 
 class LeaveDetailModel {
@@ -112,6 +113,8 @@ class Data {
 class LeaveDetailResult {
   String? requestDate;
   String? applicationCode;
+  int? employeeCode;
+  int? companyCode;
   String? eCIName;
   String? eCINumber;
   String? remarks;
@@ -121,10 +124,13 @@ class LeaveDetailResult {
   int? approvalStatusID;
   List<LeaveTimeOff>? leaveTimeOff;
   List<dynamic>? leaveDocuments;
+  AppliedForEmployee? appliedForEmployee;
 
   LeaveDetailResult(
       {this.requestDate,
         this.applicationCode,
+        this.employeeCode,
+        this.companyCode,
         this.eCIName,
         this.eCINumber,
         this.remarks,
@@ -133,11 +139,15 @@ class LeaveDetailResult {
         this.unitID,
         this.approvalStatusID,
         this.leaveTimeOff,
-        this.leaveDocuments});
+        this.leaveDocuments,
+        this.appliedForEmployee
+      });
 
   LeaveDetailResult.fromJson(Map<String, dynamic> json) {
     requestDate = json['RequestDate'];
     applicationCode = json['ApplicationCode'];
+    employeeCode = json['EmployeeCode'];
+    companyCode = json['CompanyCode'];
     eCIName = json['ECIName'];
     eCINumber = json['ECINumber'];
     remarks = json['Remarks'];
@@ -151,6 +161,10 @@ class LeaveDetailResult {
         leaveTimeOff!.add(new LeaveTimeOff.fromJson(v));
       });
     }
+    appliedForEmployee = json['AppliedForEmployee'] != null
+        ? new AppliedForEmployee.fromJson(json['AppliedForEmployee'])
+        : null;
+
     // if (json['LeaveDocuments'] != null) {
     //   leaveDocuments = <dynamic>[];
     //   json['LeaveDocuments'].forEach((v) {
@@ -163,6 +177,8 @@ class LeaveDetailResult {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['RequestDate'] = this.requestDate;
     data['ApplicationCode'] = this.applicationCode;
+    data['EmployeeCode'] = employeeCode;
+    data['CompanyCode'] = companyCode;
     data['ECIName'] = this.eCIName;
     data['ECINumber'] = this.eCINumber;
     data['Remarks'] = this.remarks;
@@ -177,6 +193,9 @@ class LeaveDetailResult {
       data['LeaveDocuments'] =
           this.leaveDocuments!.map((v) => v.toJson()).toList();
     }
+    if (this.appliedForEmployee != null) {
+      data['AppliedForEmployee'] = this.appliedForEmployee!.toJson();
+    }
     return data;
   }
 }
@@ -184,7 +203,7 @@ class LeaveDetailResult {
 class LeaveTimeOff {
   String? leaveFrom;
   String? leaveTo;
-  int? totalLeaves;
+  double? totalLeaves;
 
   LeaveTimeOff({this.leaveFrom, this.leaveTo, this.totalLeaves});
 

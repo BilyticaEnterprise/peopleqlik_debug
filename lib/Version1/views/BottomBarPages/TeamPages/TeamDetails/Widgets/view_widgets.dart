@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/TeamGetListeners/team_detail_listener.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../../../Version1/Models/TeamModel/get_team_model.dart';
+import '../../../../../../Version1/models/TeamModel/get_team_model.dart';
 import '../../../../../../../../../configs/colors.dart';
 import '../../../../../../../../../../configs/fonts.dart';
 import '../../../../../../configs/icons.dart';

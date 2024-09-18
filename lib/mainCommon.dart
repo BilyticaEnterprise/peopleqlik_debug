@@ -5,19 +5,22 @@ import 'dart:io';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:peopleqlik_debug/Version2/Modules/AllNotificationModules/subModule/FCMModule/domain/repo/fcm_payload_dealer_repo.dart';
 import 'package:peopleqlik_debug/Version2/Modules/DashBoardModule/presentation/listeners/attendance_listener.dart';
 import 'package:peopleqlik_debug/Version2/Modules/DashBoardModule/presentation/listeners/attendance_logic_builder.dart';
 import 'package:peopleqlik_debug/Version2/Modules/DashBoardModule/presentation/listeners/attendance_types_collector.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/LanguageListeners/language.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/LanguageListeners/language_listener.dart';
-import 'package:peopleqlik_debug/Version1/viewModel/NotifcationsListeners/announcements_listener.dart';
+import 'package:peopleqlik_debug/Version1/viewModel/AnnouncementListeners/announcements_listener.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/Requests/RequestSubListListeners/request_form_get_listener.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/Requests/RequestSubListListeners/request_list_listener.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/Requests/request_name_listener.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/TeamGetListeners/team_get_listener.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/TimeOffEnCashListners/SummaryListeners/get_summary_collector.dart';
+import 'package:peopleqlik_debug/Version2/Modules/FileDownloaderModule/presentation/bloc/file_downloader_bloc.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/subModules/ModuleLeave/subModules/LeaveListModule/presentation/listener/time_off_list_collector.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/TimeSheetListener/get_time_sheet_listener.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ModuleSetting/domain/repoImpl/settings_listeners.dart';
@@ -26,6 +29,8 @@ import 'package:peopleqlik_debug/Version1/viewModel/TimeOffEnCashListners/ui_tim
 
 import 'package:peopleqlik_debug/splash_screen.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
+import 'package:peopleqlik_debug/utils/States/app_state.dart';
+import 'package:peopleqlik_debug/utils/bloc_logic_utils/bloc_provider_extended.dart';
 import 'package:provider/provider.dart';
 
 import 'Version1/viewModel/AuthListeners/save_cookie_globally.dart';
@@ -38,7 +43,6 @@ import 'package:peopleqlik_debug/utils/UserLocation/get_user_location.dart';
 import 'utils/internetConnectionChecker/internet_connection.dart';
 import 'Version2/Modules/AccountModule/presentation/listeners/image_get_listener.dart';
 import 'Version2/Modules/DashBoardModule/presentation/listeners/timer_update_listener.dart';
-import 'Version2/Modules/FCMModule/domain/repo/fcm_payload_dealer_repo.dart';
 import 'Version2/Modules/ModuleAppVersion/presentation/bloc/version_checker_bloc.dart';
 import 'commonApps/configs/flavor_config.dart';
 import 'configs/themes/app_bar_theme.dart';
@@ -59,6 +63,7 @@ Future<void> mainCommon(FlavorConfig flavorConfig) async {
   await Firebase.initializeApp();
   notificationsSetting();
 
+
   runApp(const MyApp());
 
 }
@@ -73,43 +78,50 @@ class MyApp extends StatelessWidget {
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
     ]);
-    return MultiProvider(
+    return ExtendedMultiBlocProvider(
       providers: [
-        Provider<SaveCookieGlobally>(create: (_) => SaveCookieGlobally()),
-        Provider<BottomPageHandler>(create: (_) => BottomPageHandler()),
-        ChangeNotifierProvider<VersionCheckerNotifier>(create: (_) => VersionCheckerNotifier()),
-        ChangeNotifierProvider<CheckInternetConnection>(create: (_) => CheckInternetConnection()),
-        ChangeNotifierProvider<ChangeLanguage>(create: (_) => ChangeLanguage()),
-        ChangeNotifierProvider<SettingsModelListener>(create: (_) => SettingsModelListener()),
-        Provider<CheckUserLocation>(create: (_) => CheckUserLocation()),
-        ChangeNotifierProvider<PostAttendanceListener>(create: (_) => PostAttendanceListener(),),
-        ChangeNotifierProvider<TimerUpdateListener>(create: (_) => TimerUpdateListener()),
-        ChangeNotifierProvider<AttendanceLogicBuilder>(create: (_) => AttendanceLogicBuilder(),),
-        ChangeNotifierProvider<AttendanceTypesCollector>(create: (_) => AttendanceTypesCollector(),),
-        ChangeNotifierProvider<LeaveCalenderModelListener>(create: (_) => LeaveCalenderModelListener()),
-        ChangeNotifierProvider<SlidingPanelData>(create: (_) => SlidingPanelData()),
-        ChangeNotifierProvider<TimeOffCurrentPage>(create: (_) => TimeOffCurrentPage()),
-        ChangeNotifierProvider<TimeOffModelListener>(create: (_) => TimeOffModelListener()),
-        ChangeNotifierProvider<LeaveSummaryModelListener>(create: (_) => LeaveSummaryModelListener(),),
-        ChangeNotifierProvider<GetImage>(create: (_) => GetImage()),
-        ChangeNotifierProvider<GetRequestNameListener>(create: (_) => GetRequestNameListener()),
-        ChangeNotifierProvider<GetRequestListListener>(create: (_) => GetRequestListListener()),
-        ChangeNotifierProvider<GetTeamListModelListener>(create: (_) => GetTeamListModelListener()),
-        ChangeNotifierProvider<GetRequestFormListener>(create: (_) => GetRequestFormListener()),
-        ChangeNotifierProvider<PayslipListModelListener>(create: (_) => PayslipListModelListener()),
-        ChangeNotifierProvider<GetAnnouncementModelListener>(create: (_) => GetAnnouncementModelListener()),
-        ChangeNotifierProvider<GetTimeSheetListener>(create: (_) => GetTimeSheetListener()),
-        ChangeNotifierProvider<GlobalSelectedEmployeeController>(create: (_) => GlobalSelectedEmployeeController())
+        BlocProvider<FileDownloaderBloc>(create: (_) => FileDownloaderBloc(AppStateNothing()))
       ],
-      child: Builder(
-        builder: (context) {
-          return Consumer<ChangeLanguage>(
-            builder: (context,data,child) {
-              return AfterLocale(data);
+      builder: (context) {
+        return MultiProvider(
+          providers: [
+            Provider<SaveCookieGlobally>(create: (_) => SaveCookieGlobally()),
+            Provider<BottomPageHandler>(create: (_) => BottomPageHandler()),
+            ChangeNotifierProvider<VersionCheckerNotifier>(create: (_) => VersionCheckerNotifier()),
+            ChangeNotifierProvider<CheckInternetConnection>(create: (_) => CheckInternetConnection()),
+            ChangeNotifierProvider<ChangeLanguage>(create: (_) => ChangeLanguage()),
+            ChangeNotifierProvider<SettingsModelListener>(create: (_) => SettingsModelListener()),
+            Provider<CheckUserLocation>(create: (_) => CheckUserLocation()),
+            ChangeNotifierProvider<PostAttendanceListener>(create: (_) => PostAttendanceListener(),),
+            ChangeNotifierProvider<TimerUpdateListener>(create: (_) => TimerUpdateListener()),
+            ChangeNotifierProvider<AttendanceLogicBuilder>(create: (_) => AttendanceLogicBuilder(),),
+            ChangeNotifierProvider<AttendanceTypesCollector>(create: (_) => AttendanceTypesCollector(),),
+            ChangeNotifierProvider<LeaveCalenderModelListener>(create: (_) => LeaveCalenderModelListener()),
+            ChangeNotifierProvider<SlidingPanelData>(create: (_) => SlidingPanelData()),
+            ChangeNotifierProvider<TimeOffCurrentPage>(create: (_) => TimeOffCurrentPage()),
+            ChangeNotifierProvider<TimeOffModelListener>(create: (_) => TimeOffModelListener()),
+            ChangeNotifierProvider<LeaveSummaryModelListener>(create: (_) => LeaveSummaryModelListener(),),
+            ChangeNotifierProvider<GetImage>(create: (_) => GetImage()),
+            ChangeNotifierProvider<GetRequestNameListener>(create: (_) => GetRequestNameListener()),
+            ChangeNotifierProvider<GetRequestListListener>(create: (_) => GetRequestListListener()),
+            ChangeNotifierProvider<GetTeamListModelListener>(create: (_) => GetTeamListModelListener()),
+            ChangeNotifierProvider<GetRequestFormListener>(create: (_) => GetRequestFormListener()),
+            ChangeNotifierProvider<PayslipListModelListener>(create: (_) => PayslipListModelListener()),
+            ChangeNotifierProvider<GetAnnouncementModelListener>(create: (_) => GetAnnouncementModelListener()),
+            ChangeNotifierProvider<GetTimeSheetListener>(create: (_) => GetTimeSheetListener()),
+            ChangeNotifierProvider<GlobalSelectedEmployeeController>(create: (_) => GlobalSelectedEmployeeController())
+          ],
+          child: Builder(
+            builder: (context) {
+              return Consumer<ChangeLanguage>(
+                    builder: (context,data,child) {
+                      return AfterLocale(data);
+                    }
+                  );
             }
-          );
-        }
-      ),
+          ),
+        );
+      }
     );
   }
 }
@@ -172,7 +184,6 @@ class _AfterLocaleState extends State<AfterLocale> {
             initialRoute: '/',
             routes: getScreens()
         );
-
   }
 }
 
@@ -191,8 +202,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-
     return SplashScreen();
+  }
+  @override
+  void dispose() {
+    super.dispose();
   }
 }
 class GetNavigatorStateContext {

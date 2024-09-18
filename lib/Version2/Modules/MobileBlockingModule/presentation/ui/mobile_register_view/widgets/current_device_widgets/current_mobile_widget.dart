@@ -5,7 +5,7 @@ import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/configs/fonts.dart';
 import 'package:peopleqlik_debug/utils/screen_sizes.dart';
 
-import '../../../../../../../../Version1/Models/call_setting_data.dart';
+import '../../../../../../../../Version1/models/call_setting_data.dart';
 import '../../../../../../../../utils/Reuse_LogicalWidgets/tick_icon.dart';
 import '../../../../../../../../configs/language_codes.dart';
 import '../../../../../domain/models/device_add_remove_mapper.dart';

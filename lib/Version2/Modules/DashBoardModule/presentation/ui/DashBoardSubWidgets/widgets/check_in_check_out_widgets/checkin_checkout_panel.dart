@@ -8,8 +8,8 @@ import 'package:peopleqlik_debug/Version2/Modules/DashBoardModule/presentation/l
 import 'package:peopleqlik_debug/Version2/Modules/DashBoardModule/presentation/listeners/attendance_types_collector.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ModuleSetting/domain/repoImpl/settings_listeners.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/sliding_up_panel.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
-import 'package:peopleqlik_debug/utils/Buttons/buttons.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
+import 'package:peopleqlik_debug/utils/buttons/buttons.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/configs/fonts.dart';
 import 'package:peopleqlik_debug/configs/language_codes.dart';

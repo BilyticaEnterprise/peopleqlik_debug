@@ -69,6 +69,9 @@ class GetSeparationDataList {
   dynamic newRemarks;
   String? jobCode;
   String? jobDesc;
+  String? documentNo;
+  int? screenID;
+  int? companyCode;
 
   GetSeparationDataList(
       {this.iD,
@@ -82,7 +85,11 @@ class GetSeparationDataList {
         this.remarks,
         this.newRemarks,
         this.jobCode,
-        this.jobDesc});
+        this.jobDesc,
+        this.documentNo,
+        this.screenID,
+        this.companyCode
+      });
 
   GetSeparationDataList.fromJson(Map<String, dynamic> json) {
     iD = json['ID'];
@@ -97,6 +104,9 @@ class GetSeparationDataList {
     newRemarks = json['NewRemarks'];
     jobCode = json['JobCode'];
     jobDesc = json['JobDesc'];
+    documentNo = json['DocumentNo'];
+    screenID = json['ScreenID'];
+    companyCode = json['CompanyCode'];
   }
 
   Map<String, dynamic> toJson() {
@@ -113,6 +123,9 @@ class GetSeparationDataList {
     data['NewRemarks'] = this.newRemarks;
     data['JobCode'] = this.jobCode;
     data['JobDesc'] = this.jobDesc;
+    data['DocumentNo'] = documentNo;
+    data['ScreenID'] = screenID;
+    data['CompanyCode'] = companyCode;
     return data;
   }
 }

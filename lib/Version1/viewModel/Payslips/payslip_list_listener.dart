@@ -5,9 +5,9 @@ import 'package:peopleqlik_debug/utils/provider_logic_utils/overrided_change_not
 
 import 'package:flutter/material.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
-import 'package:peopleqlik_debug/Version1/Models/AuthModels/company_url_get_model.dart';
-import 'package:peopleqlik_debug/Version1/Models/PaysSlipApprovalsRequest/get_payslip_list.dart';
-import 'package:peopleqlik_debug/Version1/Models/PaysSlipApprovalsRequest/get_payslip_month.dart';
+import 'package:peopleqlik_debug/Version1/models/AuthModels/company_url_get_model.dart';
+import 'package:peopleqlik_debug/Version1/models/PaysSlipApprovalsRequest/get_payslip_list.dart';
+import 'package:peopleqlik_debug/Version1/models/PaysSlipApprovalsRequest/get_payslip_month.dart';
 import 'package:peopleqlik_debug/utils/SharedPrefs/company_urls_prefs.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/utils/loader_utils/loader.dart';
@@ -29,16 +29,17 @@ class PayslipListModelListener extends GetChangeNotifier with GetPaginationClass
   ApiStatus apiStatus = ApiStatus.nothing;
 
   @override
-  passInitialData() {
+  resetInitialData() {
     /// This method get called from start method
     dataList ??= List<GetPaySlipDataList>.empty(growable: true); /// If list null then create list
     receiveInitialData(dataList,GetPaySlipDataList()); /// pass this list to Pagination Mixin class
   }
 
+  @override
   Future? start(BuildContext context, ApiStatus status)
   async {
 
-    passInitialData();
+    resetInitialData();
 
     apiStatus = status;
     incrementPage(); ///Whenever user hit the api default page number we set is 0. So to increment that page to 1 we call this method. Why? because our every list API start getting list from page number 1 so if this api again get called then it will increment to 1,2,3... ;

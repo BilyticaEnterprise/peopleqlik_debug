@@ -29,7 +29,7 @@ class CurrentPage
   static const String RequestSeparationFormPage = '/RequestSeparationFormPage';
   static const String RequestSeparationDetailPage = '/RequestSeparationDetailPage';
   static const String RequestEncashmentDetailPage = '/RequestEncashmentDetailPage';
-  static const String ApprovalAcceptanceRejectionEncashmentPage ='/ApprovalAcceptanceRejectionEncashmentPage';
+  //static const String ApprovalAcceptanceRejectionEncashmentPage ='/ApprovalAcceptanceRejectionEncashmentPage';
   static const String ApprovalAcceptanceRejectionSeparationPage = '/ApprovalAcceptanceRejectionSeparationPage';
   static const String SeparationCalendarPage = '/SeparationCalendarPage';
   static const String TimeOffPage = '/TimeOffPage';
@@ -47,7 +47,6 @@ class CurrentPage
   static const String ShiftFormPage = '/ShiftFormPage';
   static const String ChangeCompanyPage = '/ChangeCompanyPage';
   static const String OvertimeDetailPage = '/OvertimeDetailPage';
-  static const String ApprovalOvertimeDetailPage = '/ApprovalOvertimeDetailPage';
   static const String ShiftDetailPage = '/ShiftDetailPage';
   static const String ApprovalShiftDetailPage = 'ApprovalShiftDetailPage';
   static const String PerformancePage = '/PerformancePage';
@@ -74,4 +73,6 @@ class CurrentPage
   static const String documentMainPage = '/DocumentMainPage';
   static const String todoMainPage = '/TodoMainPage';
   static const String attendanceSummaryPage = '/AttendanceSummaryPage';
+  static const String organizationChartPage ='/OrganizationChartPage';
+  static const String documentDetailPage = '/documentDetailPage';
 }

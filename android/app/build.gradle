@@ -73,8 +73,8 @@ android {
         peopleqlik {
             dimension "app"
             applicationId "com.bilytica.peopleqliksapp"
-            versionCode 21
-            versionName "1.2.1"
+            versionCode 22
+            versionName "1.2.2"
             signingConfig signingConfigs.peopleqlik
         }
         paypeopleplus {

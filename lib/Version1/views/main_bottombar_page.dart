@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/LanguageListeners/language_listener.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/sliding_up_panel.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
 import 'package:peopleqlik_debug/Version1/views/BottomBarPages/Announcements/announcement_page.dart';
 import 'package:peopleqlik_debug/Version2/Modules/DashBoardModule/presentation/ui/dashboard_main_page.dart';
 import 'package:peopleqlik_debug/Version1/views/BottomBarPages/TeamPages/team_page.dart';
@@ -107,6 +107,7 @@ class _MainBottomBarPageState extends State<MainBottomBarPage> {
   }
   @override
   Widget build(BuildContext context) {
+
     final titles=[
       '${CallLanguageKeyWords.get(context, LanguageCodes.DashBoard)}'.toUpperCase(),
       '${CallLanguageKeyWords.get(context, LanguageCodes.teamTeamHeader)}'.toUpperCase(),
@@ -131,61 +132,63 @@ class _MainBottomBarPageState extends State<MainBottomBarPage> {
         panelBuilder: (sc) => DashBoardPanel(sc,panelController),
         borderRadius: const BorderRadius.only(topLeft: Radius.circular(18.0), topRight: Radius.circular(18.0)),
         body: Scaffold(
-          appBar: AppBar(
-            toolbarHeight: 0,
-            elevation: 0,
+            appBar: AppBar(
+              toolbarHeight: 0,
+              elevation: 0,
+              scrolledUnderElevation:0,
+              backgroundColor: const Color(MyColor.colorWhite),
+            ),
             backgroundColor: const Color(MyColor.colorWhite),
-          ),
-          backgroundColor: const Color(MyColor.colorWhite),
-          bottomNavigationBar: SnakeNavigationBar.color(
-            locale: Provider.of<ChangeLanguage>(context,listen: true).currentLocale,
-            behaviour: snakeBarStyle,
-            snakeShape: snakeShape,
-            shape: bottomBarShape,
-            padding: window.viewPadding.bottom>0?EdgeInsets.symmetric(horizontal: ScreenSize(context).widthOnly( 4.6)):EdgeInsets.symmetric(vertical: ScreenSize(context).heightOnly( 3),horizontal: ScreenSize(context).widthOnly( 4.6)),
+            bottomNavigationBar: SnakeNavigationBar.color(
+              locale: Provider.of<ChangeLanguage>(context,listen: true).currentLocale,
+              behaviour: snakeBarStyle,
+              snakeShape: snakeShape,
+              shape: bottomBarShape,
+              padding: window.viewPadding.bottom>0?EdgeInsets.symmetric(horizontal: ScreenSize(context).widthOnly( 4.6)):EdgeInsets.symmetric(vertical: ScreenSize(context).heightOnly( 3),horizontal: ScreenSize(context).widthOnly( 4.6)),
 
-            ///configuration for SnakeNavigationBar.color
-            snakeViewColor: selectedColor,
-            selectedItemColor: snakeShape == SnakeShape.indicator ? selectedColor : null,
-            unselectedItemColor: Colors.blueGrey,
-            elevation: 10,
-            shadowColor: const Color(MyColor.colorBackgroundLight).withOpacity(0.7),
-            backgroundColor: const Color(MyColor.colorBackgroundLight),
-            ///configuration for SnakeNavigationBar.gradient
-            //snakeViewGradient: selectedGradient,
-            //selectedItemGradient: snakeShape == SnakeShape.indicator ? selectedGradient : null,
-            //unselectedItemGradient: unselectedGradient,
+              ///configuration for SnakeNavigationBar.color
+              snakeViewColor: selectedColor,
+              selectedItemColor: snakeShape == SnakeShape.indicator ? selectedColor : null,
+              unselectedItemColor: Colors.blueGrey,
+              elevation: 10,
+              shadowColor: const Color(MyColor.colorBackgroundLight).withOpacity(0.7),
+              backgroundColor: const Color(MyColor.colorBackgroundLight),
+              ///configuration for SnakeNavigationBar.gradient
+              //snakeViewGradient: selectedGradient,
+              //selectedItemGradient: snakeShape == SnakeShape.indicator ? selectedGradient : null,
+              //unselectedItemGradient: unselectedGradient,
 
-            showUnselectedLabels: showUnselectedLabels,
-            showSelectedLabels: showSelectedLabels,
+              showUnselectedLabels: showUnselectedLabels,
+              showSelectedLabels: showSelectedLabels,
 
-            currentIndex: _selectedItemPosition,
-            onTap: (index) => setState(() => _selectedItemPosition = index),
-            items: const [
-              BottomNavigationBarItem(icon: Icon(Icons.timer), label: 'Home'),
-              BottomNavigationBarItem(icon: Icon(Icons.workspaces_filled), label: 'Team'),
-              BottomNavigationBarItem(icon: Icon(Icons.dashboard), label: 'Payments'),
-              BottomNavigationBarItem(icon: Icon(Icons.announcement), label: 'Announcements'),
-              BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Account'),
-            ],
-          ),
+              currentIndex: _selectedItemPosition,
+              onTap: (index) => setState(() => _selectedItemPosition = index),
+              items: const [
+                BottomNavigationBarItem(icon: Icon(Icons.timer), label: 'Home'),
+                BottomNavigationBarItem(icon: Icon(Icons.workspaces_filled), label: 'Team'),
+                BottomNavigationBarItem(icon: Icon(Icons.dashboard), label: 'Payments'),
+                BottomNavigationBarItem(icon: Icon(Icons.announcement), label: 'Announcements'),
+                BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Account'),
+              ],
+            ),
             body: NestedScrollView(
               headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
                 Provider.of<SlidingPanelData>(context,listen: false).realContext = context;
                 return <Widget>[
                   SliverAppBar(
-                      automaticallyImplyLeading: false,
-                      pinned: false,
-                      floating: true,
-                      backgroundColor: Color(_selectedItemPosition==4?MyColor.colorWhite:MyColor.colorWhite),
-                      snap: true,
-                      elevation: 0,
-                      titleSpacing: 0,
-                      title: AppBarWidgetDashBoard(titles[_selectedItemPosition],_selectedItemPosition,profileTap: (){
-                        setState(() {
-                          _selectedItemPosition = 4;
-                        });
-                      },),
+                    automaticallyImplyLeading: false,
+                    pinned: false,
+                    floating: true,
+                    backgroundColor: Color(_selectedItemPosition==4?MyColor.colorWhite:MyColor.colorWhite),
+                    snap: true,
+                    scrolledUnderElevation:0,
+                    elevation: 0,
+                    titleSpacing: 0,
+                    title: AppBarWidgetDashBoard(titles[_selectedItemPosition],_selectedItemPosition,profileTap: (){
+                      setState(() {
+                        _selectedItemPosition = 4;
+                      });
+                    },),
                   ),
                 ];
               },

@@ -70,7 +70,7 @@ class OvertimeListResultSet {
 }
 
 class OvertimeListData {
-  int? documentNo;
+  String? documentNo;
   String? overtimeType;
   double? overtimeMinutes;
   int? noOfEmploees;
@@ -80,6 +80,8 @@ class OvertimeListData {
   String? status;
   String? minDate;
   String? maxDate;
+  int? screenID;
+  int? companyCode;
 
   OvertimeListData(
       {this.documentNo,
@@ -91,7 +93,10 @@ class OvertimeListData {
         this.requestDate,
         this.status,
         this.minDate,
-        this.maxDate});
+        this.maxDate,
+        this.screenID,
+        this.companyCode
+      });
 
   OvertimeListData.fromJson(Map<String, dynamic> json) {
     documentNo = json['DocumentNo'];
@@ -104,6 +109,8 @@ class OvertimeListData {
     status = json['Status'];
     minDate = json['MinDate'];
     maxDate = json['MaxDate'];
+    screenID = json['ScreenID'];
+    companyCode = json['CompanyCode'];
   }
 
   Map<String, dynamic> toJson() {
@@ -118,6 +125,8 @@ class OvertimeListData {
     data['Status'] = this.status;
     data['MinDate'] = this.minDate;
     data['MaxDate'] = this.maxDate;
+    data['ScreenID'] = screenID;
+    data['CompanyCode'] = companyCode;
     return data;
   }
 }

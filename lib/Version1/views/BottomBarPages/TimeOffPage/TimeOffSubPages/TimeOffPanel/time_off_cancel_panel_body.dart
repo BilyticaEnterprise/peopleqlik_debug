@@ -6,8 +6,8 @@ import 'package:peopleqlik_debug/Version1/viewModel/Approvals/approvals_detail_c
 import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/subModules/ModuleLeave/subModules/LeaveDetailModule/presentation/listener/post_time_off_cancel_collector.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/subModules/ModuleLeave/subModules/LeaveDetailModule/domain/models/time_off_cancel_mapper.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/subModules/ModuleLeave/subModules/LeaveApplyFormModule/domain/models/time_off_model.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
-import 'package:peopleqlik_debug/utils/Buttons/buttons.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
+import 'package:peopleqlik_debug/utils/buttons/buttons.dart';
 import 'package:peopleqlik_debug/utils/TextFields/LegacyTextFields/header_textfield.dart';
 import 'package:peopleqlik_debug/utils/TextFieldRemarks/text_remarks_header.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';

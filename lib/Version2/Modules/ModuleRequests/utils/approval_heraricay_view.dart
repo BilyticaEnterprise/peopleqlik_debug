@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:peopleqlik_debug/Version1/Models/ApprovalsModel/get_approvals_detail_model.dart';
+import 'package:peopleqlik_debug/Version1/models/ApprovalsModel/get_approvals_detail_model.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/domain/models/approval_list_model.dart';
 import 'package:peopleqlik_debug/utils/dividers_screen/dividers.dart';
 
-import '../../../../../../Version1/Models/call_setting_data.dart';
+import '../../../../../../Version1/models/call_setting_data.dart';
 import '../../../../../../configs/colors.dart';
 import '../../../../../../utils/date_formats.dart';
 import '../../../../../../configs/fonts.dart';

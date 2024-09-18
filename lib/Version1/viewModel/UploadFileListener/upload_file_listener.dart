@@ -5,14 +5,8 @@ import 'package:peopleqlik_debug/utils/loader_utils/loader_class.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/usecase/apis_url_caller.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/model/api_global_model.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/utils/Urls/urls.dart';
-import 'package:peopleqlik_debug/Version1/ApiCalls/upload_files_api.dart';
-import 'package:peopleqlik_debug/Version1/Models/uploaded_file_model.dart';
-import 'package:peopleqlik_debug/configs/colors.dart';
-import 'package:peopleqlik_debug/utils/loader_utils/loader.dart';
-import 'package:peopleqlik_debug/configs/routing/pages_name.dart';
+import 'package:peopleqlik_debug/Version1/models/uploaded_file_model.dart';
 import 'package:peopleqlik_debug/configs/prints_logs.dart';
-import 'package:peopleqlik_debug/utils/snackbar_design.dart';
-import 'package:peopleqlik_debug/utils/strings.dart';
 
 import '../../../Version2/Modules/ApiModule/domain/model/show_error.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';

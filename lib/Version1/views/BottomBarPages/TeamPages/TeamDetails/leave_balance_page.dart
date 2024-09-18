@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/TeamGetListeners/get_leave_balance_listener.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
 import 'package:peopleqlik_debug/utils/dividers_screen/dividers.dart';
@@ -7,13 +7,13 @@ import 'package:peopleqlik_debug/configs/language_codes.dart';
 import 'package:peopleqlik_debug/utils/screen_sizes.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../../Version1/Models/TeamModel/get_employee_leave_balance_mapper.dart';
-import '../../../../../Version1/Models/TeamModel/leave_balance_model.dart';
+import '../../../../../Version1/models/TeamModel/get_employee_leave_balance_mapper.dart';
+import '../../../../../Version1/models/TeamModel/leave_balance_model.dart';
 import '../../../../../configs/colors.dart';
 import '../../../../../configs/fonts.dart';
 import '../../../../../utils/Default_Screens/scafold_screens/default_screens.dart';
-import 'package:peopleqlik_debug/utils/ErrorsUi/not_available.dart';
-import '../../../../../utils/ScreenLoader/circular_indicator_customized.dart';
+import 'package:peopleqlik_debug/utils/errorsUi/not_available.dart';
+import '../../../../../utils/screenLoader/circular_indicator_customized.dart';
 import '../../../../../utils/lines_widget/horizontal_vertical_line.dart';
 
 class LeaveBalancePage extends StatelessWidget {

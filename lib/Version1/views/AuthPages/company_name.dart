@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/AuthListeners/company_listeners.dart';
-import 'package:peopleqlik_debug/utils/Buttons/buttons.dart';
+import 'package:peopleqlik_debug/configs/prints_logs.dart';
+import 'package:peopleqlik_debug/utils/buttons/buttons.dart';
 import 'package:peopleqlik_debug/utils/TextFields/LegacyTextFields/text_widgets.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/configs/fonts.dart';
@@ -12,6 +13,7 @@ import 'package:peopleqlik_debug/utils/hide_keyboard.dart';
 import 'package:peopleqlik_debug/configs/language_codes.dart';
 import 'package:peopleqlik_debug/configs/routing/pages_name.dart';
 import 'package:peopleqlik_debug/utils/screen_sizes.dart';
+import 'package:peopleqlik_debug/utils/size_configs/size_config.dart';
 import 'package:peopleqlik_debug/utils/snackbar_design.dart';
 
 import '../../../configs/themes/app_bar_theme.dart';
@@ -64,6 +66,11 @@ class _BodyDataState extends State<BodyData> {
   }
   @override
   Widget build(BuildContext context) {
+    PrintLogs.printLogs('totalheigh ${SizeConfig.instance.getHeightNotSafe(100)}');
+    PrintLogs.printLogs('totalheigh ${SizeConfig.instance.getTextSize(12.6)}');
+
+    PrintLogs.printLogs('textsizee2 ${ScreenSize(context).textHeightOnly(14)}');
+
     return SingleChildScrollView(
         child: SizedBox(
           height: ScreenSize(context).heightOnly( 100),

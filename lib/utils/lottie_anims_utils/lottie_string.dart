@@ -11,4 +11,6 @@ class LottieString
   static const String leavebalance = 'leavebalance';
   static const String firstRegister = 'assets/firstregisteredmobile.json';
   static const String mobRegister = 'assets/mobcannotregistered.json';
+
+  static var heirarchy = 'anims/heirarchy';
 }

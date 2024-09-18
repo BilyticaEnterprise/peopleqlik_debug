@@ -69,9 +69,9 @@ class _ButtonCustomState extends State<ButtonCustom> {
       child: Text(widget.text),
       onPressed: widget.onPressed,
       style: ElevatedButton.styleFrom(
-          fixedSize: Size(widget.width??double.infinity, widget.height??ScreenSize(context).heightOnly( 5)),
-          primary: Color(widget.buttonColor??MyColor.colorPrimary),
-          onPrimary: Color(widget.textColor??MyColor.colorWhite),//c
+          foregroundColor: Color(widget.textColor??MyColor.colorWhite),
+          backgroundColor: Color(widget.buttonColor??MyColor.colorPrimary),
+          fixedSize: Size(widget.width??double.infinity, widget.height??ScreenSize(context).heightOnly( 5)),//c
           padding: EdgeInsets.symmetric(horizontal: widget.paddingHorizontal??10),
           textStyle: GetFont.get(
             context,

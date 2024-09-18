@@ -1,11 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:peopleqlik_debug/Version1/viewModel/Requests/RequestSubListListeners/RequestSeparationListener/request_separation_detail_listener.dart';
+import 'package:peopleqlik_debug/Version1/viewModel/Requests/RequestSubListListeners/RequestSeparationListener/request_separation_list_listener.dart';
 import 'package:peopleqlik_debug/utils/loader_utils/loader_class.dart';
-import 'package:peopleqlik_debug/Version1/ApiCalls/post_separation_calendar_api.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/configs/language_codes.dart';
 import 'package:peopleqlik_debug/utils/loader_utils/loader.dart';
@@ -21,7 +20,6 @@ import '../../../../../Version2/Modules/ApiModule/domain/model/api_global_model.
 class GetRequestSeparationCalendarListener extends GetChangeNotifier with GetLoader
 {
   RequestSeparationDetailData? requestSeparationDetailData;
-
 
   Future? start(BuildContext context)
   async {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
-import 'package:peopleqlik_debug/utils/Default_Screens/scafold_screens/default_screens.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
+import 'package:peopleqlik_debug/utils/default_Screens/scafold_screens/default_screens.dart';
 import 'package:peopleqlik_debug/utils/dividers_screen/dividers.dart';
 import 'package:peopleqlik_debug/utils/lines_widget/horizontal_vertical_line.dart';
 import 'package:peopleqlik_debug/configs/fonts.dart';

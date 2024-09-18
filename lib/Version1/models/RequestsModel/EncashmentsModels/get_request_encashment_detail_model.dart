@@ -1,4 +1,4 @@
-import 'package:peopleqlik_debug/Version1/Models/ApprovalsModel/get_approvals_detail_model.dart';
+import 'package:peopleqlik_debug/Version1/models/ApprovalsModel/get_approvals_detail_model.dart';
 
 class GetRequestEncashmentDetailsJson {
   bool? isSuccess;

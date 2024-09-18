@@ -7,8 +7,8 @@ import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/model/show_er
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/model/api_global_model.dart';
 import 'package:peopleqlik_debug/utils/AppConstants/app_constants.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
-import 'package:peopleqlik_debug/Version1/Models/ApprovalsModel/post_approval_model.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
+import 'package:peopleqlik_debug/Version1/models/ApprovalsModel/post_approval_model.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
 import 'package:peopleqlik_debug/mainCommon.dart';
 import 'package:peopleqlik_debug/configs/routing/pages_name.dart';
 import 'package:peopleqlik_debug/utils/snackbar_design.dart';

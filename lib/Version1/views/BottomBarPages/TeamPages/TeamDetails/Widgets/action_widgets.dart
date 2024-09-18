@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/TeamGetListeners/team_detail_listener.dart';
 import 'package:peopleqlik_debug/utils/dividers_screen/dividers.dart';
 import 'package:peopleqlik_debug/configs/language_codes.dart';
 import 'package:peopleqlik_debug/configs/routing/pages_name.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../../../Version1/Models/TeamModel/get_team_model.dart';
+import '../../../../../../Version1/models/TeamModel/get_team_model.dart';
 import '../../../../../../../../../configs/colors.dart';
 import '../../../../../../../../../../configs/fonts.dart';
 import '../../../../../../configs/icons.dart';

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
-import 'package:peopleqlik_debug/utils/Buttons/bottom_single_button.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
+import 'package:peopleqlik_debug/utils/buttons/bottom_single_button.dart';
 import 'package:peopleqlik_debug/configs/language_codes.dart';
 import 'package:peopleqlik_debug/utils/States/app_state.dart';
 import 'package:peopleqlik_debug/utils/bloc_logic_utils/bloc_provider_extended.dart';
 
-import 'package:peopleqlik_debug/utils/DropDowns/drop_down_header.dart';
-import '../../../../../../../../../utils/ScreenLoader/circular_indicator_customized.dart';
+import 'package:peopleqlik_debug/utils/dropDowns/drop_down_header.dart';
+import '../../../../../../../../../utils/screenLoader/circular_indicator_customized.dart';
 import '../../../../../../../../../utils/dividers_screen/dividers.dart';
 import '../../../../../../../../../configs/colors.dart';
 import '../../../../../../../../../utils/Default_Screens/scafold_screens/default_screens.dart';

@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ModuleSetting/domain/model/settings_model.dart';
 import 'package:peopleqlik_debug/utils/SharedPrefs/settings_pref.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
@@ -10,7 +10,7 @@ import 'package:peopleqlik_debug/configs/icons.dart';
 import 'package:peopleqlik_debug/configs/language_codes.dart';
 import 'package:peopleqlik_debug/utils/provider_logic_utils/overrided_change_notifier.dart';
 
-import '../../domain/model/attendance_type_model.dart';
+import '../../data/model/attendance_type_model.dart';
 import '../../utils/enums/attendance_type_enums.dart';
 
 class AttendanceTypesCollector extends GetChangeNotifier

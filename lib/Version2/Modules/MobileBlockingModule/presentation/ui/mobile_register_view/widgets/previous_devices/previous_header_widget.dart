@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ModuleSetting/domain/model/settings_model.dart';
 import 'package:peopleqlik_debug/utils/dividers_screen/dividers.dart';
 
-import '../../../../../../../../Version1/Models/call_setting_data.dart';
+import '../../../../../../../../Version1/models/call_setting_data.dart';
 import '../../../../../../../../configs/colors.dart';
 import '../../../../../../../../configs/fonts.dart';
 import '../../../../../../../../configs/language_codes.dart';

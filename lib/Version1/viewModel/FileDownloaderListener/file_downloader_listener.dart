@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/utils/Urls/urls.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/FileDownloaderListener/file_download_permission.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/configs/icons.dart';
 import 'package:peopleqlik_debug/configs/language_codes.dart';
@@ -53,6 +53,9 @@ class FileDownloaderListener extends GetChangeNotifier
     Directory? directory = Directory('/storage/emulated/0/Download');
     // Put file in global download folder, if for an unknown reason it didn't exist, we fallback
     // ignore: avoid_slow_async_io
+    if (!await directory.exists()) {
+      directory = await directory.create(recursive: true);
+    }
     var androidInfo = await DeviceInfoPlugin().androidInfo;
     if(androidInfo.version.sdkInt>11)
     {

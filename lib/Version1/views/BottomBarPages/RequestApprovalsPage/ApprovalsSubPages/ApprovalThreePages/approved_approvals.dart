@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/Approvals/approvals_collector.dart';
-import 'package:peopleqlik_debug/Version1/Models/ApprovalsModel/get_approvals_list.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
+import 'package:peopleqlik_debug/Version1/models/ApprovalsModel/get_approvals_list.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
 import 'package:peopleqlik_debug/Version1/views/BottomBarPages/RequestApprovalsPage/ApprovalsSubPages/ApprovalsAcceptance/approval_acceptance_rejection_page.dart';
 import 'package:peopleqlik_debug/Version1/views/BottomBarPages/RequestApprovalsPage/ApprovalsSubPages/ApprovalsAcceptance/approval_appceptance_leave_request_page.dart';
+import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/domain/models/get_all_approval_mapper.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/utils/date_formats.dart';
 import 'package:peopleqlik_debug/configs/fonts.dart';
@@ -13,8 +14,8 @@ import 'package:peopleqlik_debug/utils/screen_sizes.dart';
 import 'package:peopleqlik_debug/utils/snackbar_design.dart';
 import 'package:peopleqlik_debug/utils/strings.dart';
 import 'package:provider/provider.dart';
-import '../../../../../../Version1/Models/ApprovalsModel/approval_detail_mapper.dart';
-import '../../../../../../Version1/Models/ApprovalsModel/approval_result_set_data.dart';
+import '../../../../../../Version1/models/ApprovalsModel/approval_detail_mapper.dart';
+import '../../../../../../Version1/models/ApprovalsModel/approval_result_set_data.dart';
 import 'package:peopleqlik_debug/utils/SkeletetonAnimation/skeleton_text.dart';
 
 import 'package:peopleqlik_debug/utils/AppConstants/app_constants.dart';
@@ -65,44 +66,47 @@ class ApprovedApprovals extends StatelessWidget {
                 child: InkWell(
                   splashColor: const Color(MyColor.colorGrey0),
                   onTap: (){
-                    if(approvalResultSet?[index].screenID == GetVariable.requestScreenId)
-                    {
-                      var spl = approvalResultSet?[index].documentNo?.split(',');
-                      if(spl!=null&&spl.isNotEmpty&&spl.length>=2)
-                      {
-                        Navigator.pushNamed(context, CurrentPage.ApprovalRequestFormPage,arguments: ApprovalRequestDetailData(spl[1],spl[0],false,ApprovalDetailMapper.getApprovalDetailMapper(approvalResultSet?[index])));
-                      }
-                      else
-                      {
-                        SnackBarDesign.errorSnack('${CallLanguageKeyWords.get(context, LanguageCodes.stringsstr31)}');
-                        // ScaffoldMessenger.of(context).showSnackBar(SnackBarDesign.getSessionSnackBar(context,'',color: MyColor.colorRed));
-                      }
 
-                    }
-                    else if(approvalResultSet?[index].screenID == AppConstants.requestEnCashmentScreenID)
-                    {
-                      Navigator.pushNamed(context, CurrentPage.ApprovalAcceptanceRejectionEncashmentPage,arguments: ApprovalResultSetData(ApprovalDetailMapper.getApprovalDetailMapper(approvalResultSet?[index]),false));
-                    }
-                    else if(approvalResultSet?[index].screenID == AppConstants.requestSeparationScreenID)
-                    {
-                      Navigator.pushNamed(context, CurrentPage.ApprovalAcceptanceRejectionSeparationPage,arguments: ApprovalResultSetData(ApprovalDetailMapper.getApprovalDetailMapper(approvalResultSet?[index]),false));
-                    }
-                    else if(approvalResultSet?[index].screenID == AppConstants.requestTimeRegulationScreenID)
-                      {
-                        Navigator.pushNamed(context, CurrentPage.AcceptanceTimeRegulationPage,arguments: ApprovalResultSetData(ApprovalDetailMapper.getApprovalDetailMapper(approvalResultSet?[index]),false));
-                      }
-                    else if(approvalResultSet?[index].screenID == AppConstants.requestOverTimeScreenID)
-                    {
-                      Navigator.pushNamed(context, CurrentPage.ApprovalOvertimeDetailPage,arguments: ApprovalResultSetData(ApprovalDetailMapper.getApprovalDetailMapper(approvalResultSet?[index]),false));
-                    }
-                    else if(approvalResultSet?[index].screenID == AppConstants.requestShiftScreenID)
-                    {
-                      Navigator.pushNamed(context, CurrentPage.ApprovalShiftDetailPage,arguments: ApprovalResultSetData(ApprovalDetailMapper.getApprovalDetailMapper(approvalResultSet?[index]),false));
-                    }
-                    else {
-                      Navigator.pushNamed(context, CurrentPage.ApprovalAcceptanceRejectionPage,arguments: ApprovalResultSetData(ApprovalDetailMapper.getApprovalDetailMapper(approvalResultSet?[index]),false));
-                    }
+                    ApprovalCollector approvalCollector = Provider.of<ApprovalCollector>(context,listen: false);
+                    Navigator.pushNamed(context, approvalCollector.getPageName(approvalResultSet?[index].screenID),arguments: GetApprovalDetailMapper.getApprovalDetailMapper(approvalResultSet?[index],isApprovalScreen: false));
 
+                    // if(approvalResultSet?[index].screenID == GetVariable.requestScreenId)
+                    // {
+                    //   var spl = approvalResultSet?[index].documentNo?.split(',');
+                    //   if(spl!=null&&spl.isNotEmpty&&spl.length>=2)
+                    //   {
+                    //     Navigator.pushNamed(context, CurrentPage.ApprovalRequestFormPage,arguments: ApprovalRequestDetailData(spl[1],spl[0],false,ApprovalDetailMapper.getApprovalDetailMapper(approvalResultSet?[index])));
+                    //   }
+                    //   else
+                    //   {
+                    //     SnackBarDesign.errorSnack('${CallLanguageKeyWords.get(context, LanguageCodes.stringsstr31)}');
+                    //     // ScaffoldMessenger.of(context).showSnackBar(SnackBarDesign.getSessionSnackBar(context,'',color: MyColor.colorRed));
+                    //   }
+                    //
+                    // }
+                    // else if(approvalResultSet?[index].screenID == AppConstants.requestEnCashmentScreenID)
+                    // {
+                    //   Navigator.pushNamed(context, CurrentPage.RequestEncashmentDetailPage,arguments: GetApprovalDetailMapper.getApprovalDetailMapper(approvalResultSet?[index],isApprovalScreen: false));
+                    // }
+                    // else if(approvalResultSet?[index].screenID == AppConstants.requestSeparationScreenID)
+                    // {
+                    //   Navigator.pushNamed(context, CurrentPage.RequestSeparationDetailPage,arguments: GetApprovalDetailMapper.getApprovalDetailMapper(approvalResultSet?[index],isApprovalScreen: false));
+                    // }
+                    // else if(approvalResultSet?[index].screenID == AppConstants.requestTimeRegulationScreenID)
+                    //   {
+                    //     Navigator.pushNamed(context, CurrentPage.AcceptanceTimeRegulationPage,arguments: ApprovalResultSetData(ApprovalDetailMapper.getApprovalDetailMapper(approvalResultSet?[index]),false));
+                    //   }
+                    // else if(approvalResultSet?[index].screenID == AppConstants.requestOverTimeScreenID)
+                    // {
+                    //   Navigator.pushNamed(context, CurrentPage.OvertimeDetailPage,arguments: GetApprovalDetailMapper.getApprovalDetailMapper(approvalResultSet?[index],isApprovalScreen: false));
+                    // }
+                    // else if(approvalResultSet?[index].screenID == AppConstants.requestShiftScreenID)
+                    // {
+                    //   Navigator.pushNamed(context, CurrentPage.ApprovalShiftDetailPage,arguments: ApprovalResultSetData(ApprovalDetailMapper.getApprovalDetailMapper(approvalResultSet?[index]),false));
+                    // }
+                    // else {
+                    //   Navigator.pushNamed(context, CurrentPage.ApprovalAcceptanceRejectionPage,arguments: ApprovalResultSetData(ApprovalDetailMapper.getApprovalDetailMapper(approvalResultSet?[index]),false));
+                    // }
                   },
                   child: Padding(
                     padding: EdgeInsets.all(ScreenSize(context).heightOnly( 1.8)),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:peopleqlik_debug/mainCommon.dart';
 import 'package:provider/provider.dart';
 import '../../../Version1/viewModel/LanguageListeners/language_listener.dart';
-import '../../../Version1/Models/call_setting_data.dart';
+import '../../../Version1/models/call_setting_data.dart';
 import '../../../configs/colors.dart';
 import '../../../configs/fonts.dart';
 import '../../../configs/language_codes.dart';

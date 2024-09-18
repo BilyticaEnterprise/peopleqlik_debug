@@ -8,11 +8,11 @@ import 'bottom_sheet_header.dart';
 
 class ShowBottomSheet
 {
-  static show(BuildContext context,{bool? noAppBar = false,Function()? onDoneTap,Function(dynamic)? callBack,Widget? bottomNavigationBar,double? toolbarHeight,PreferredSizeWidget? bottomAppWidget,bool? enableDrag,bool? isDismissible,double? height,Widget? appBar,Widget? body,Widget? builder,String? optionalDefaultAppBarText,double? borderRadius,bool? expand,bool? topSafeRemove})
+  static show(BuildContext context,{DraggableScrollableController? draggableScrollableController,bool? noAppBar = false,Function()? onDoneTap,Function(dynamic)? callBack,Widget? bottomNavigationBar,double? toolbarHeight,PreferredSizeWidget? bottomAppWidget,bool? enableDrag,bool? isDismissible,double? height,Widget? appBar,Widget? body,Widget? builder,String? optionalDefaultAppBarText,double? borderRadius,bool? expand,bool? topSafeRemove})
   {
-    PrintLogs.printLogs('maxasdasd $height');
     showFlexibleBottomSheet(
       useRootNavigator: true,
+      draggableScrollableController: draggableScrollableController,
       context: context,
       isDismissible: isDismissible??true,
       isExpand: expand??false,
@@ -37,10 +37,10 @@ class ShowBottomSheet
                 extendBody: topSafeRemove??false,
                 resizeToAvoidBottomInset: false,
                 extendBodyBehindAppBar: false,
-                backgroundColor: Color(MyColor.colorWhite),
+                backgroundColor: const Color(MyColor.colorWhite),
                 appBar: noAppBar==true?null:AppBar(
                   automaticallyImplyLeading: false,
-                  backgroundColor: Color(MyColor.colorWhite),
+                  backgroundColor: const Color(MyColor.colorWhite),
                   elevation: 0,
                   titleSpacing: 0,
                   toolbarHeight: ScreenSize(context).heightOnly(toolbarHeight??9),

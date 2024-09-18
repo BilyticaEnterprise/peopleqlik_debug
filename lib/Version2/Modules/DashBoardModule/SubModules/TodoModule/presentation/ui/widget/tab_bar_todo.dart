@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../../../Version1/Models/call_setting_data.dart';
+import '../../../../../../../../Version1/models/call_setting_data.dart';
 import '../../../../../../../../utils/tabs/presentation/ui/custom_tabs_header.dart';
 import '../../../../../../../../configs/colors.dart';
 import '../../../../../../../../configs/language_codes.dart';

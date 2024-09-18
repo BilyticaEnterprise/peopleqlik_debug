@@ -3,20 +3,22 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:peopleqlik_debug/Version2/Modules/DashBoardModule/presentation/ui/DashBoardSubWidgets/dummy_widgets/dashboard_dummy.dart';
+import 'package:peopleqlik_debug/Version2/Modules/DashBoardModule/presentation/ui/DashBoardSubWidgets/dummy_widgets/dummy_dashboard_widget.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
 import 'package:peopleqlik_debug/Version2/Modules/DashBoardModule/presentation/listeners/attendance_listener.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/LanguageListeners/language_listener.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/sliding_up_panel.dart';
 import 'package:peopleqlik_debug/Version2/Modules/DashBoardModule/presentation/listeners/attendance_logic_builder.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
 import 'package:peopleqlik_debug/utils/UserLocation/get_user_location.dart';
 import 'package:peopleqlik_debug/utils/Enums/dashboard_enums.dart';
 import 'package:peopleqlik_debug/utils/internetConnectionChecker/internet_connection.dart';
-import 'package:peopleqlik_debug/utils/ErrorsUi/not_available.dart';
+import 'package:peopleqlik_debug/utils/errorsUi/not_available.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/configs/prints_logs.dart';
 import 'package:peopleqlik_debug/mainCommon.dart';
-import 'package:peopleqlik_debug/utils/Headers/header_large.dart';
+import 'package:peopleqlik_debug/utils/headers/header_large.dart';
 import 'package:peopleqlik_debug/utils/date_formats.dart';
 import 'package:peopleqlik_debug/configs/fonts.dart';
 import 'package:peopleqlik_debug/configs/language_codes.dart';
@@ -25,16 +27,15 @@ import 'package:peopleqlik_debug/configs/routing/pages_name.dart';
 import 'package:peopleqlik_debug/utils/screen_sizes.dart';
 import 'package:peopleqlik_debug/utils/strings.dart';
 import 'package:provider/provider.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 import '../../../../../configs/get_assets.dart';
 import '../../../../../utils/lottie_anims_utils/lottie_string.dart';
 import '../listeners/timer_update_listener.dart';
-import 'DashBoardSubWidgets/widgets/attendance_summary_widget/attendance_summary.dart';
 import 'DashBoardSubWidgets/widgets/bottom_card_widget.dart';
 import 'DashBoardSubWidgets/widgets/check_in_check_out_widgets/check_in_out_button.dart';
 import 'DashBoardSubWidgets/widgets/check_in_check_out_widgets/circle_indicator.dart';
 import 'DashBoardSubWidgets/widgets/documents_widget/document_widget.dart';
-import 'DashBoardSubWidgets/widgets/todos_widgets/todo_widget.dart';
 
 class DashBoardPage extends StatelessWidget {
   const DashBoardPage({Key? key}) : super(key: key);
@@ -65,48 +66,71 @@ class _BodyDataState extends State<BodyData> {
           builder: (context,internet,child) {
             if(internet.internetConnectionEnum == InternetConnectionEnum.available)
               {
-                return CustomScrollView(
-                  slivers: [
-                    const SliverToBoxAdapter(
-                      child: TopWidget(),
-                    ),
-                    SliverToBoxAdapter(
-                        child: MainHeaderWidget(text: CallLanguageKeyWords.get(context, LanguageCodes.activity)??'')
-                    ),
-                    SliverToBoxAdapter(
-                      child: AttendanceSummary(onTap: (){
-                        Navigator.pushNamed(context, CurrentPage.attendanceSummaryPage);
-                      },),
-                    ),
-                    SliverToBoxAdapter(
-                      child: TodoDashboardWidget(onTap: (){
-                        Navigator.pushNamed(context, CurrentPage.todoMainPage);
-                      },),
-                    ),
-                    SliverToBoxAdapter(
-                      child: DocumentDashboardWidget(onTap: (){
-                        Navigator.pushNamed(context, CurrentPage.documentMainPage);
-                      },),
-                    ),
-                    SliverToBoxAdapter(
-                      child: MainHeaderWidget(text: CallLanguageKeyWords.get(context, LanguageCodes.dashboardTitle1)??'')
-                    ),
-                    SliverToBoxAdapter(
-                      child: BottomCardWidget(dashboardEnum: DashboardEnum.timesheet,header: CallLanguageKeyWords.get(context, LanguageCodes.dashBoardTimeSheet)??'',value: CallLanguageKeyWords.get(context, LanguageCodes.dashBoardTimeSheetDetail)??'',animationIcon: LottieString.timeSheet,iconColor: MyColor.colorA4,onTap: (){ Navigator.pushNamed(context, CurrentPage.TimeSheetPage);},),
-                    ),
-                    SliverToBoxAdapter(
-                      child: BottomCardWidget(dashboardEnum: DashboardEnum.overtimeEmployee,header: CallLanguageKeyWords.get(context, LanguageCodes.dashBoardOverTimeHeader)??'',value: CallLanguageKeyWords.get(context, LanguageCodes.dashBoardOverTimeValue)??'',animationIcon: 'assets/${LottieString.overtime}.json',iconColor: MyColor.colorA5,onTap: (){Navigator.pushNamed(context, CurrentPage.OverTimeTeamRequestPage);},),
-                    ),
-                    SliverToBoxAdapter(
-                      child: Consumer<PostAttendanceListener>(
-                          builder: (context,data,child) {
-                          return BottomCardWidget(dashboardEnum: DashboardEnum.leaveBalanceCurrentEmployee,header: CallLanguageKeyWords.get(context, LanguageCodes.leaveBalance)??'',value: '${CallLanguageKeyWords.get(context, LanguageCodes.leaveBalanceValue1)??''} ${data.getLeaveBalance()} . ${CallLanguageKeyWords.get(context, LanguageCodes.leaveBalanceValue2)??''}',animationIcon: 'assets/${LottieString.leavebalance}.json',iconColor: MyColor.colorA3,onTap: (){
-                            Provider.of<PostAttendanceListener>(context,listen: false).goToLeaveBalancePage(context);
-                            },);
+
+                return Consumer<PostAttendanceListener>(
+                    builder: (context,data,child) {
+                      if(data.apiStatus == ApiStatus.nothing||data.apiStatus == ApiStatus.started)
+                        {
+                          return DashboardDummy();
                         }
-                      ),
-                    ),
-                  ],
+                      else
+                        {
+                          return CustomScrollView(
+                            slivers: [
+                              const SliverToBoxAdapter(
+                                child: TopWidget(),
+                              ),
+                              SliverToBoxAdapter(
+                                  child: MainHeaderWidget(text: CallLanguageKeyWords.get(context, LanguageCodes.activity)??'')
+                              ),
+                              // SliverToBoxAdapter(
+                              //   child: AttendanceSummary(onTap: (){
+                              //     Navigator.pushNamed(context, CurrentPage.attendanceSummaryPage);
+                              //   },),
+                              // ),
+                              // SliverToBoxAdapter(
+                              //   child: TodoDashboardWidget(onTap: (){
+                              //     Navigator.pushNamed(context, CurrentPage.todoMainPage);
+                              //   },),
+                              // ),
+                              SliverToBoxAdapter(
+                                child: DocumentDashboardWidget(
+                                  isEmpty: data.apiStatus==ApiStatus.empty||data.apiStatus == ApiStatus.error,
+                                  data: data.objDocumentList,
+                                  onTap: (){
+                                    Navigator.pushNamed(context, CurrentPage.documentMainPage).then((value){
+                                      if(value !=null &&value is bool&&value == true)
+                                        {
+                                          Provider.of<PostAttendanceListener>(context,listen: false).getDashBoard(context);
+                                        }
+                                    });
+                                  },
+                                ),
+                              ),
+                              SliverToBoxAdapter(
+                                  child: MainHeaderWidget(text: CallLanguageKeyWords.get(context, LanguageCodes.dashboardTitle1)??'')
+                              ),
+                              SliverToBoxAdapter(
+                                child: BottomCardWidget(dashboardEnum: DashboardEnum.timesheet,header: CallLanguageKeyWords.get(context, LanguageCodes.dashBoardTimeSheet)??'',value: CallLanguageKeyWords.get(context, LanguageCodes.dashBoardTimeSheetDetail)??'',animationIcon: LottieString.timeSheet,iconColor: MyColor.colorA4,onTap: (){ Navigator.pushNamed(context, CurrentPage.TimeSheetPage);},),
+                              ),
+                              SliverToBoxAdapter(
+                                child: BottomCardWidget(dashboardEnum: DashboardEnum.overtimeEmployee,header: CallLanguageKeyWords.get(context, LanguageCodes.dashBoardOverTimeHeader)??'',value: CallLanguageKeyWords.get(context, LanguageCodes.dashBoardOverTimeValue)??'',animationIcon: 'assets/${LottieString.overtime}.json',iconColor: MyColor.colorA5,onTap: (){Navigator.pushNamed(context, CurrentPage.OverTimeTeamRequestPage);},),
+                              ),
+                              SliverToBoxAdapter(
+                                child: BottomCardWidget(dashboardEnum: DashboardEnum.leaveBalanceCurrentEmployee,header: CallLanguageKeyWords.get(context, LanguageCodes.leaveBalance)??'',value: '${CallLanguageKeyWords.get(context, LanguageCodes.leaveBalanceValue1)??''} ${data.getLeaveBalance()} . ${CallLanguageKeyWords.get(context, LanguageCodes.leaveBalanceValue2)??''}',animationIcon: 'assets/${LottieString.leavebalance}.json',iconColor: MyColor.colorA3,
+                                  onTap: ()
+                                  {
+                                    Provider.of<PostAttendanceListener>(context,listen: false).goToLeaveBalancePage(context);
+                                  },
+                                ),
+                              ),
+                              SliverToBoxAdapter(
+                                child: BottomCardWidget(dashboardEnum: DashboardEnum.organizationChart,header: CallLanguageKeyWords.get(context, LanguageCodes.organizationChartHeader)??'',value: CallLanguageKeyWords.get(context, LanguageCodes.organizationChartValue)??'',animationIcon: 'assets/${LottieString.heirarchy}.json',iconColor: MyColor.colorA5,animSize: 8,paddingRight: 2,onTap: (){Navigator.pushNamed(context, CurrentPage.organizationChartPage);},),
+                              ),
+                            ],
+                          );
+                        }
+                  }
                 );
               }
             else

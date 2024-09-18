@@ -14,9 +14,11 @@ import '../../../../utils/common_dashboard_container.dart';
 class BottomCardWidget extends StatelessWidget {
   final DashboardEnum dashboardEnum;
   final String header,value,animationIcon;
+  final double? animSize;
+  final double? paddingRight;
   final int? iconColor;
   final Function() onTap;
-  const BottomCardWidget({required this.dashboardEnum,required this.onTap,required this.header,required this.value,this.iconColor, required this.animationIcon,Key? key}) : super(key: key);
+  const BottomCardWidget({required this.dashboardEnum,required this.onTap,required this.header,required this.value,this.iconColor, required this.animationIcon,this.animSize,this.paddingRight,Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -62,8 +64,8 @@ class BottomCardWidget extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.only(right: ScreenSize(context).heightOnly(dashboardEnum == DashboardEnum.timesheet?1:0)),
-            child: Lottie.asset(animationIcon,fit: BoxFit.fitWidth,height: ScreenSize(context).heightOnly(dashboardEnum == DashboardEnum.timesheet?14:11.5),width: ScreenSize(context).heightOnly(dashboardEnum == DashboardEnum.timesheet?14:11.5),repeat: true),
+            padding: EdgeInsets.only(right: ScreenSize(context).heightOnly(paddingRight??(dashboardEnum == DashboardEnum.timesheet?1:0))),
+            child: Lottie.asset(animationIcon,fit: BoxFit.fitWidth,height: ScreenSize(context).heightOnly(animSize??(dashboardEnum == DashboardEnum.timesheet?14:11.5)),width: ScreenSize(context).heightOnly(animSize??(dashboardEnum == DashboardEnum.timesheet?14:11.5)),repeat: true),
           )
         ],
       ),

@@ -2,15 +2,15 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:peopleqlik_debug/utils/Default_Screens/scafold_screens/default_screens.dart';
+import 'package:peopleqlik_debug/utils/default_Screens/scafold_screens/default_screens.dart';
 import 'package:peopleqlik_debug/configs/prints_logs.dart';
 import 'package:peopleqlik_debug/utils/bloc_logic_utils/bloc_provider_extended.dart';
 
 import '../../../../../../../Version1/viewModel/AuthListeners/log_out_listener.dart';
-import '../../../../../../../Version1/Models/call_setting_data.dart';
+import '../../../../../../../Version1/models/call_setting_data.dart';
 import '../../../../../ModuleSetting/domain/model/settings_model.dart';
-import 'package:peopleqlik_debug/utils/Buttons/bottom_twin_buttons.dart';
-import '../../../../../../../utils/ScreenLoader/circular_indicator_customized.dart';
+import 'package:peopleqlik_debug/utils/buttons/bottom_twin_buttons.dart';
+import '../../../../../../../utils/screenLoader/circular_indicator_customized.dart';
 import '../../../../../../../utils/dividers_screen/dividers.dart';
 import '../../../../../../../configs/language_codes.dart';
 import '../../../../../../../configs/routing/pages_name.dart';

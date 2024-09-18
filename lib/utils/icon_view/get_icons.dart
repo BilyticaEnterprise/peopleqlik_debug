@@ -7,7 +7,7 @@ import '../../configs/colors.dart';
 class GetIcons extends StatelessWidget {
   final String icon;
   final double size;
-  final int iconColor;
+  final int color;
   final int? backgroundColor;
   final Function()? onTap;
   final bool? noPadding,noColor;
@@ -15,7 +15,7 @@ class GetIcons extends StatelessWidget {
   final BorderRadius? borderRadius;
   final double? paddingAll;
   final double opacity;
-  const GetIcons({this.opacity = 1.0,this.paddingAll,this.noColor,this.borderRadius,this.radius,this.backgroundColor,this.noPadding,this.onTap,this.iconColor = MyColor.colorBlack,this.size = 3,required this.icon,Key? key}) : super(key: key);
+  const GetIcons({this.opacity = 1.0,this.paddingAll,this.noColor,this.borderRadius,this.radius,this.backgroundColor,this.noPadding,this.onTap,this.color = MyColor.colorBlack,this.size = 3,required this.icon,Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class GetIcons extends StatelessWidget {
               icon,
               height: ScreenSize(context).heightOnly(size),
               width: ScreenSize(context).heightOnly(size),
-              colorFilter: noColor==true?null:ColorFilter.mode(Color(iconColor),BlendMode.srcIn),
+              colorFilter: noColor==true?null:ColorFilter.mode(Color(color),BlendMode.srcIn),
             ),
           ),
         ),

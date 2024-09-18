@@ -1,4 +1,4 @@
-import 'package:peopleqlik_debug/Version1/Models/AuthModels/login_model.dart';
+import 'package:peopleqlik_debug/Version1/models/AuthModels/login_model.dart';
 
 class GetSettingsJson {
   bool? isSuccess;
@@ -62,7 +62,9 @@ class SettingsResultSet {
   DeviceRestricModel? deviceRestricModel;
   String? cuttofDate;
   List<AllApprovalTypes>? allApprovalTypesList;
-
+  List<ScreenDetail>? screenDetail;
+  List<NotificationTabs>? notificationTabs;
+  List<CompanyPolicyType>? companyPolicyType;
 
   SettingsResultSet(
       {
@@ -78,7 +80,10 @@ class SettingsResultSet {
         this.companyList,
         this.officePermTypes,
         this.leaveCalendar,
-        this.deviceRestricModel
+        this.deviceRestricModel,
+        this.screenDetail,
+        this.notificationTabs,
+        this.companyPolicyType
       });
 
   SettingsResultSet.fromJson(Map<String, dynamic> json) {
@@ -194,6 +199,26 @@ class SettingsResultSet {
       allApprovalTypesList = <AllApprovalTypes>[];
       json['adm_notifications'].forEach((v) { allApprovalTypesList!.add(new AllApprovalTypes.fromJson(v)); });
     }
+    if (json['ScreenDetail'] != null) {
+      screenDetail = <ScreenDetail>[];
+      json['ScreenDetail'].forEach((v) {
+        screenDetail!.add(new ScreenDetail.fromJson(v));
+      });
+    }
+    if(json['NotificationTabs'] != null)
+      {
+        notificationTabs = <NotificationTabs>[];
+        json['NotificationTabs'].forEach((v) {
+          notificationTabs!.add(NotificationTabs.fromJson(v));
+        });
+
+      }
+    if (json['CompanyPolicyType'] != null) {
+      companyPolicyType = <CompanyPolicyType>[];
+      json['CompanyPolicyType'].forEach((v) {
+        companyPolicyType!.add(new CompanyPolicyType.fromJson(v));
+      });
+    }
   }
 
   Map<String, dynamic> toJson() {
@@ -274,6 +299,17 @@ class SettingsResultSet {
     }
     if (this.allApprovalTypesList != null) {
       data['adm_notifications'] = this.allApprovalTypesList!.map((v) => v.toJson()).toList();
+    }
+    if (this.screenDetail != null) {
+      data['ScreenDetail'] = this.screenDetail!.map((v) => v.toJson()).toList();
+    }
+    if (this.notificationTabs != null) {
+      data['NotificationTabs'] = this.notificationTabs!.map((v) => v.toJson()).toList();
+    }
+
+    if (this.companyPolicyType != null) {
+      data['CompanyPolicyType'] =
+          this.companyPolicyType!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -807,6 +843,71 @@ class AllApprovalTypes {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['StatusID'] = this.statusID;
     data['StatusName'] = this.statusName;
+    return data;
+  }
+}
+
+class ScreenDetail {
+  int? screenID;
+  String? screenName;
+  int? iD;
+
+  ScreenDetail({this.screenID, this.screenName, this.iD});
+
+  ScreenDetail.fromJson(Map<String, dynamic> json) {
+    screenID = json['ScreenID'];
+    screenName = json['ScreenName'];
+    iD = json['ID'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['ScreenID'] = this.screenID;
+    data['ScreenName'] = this.screenName;
+    data['ID'] = this.iD;
+    return data;
+  }
+}
+
+
+class NotificationTabs {
+  int? screenID;
+  String? screenName;
+  int? iD;
+
+  NotificationTabs({this.screenID, this.screenName, this.iD});
+
+  NotificationTabs.fromJson(Map<String, dynamic> json) {
+    screenID = json['ScreenID'];
+    screenName = json['ScreenName'];
+    iD = json['ID'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['ScreenID'] = this.screenID;
+    data['ScreenName'] = this.screenName;
+    data['ID'] = this.iD;
+    return data;
+  }
+
+}
+
+class CompanyPolicyType {
+  int? typeID;
+  String? typeName;
+
+  CompanyPolicyType({this.typeID, this.typeName});
+
+  CompanyPolicyType.fromJson(Map<String, dynamic> json) {
+    typeID = json['TypeID'];
+    typeName = json['TypeName'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['TypeID'] = this.typeID;
+    data['TypeName'] = this.typeName;
     return data;
   }
 }

@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:peopleqlik_debug/utils/dividers_screen/dividers.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/configs/fonts.dart';
-import 'package:peopleqlik_debug/utils/CommonUis/common_container.dart';
+import 'package:peopleqlik_debug/utils/commonUis/common_container.dart';
 import 'package:peopleqlik_debug/utils/icon_view/next_icon.dart';
 
 import '../../../../../../../../../utils/lines_widget/horizontal_vertical_line.dart';
-import '../../../../../../../../../utils/cached_image_getter/cache_image.dart';
+import '../../../../../../../../../utils/image_getter/cache_image.dart';
 import '../../../../../../../../../utils/icon_view/done_icon.dart';
 import '../../../../../../../../../utils/screen_sizes.dart';
 

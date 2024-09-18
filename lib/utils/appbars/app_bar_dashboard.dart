@@ -1,8 +1,8 @@
-import 'package:badges/badges.dart' as badges;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:peopleqlik_debug/Version2/Modules/AllNotificationModules/subModule/NotificationBadge/presentation/ui/notification_icon_view.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/utils/Urls/urls.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/LanguageListeners/language_listener.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ModuleSetting/domain/repoImpl/settings_listeners.dart';
@@ -125,44 +125,7 @@ class AppBarWidgetDashBoard extends StatelessWidget {
           ),
           Align(
             alignment: changeLanguage.languageEnum == LanguageEnum.arabic?Alignment.centerLeft:Alignment.centerRight,
-            child: ClipOval(
-              child: Material(
-                color: const Color(MyColor.colorTransparent),
-                child: Padding(
-                    padding: EdgeInsets.all(ScreenSize(context).heightOnly( 1.2)),
-                    child: InkWell(
-                      splashColor: const Color(MyColor.colorGrey0),
-                      onTap: (){
-                        Navigator.pushNamed(context, CurrentPage.NotificationPage);
-                      },
-                      child: badges.Badge(
-                          position: badges.BadgePosition.topEnd(
-                              top: ScreenSize(context).heightOnly( 0.7),
-                              end: ScreenSize(context).heightOnly( 0.7)),
-                          badgeStyle: badges.BadgeStyle(
-                            shape: badges.BadgeShape.circle,
-                            padding: EdgeInsets.all(ScreenSize(context).heightOnly( 0.7)),
-                            badgeColor: const Color(MyColor.colorPrimary),
-                          ),
-                          badgeAnimation: const badges.BadgeAnimation.scale(
-                            animationDuration: Duration(milliseconds: 80),
-                          ),
-                          showBadge: false,
-                          badgeContent: Text('0',
-                              style: GetFont.get(context,
-                                  fontWeight: FontWeight.w400,
-                                  color: MyColor.colorWhite,
-                                  fontSize: 1.3)),
-                          child: Icon(
-                            MdiIcons.bellOutline,
-                            size: ScreenSize(context).heightOnly( 3.5),
-                            color: const Color(MyColor.colorBlack),
-                          )
-                      ),
-                    ),
-                  ),
-                ),
-            ),
+            child: NotificationIconView(),
           )
         ],
       ):Container(),

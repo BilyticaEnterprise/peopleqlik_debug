@@ -71,6 +71,9 @@ class RequestListDataList {
   String? employeeName;
   String? statusName;
   String? orderDate;
+  String? documentNo;
+  int? screenID;
+  int? companyCode;
 
   RequestListDataList(
       {this.iD,
@@ -81,7 +84,11 @@ class RequestListDataList {
         this.approvalStatusID,
         this.employeeName,
         this.statusName,
-        this.orderDate});
+        this.orderDate,
+        this.documentNo,
+        this.screenID,
+        this.companyCode
+      });
 
   RequestListDataList.fromJson(Map<String, dynamic> json) {
     iD = json['ID'];
@@ -93,6 +100,9 @@ class RequestListDataList {
     employeeName = json['EmployeeName'];
     statusName = json['StatusName'];
     orderDate = json['OrderDate'];
+    documentNo = json['DocumentNo'];
+    screenID = json['ScreenID'];
+    companyCode = json['CompanyCode'];
   }
 
   Map<String, dynamic> toJson() {
@@ -106,6 +116,9 @@ class RequestListDataList {
     data['EmployeeName'] = employeeName;
     data['StatusName'] = statusName;
     data['OrderDate'] = orderDate;
+    data['DocumentNo'] = documentNo;
+    data['ScreenID'] = screenID;
+    data['CompanyCode'] = companyCode;
     return data;
   }
 }

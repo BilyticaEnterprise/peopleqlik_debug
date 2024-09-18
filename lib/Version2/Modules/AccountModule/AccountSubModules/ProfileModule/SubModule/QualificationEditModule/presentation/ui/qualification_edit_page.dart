@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:peopleqlik_debug/utils/Default_Screens/scafold_screens/default_screens.dart';
+import 'package:peopleqlik_debug/utils/default_Screens/scafold_screens/default_screens.dart';
 import 'package:peopleqlik_debug/utils/dividers_screen/dividers.dart';
 
-import '../../../../../../../../../Version1/Models/call_setting_data.dart';
-import 'package:peopleqlik_debug/utils/DropDowns/drop_down_header.dart';
-import '../../../../../../../../../utils/ScreenLoader/circular_indicator_customized.dart';
+import '../../../../../../../../../Version1/models/call_setting_data.dart';
+import 'package:peopleqlik_debug/utils/dropDowns/drop_down_header.dart';
+import '../../../../../../../../../utils/screenLoader/circular_indicator_customized.dart';
 import '../../../../../../../../../configs/colors.dart';
 import '../../../../../../../../../configs/language_codes.dart';
-import '../../../../../../../../../utils/Buttons/bottom_single_button.dart';
-import '../../../../../../../../../utils/DatePickText/date_picker_text_style_1.dart';
+import '../../../../../../../../../utils/buttons/bottom_single_button.dart';
+import '../../../../../../../../../utils/datePickText/date_picker_text_style_1.dart';
 import '../../../../../../../../../utils/States/app_state.dart';
 import '../../../../../../../../../utils/TextFields/text_field_latest.dart';
 import '../../../../../../../../../utils/bloc_logic_utils/bloc_provider_extended.dart';

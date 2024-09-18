@@ -4,8 +4,9 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/LanguageListeners/update_language.dart';
+import 'package:peopleqlik_debug/configs/prints_logs.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
-import 'package:peopleqlik_debug/Version1/Models/AuthModels/login_model.dart';
+import 'package:peopleqlik_debug/Version1/models/AuthModels/login_model.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ModuleSetting/domain/model/settings_model.dart';
 import 'package:peopleqlik_debug/utils/SharedPrefs/login_prefs.dart';
 import 'package:peopleqlik_debug/utils/SharedPrefs/settings_pref.dart';
@@ -49,7 +50,7 @@ class ChangeLanguage extends GetChangeNotifier
             {
               languageEnum = LanguageEnum.english;
             }
-          localeChange(languageEnum);
+          _localeChange(languageEnum);
         }
         else
           {
@@ -79,32 +80,33 @@ class ChangeLanguage extends GetChangeNotifier
       {
         selected = [true,false];
         languageEnum = LanguageEnum.english;
-        localeChange(languageEnum);
+        _localeChange(languageEnum);
       }
     else if(code == 2)
     {
       selected = [false,true];
       languageEnum = LanguageEnum.arabic;
-      localeChange(languageEnum);
+      _localeChange(languageEnum);
     }
     else
       {
         selected = [true,false];
         languageEnum = LanguageEnum.english;
-        localeChange(languageEnum);
+        _localeChange(languageEnum);
       }
 
   }
 
-  void localeChange(LanguageEnum languageEnum) {
+  void _localeChange(LanguageEnum languageEnum) {
     final List<Locale>? systemLocales = WidgetsBinding.instance?.window.locales;
     if(systemLocales!=null&&systemLocales.isNotEmpty)
       {
         for(int x=0;x<systemLocales.length;x++)
         {
-          //PrintLogs.print('localessss ${systemLocales[x].countryCode}');
+          PrintLogs.printLogs('localessss ${systemLocales[x].languageCode}');
           if(languageEnum == LanguageEnum.arabic)
           {
+
             selected = [false,true];
             if(systemLocales[x].countryCode!=null&&systemLocales[x].countryCode!.contains('SA'))
             {

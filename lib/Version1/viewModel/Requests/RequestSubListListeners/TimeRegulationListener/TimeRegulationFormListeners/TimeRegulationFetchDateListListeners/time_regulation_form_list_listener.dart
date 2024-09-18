@@ -11,7 +11,7 @@ import '../../../../../../../utils/pagination_logic_utils/pagination_classes.dar
 import '../../../../../../../Version2/Modules/ApiModule/domain/usecase/apis_url_caller.dart';
 import '../../../../../../../Version2/Modules/ApiModule/domain/model/show_error.dart';
 import '../../../../../../../Version2/Modules/ApiModule/domain/model/api_global_model.dart';
-import '../../../../../../Models/TimeRegulationModels/time_regulation_monthly_model.dart';
+import '../../../../../../models/TimeRegulationModels/time_regulation_monthly_model.dart';
 import '../../../../../EmployeeSearchController/global_selected_employee/employee_info_mapper.dart';
 import '../../../../../EmployeeSearchController/global_selected_employee/global_selected_employee_controller.dart';
 import 'get_previous_date_limit.dart';
@@ -51,7 +51,7 @@ class TimeRegulationFormFetchListListener extends GetChangeNotifier with GetPagi
   }
 
   @override
-  passInitialData() {
+  resetInitialData() {
     /// This method get called from start method
     dataList ??= List<TimeRegulationMonthlyDataList>.empty(growable: true); /// If list null then create list
     receiveInitialData(dataList,TimeRegulationMonthlyDataList()); /// pass this list to Pagination Mixin class
@@ -60,7 +60,7 @@ class TimeRegulationFormFetchListListener extends GetChangeNotifier with GetPagi
   @override
   start(BuildContext context, ApiStatus status) async {
 
-    passInitialData();
+    resetInitialData();
 
     apiStatus = status;
     incrementPage(); ///Whenever user hit the api default page number we set is 0. So to increment that page to 1 we call this method. Why? because our every list API start getting list from page number 1 so if this api again get called then it will increment to 1,2,3... ;

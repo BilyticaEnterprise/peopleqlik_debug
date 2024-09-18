@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
 import 'package:peopleqlik_debug/Version2/Modules/DashBoardModule/SubModules/AttendanceSummaryModule/presentation/ui/widgets/attendance_summary_tab_view.dart';
 import 'package:peopleqlik_debug/configs/language_codes.dart';
-import 'package:peopleqlik_debug/utils/Default_Screens/scafold_screens/default_screens.dart';
+import 'package:peopleqlik_debug/utils/default_Screens/scafold_screens/default_screens.dart';
 import 'package:peopleqlik_debug/utils/bloc_logic_utils/bloc_provider_extended.dart';
 import 'package:peopleqlik_debug/utils/screen_sizes.dart';
 

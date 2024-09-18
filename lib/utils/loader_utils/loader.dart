@@ -17,6 +17,12 @@ class ShowLoaderPopUp
       callBack();
     });
   }
+  static showTransparent(BuildContext context, StreamController<bool> loadingStream, Function() callBack)
+  {
+    showDialog(context: context,barrierColor: const Color(MyColor.colorWhite).withOpacity(0.0),builder: (BuildContext dialogContext)=> LoaderPopUp(dialogContext,loadingStream: loadingStream,)).then((value){
+      callBack();
+    });
+  }
 }
 class LoaderPopUp extends StatefulWidget {
   BuildContext dialogContext;

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jiffy/jiffy.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/model/api_global_model.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
-import 'package:peopleqlik_debug/Version1/Models/TimeSheetModel/get_time_sheet_model.dart';
+import 'package:peopleqlik_debug/Version1/models/TimeSheetModel/get_time_sheet_model.dart';
 import 'package:peopleqlik_debug/Version1/views/BottomBarPages/TimeSheet/calender_view.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/utils/date_formats.dart';

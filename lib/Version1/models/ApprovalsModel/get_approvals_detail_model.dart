@@ -1,5 +1,4 @@
 
-import 'package:peopleqlik_debug/configs/prints_logs.dart';
 
 class GetApprovalDetailJson {
   bool? isSuccess;

@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:peopleqlik_debug/configs/icons.dart';
 
-import '../../../../../../../../Version1/Models/call_setting_data.dart';
-import 'package:peopleqlik_debug/utils/Buttons/buttons.dart';
+import '../../../../../../../../Version1/models/call_setting_data.dart';
+import 'package:peopleqlik_debug/utils/buttons/buttons.dart';
 import '../../../../../../../../utils/dividers_screen/dividers.dart';
 import '../../../../../../../../configs/colors.dart';
 import '../../../../../../../../configs/fonts.dart';
 import '../../../../../../../../configs/language_codes.dart';
-import '../../../../../../../../utils/CommonUis/common_container.dart';
+import '../../../../../../../../utils/commonUis/common_container.dart';
 import '../../../../../../../../utils/date_formats.dart';
 import '../../../../../../../../utils/icon_view/icon_text.dart';
 import '../../../../../../../../utils/screen_sizes.dart';

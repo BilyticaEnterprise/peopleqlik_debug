@@ -1,13 +1,13 @@
 import 'package:dio/dio.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/model/api_global_model.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
-import 'package:peopleqlik_debug/Version1/Models/AuthModels/cookie_model.dart';
+import 'package:peopleqlik_debug/Version1/models/AuthModels/cookie_model.dart';
 import 'package:peopleqlik_debug/configs/prints_logs.dart';
 import 'package:peopleqlik_debug/utils/strings.dart';
 
 import '../../../../../mainCommon.dart';
 import '../../../../../Version1/viewModel/AuthListeners/save_cookie_globally.dart';
-import '../../../../../Version1/Models/call_setting_data.dart';
+import '../../../../../Version1/models/call_setting_data.dart';
 
 class ValidationApiData
 {
@@ -20,12 +20,12 @@ class ValidationApiData
       }
     else
       {
-
         apiResponse.apiStatus = ApiStatus.error;
-        apiResponse = checkIfContainerError(apiResponse);
+        apiResponse = _checkIfContainsError(apiResponse);
         return apiResponse;
       }
   }
+
   getCookie(ApiResponse apiResponse,Response? response)
   {
     CookieJson? cookieJson = getCookieClass(response);
@@ -42,6 +42,7 @@ class ValidationApiData
       }
 
   }
+
   includeData(ApiResponse apiResponse)
   {
     if(apiResponse.data!=null&&apiResponse.data?.isSuccess == true)
@@ -54,18 +55,19 @@ class ValidationApiData
       else
       {
         apiResponse.apiStatus = ApiStatus.error;
-        apiResponse = checkIfContainerError(apiResponse);
+        apiResponse = _checkIfContainsError(apiResponse);
         return apiResponse;
       }
     }
     else
     {
       apiResponse.apiStatus = ApiStatus.error;
-      apiResponse = checkIfContainerError(apiResponse);
+      apiResponse = _checkIfContainsError(apiResponse);
       return apiResponse;
     }
 
   }
+
   includeListData(ApiResponse apiResponse)
   {
     if(apiResponse.data!=null&&apiResponse.data?.isSuccess == true)
@@ -78,26 +80,26 @@ class ValidationApiData
       else if(apiResponse.data!=null&&apiResponse.data?.isSuccess == true && apiResponse.data?.resultSet!=null && apiResponse.data!.resultSet.isEmpty)
       {
         apiResponse.apiStatus = ApiStatus.empty;
-        apiResponse = checkIfContainerError(apiResponse);
+        apiResponse = _checkIfContainsError(apiResponse);
         return apiResponse;
       }
       else if(apiResponse.data!=null&&apiResponse.data?.isSuccess == true && apiResponse.data?.resultSet==null)
       {
         apiResponse.apiStatus = ApiStatus.empty;
-        apiResponse = checkIfContainerError(apiResponse);
+        apiResponse = _checkIfContainsError(apiResponse);
         return apiResponse;
       }
       else
       {
         apiResponse.apiStatus = ApiStatus.error;
-        apiResponse = checkIfContainerError(apiResponse);
+        apiResponse = _checkIfContainsError(apiResponse);
         return apiResponse;
       }
     }
     else
     {
       apiResponse.apiStatus = ApiStatus.error;
-      apiResponse = checkIfContainerError(apiResponse);
+      apiResponse = _checkIfContainsError(apiResponse);
       return apiResponse;
     }
   }
@@ -132,24 +134,31 @@ class ValidationApiData
       else if(apiResponse.data!=null&&apiResponse.data?.isSuccess == true && apiResponse.data?.resultSet!=null && apiResponse.data?.resultSet.dataList!=null && apiResponse.data!.resultSet!.dataList.isEmpty)
       {
         apiResponse.apiStatus = ApiStatus.empty;
-        apiResponse = checkIfContainerError(apiResponse);
+        apiResponse = _checkIfContainsError(apiResponse);
+        return apiResponse;
+      }
+      else if(apiResponse.data!=null&&apiResponse.data?.isSuccess == true && apiResponse.data?.resultSet!=null && apiResponse.data?.resultSet.dataList==null)
+      {
+        apiResponse.apiStatus = ApiStatus.empty;
+        apiResponse = _checkIfContainsError(apiResponse);
         return apiResponse;
       }
       else
       {
         apiResponse.apiStatus = ApiStatus.error;
-        apiResponse = checkIfContainerError(apiResponse);
+        apiResponse = _checkIfContainsError(apiResponse);
         return apiResponse;
       }
     }
     else
     {
       apiResponse.apiStatus = ApiStatus.error;
-      apiResponse = checkIfContainerError(apiResponse);
+      apiResponse = _checkIfContainsError(apiResponse);
       return apiResponse;
     }
   }
-  checkIfContainerError(ApiResponse apiResponse)
+
+  _checkIfContainsError(ApiResponse apiResponse)
   {
     if(apiResponse.data!=null&&apiResponse.data?.errorMessage!=null&&apiResponse.data!.errorMessage.isNotEmpty)
       {
@@ -169,6 +178,27 @@ class ValidationApiData
     else if(apiResponse.message!=null&&apiResponse.message=='OK')
       {
         apiResponse.message = 'Server error';
+      }
+    return apiResponse;
+  }
+
+  ApiResponse includeRequestChecks(ApiResponse apiResponse) {
+    if(apiResponse.data!=null&&apiResponse.data?.isSuccess == true)
+      {
+        if(apiResponse.data.resultSet!=null&&apiResponse.data.resultSet.data!=null&&apiResponse.data.resultSet.data.result!=null)
+          {
+            apiResponse.apiStatus = ApiStatus.done;
+          }
+        else
+          {
+            apiResponse.apiStatus = ApiStatus.error;
+            apiResponse = _checkIfContainsError(apiResponse);
+          }
+      }
+    else
+      {
+        apiResponse.apiStatus = ApiStatus.error;
+        apiResponse = _checkIfContainsError(apiResponse);
       }
     return apiResponse;
   }

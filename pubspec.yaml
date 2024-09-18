@@ -34,7 +34,7 @@ dependencies:
     sdk: flutter
   shared_preferences: ^2.2.2
   material_design_icons_flutter: ^7.0.7296
-  google_fonts: ^6.1.0
+  google_fonts: 6.1.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -42,7 +42,7 @@ dependencies:
   build_runner: ^2.4.6
 #  geolocator: ^10.1.0
   #  location: ^4.2.0
-  permission_handler: ^11.0.1
+  permission_handler: ^11.3.1
   sliding_up_panel: ^2.0.0+1
   #  http: ^0.13.0
   dio: ^5.3.4
@@ -61,6 +61,7 @@ dependencies:
   #  flutter_local_notifications: ^11.0.1
   #  skeleton_text: ^3.0.0
   #  curved_navigation_bar: ^1.0.3
+  skeletonizer: ^1.1.2+1
   cached_network_image: ^3.3.0
   flutter_staggered_grid_view: ^0.7.0
   badges: ^3.1.2
@@ -78,12 +79,13 @@ dependencies:
   #  flutter_google_places: ^0.3.0
   url_launcher: ^6.2.1
   flutter_html: ^3.0.0-beta.2
+  flutter_widget_from_html: ^0.15.0
   #  camera: ^0.10.5+2
   path_provider: ^2.1.1
   path: ^1.8.3
   #  geocoding: ^2.0.1
   timeline_tile: ^2.0.0
-  photo_view: ^0.14.0
+  photo_view: ^0.15.0
   #  flutter_device_type: ^0.4.0
   #  flutter_vibrate: ^1.2.0
   #  scroll_to_index: ^2.1.0
@@ -122,6 +124,7 @@ dependencies:
   firebase_messaging: ^14.7.10
   flutter_local_notifications: ^16.3.2
   fl_chart: ^0.66.2
+  flutter_cached_pdfview: ^0.4.2
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -156,6 +159,7 @@ flutter:
   assets:
     - assets/
     - assets/languages/
+    - assets/anims/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

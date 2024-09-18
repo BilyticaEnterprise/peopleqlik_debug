@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/usecase/apis_url_caller.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/model/api_global_model.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
-import 'package:peopleqlik_debug/Version1/Models/AuthModels/login_model.dart';
-import 'package:peopleqlik_debug/Version1/Models/ApprovalsModel/get_approvals_detail_model.dart';
-import 'package:peopleqlik_debug/Version1/Models/ApprovalsModel/get_approvals_list.dart';
+import 'package:peopleqlik_debug/Version1/models/AuthModels/login_model.dart';
+import 'package:peopleqlik_debug/Version1/models/ApprovalsModel/get_approvals_detail_model.dart';
+import 'package:peopleqlik_debug/Version1/models/ApprovalsModel/get_approvals_list.dart';
 import 'package:peopleqlik_debug/utils/SharedPrefs/login_prefs.dart';
 import 'package:peopleqlik_debug/utils/SharedPrefs/login_prefs.dart';
 import 'package:peopleqlik_debug/utils/provider_logic_utils/overrided_change_notifier.dart';
 
 import '../../../Version2/Modules/ApiModule/domain/model/show_error.dart';
 import 'package:peopleqlik_debug/utils/AppConstants/app_constants.dart';
-import '../../Models/ApprovalsModel/approval_detail_mapper.dart';
+import '../../models/ApprovalsModel/approval_detail_mapper.dart';
 
 class ApprovalsDetailCollector extends GetChangeNotifier
 {

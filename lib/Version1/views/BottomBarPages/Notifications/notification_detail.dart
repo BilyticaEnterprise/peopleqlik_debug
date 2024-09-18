@@ -1,10 +1,10 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
 import 'package:peopleqlik_debug/utils/internetConnectionChecker/internet_connection.dart';
 import 'package:peopleqlik_debug/utils/Webview_Html_Widget/html_widget.dart';
-import 'package:peopleqlik_debug/utils/ErrorsUi/not_available.dart';
+import 'package:peopleqlik_debug/utils/errorsUi/not_available.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/configs/language_codes.dart';
 import 'package:peopleqlik_debug/utils/screen_sizes.dart';

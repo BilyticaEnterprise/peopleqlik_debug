@@ -77,6 +77,9 @@ class ShiftListDataList {
   String? effectiveDate;
   String? regularShift;
   String? ramadanShift;
+  int? companyCode;
+  String? documentNo;
+  int? screenID;
 
   ShiftListDataList(
       {this.requestMID,
@@ -85,7 +88,11 @@ class ShiftListDataList {
         this.statusID,
         this.effectiveDate,
         this.regularShift,
-        this.ramadanShift});
+        this.ramadanShift,
+        this.companyCode,
+        this.documentNo,
+        this.screenID
+      });
 
   ShiftListDataList.fromJson(Map<String, dynamic> json) {
     requestMID = json['RequestMID'];
@@ -95,6 +102,9 @@ class ShiftListDataList {
     effectiveDate = json['EffectiveDate'];
     regularShift = json['RegularShift'];
     ramadanShift = json['RamadanShift'];
+    companyCode = json['CompanyCode'];
+    documentNo = json['DocumentNo'];
+    screenID = json['ScreenID'];
   }
 
   Map<String, dynamic> toJson() {
@@ -106,7 +116,9 @@ class ShiftListDataList {
     data['EffectiveDate'] = this.effectiveDate;
     data['RegularShift'] = this.regularShift;
     data['RamadanShift'] = this.ramadanShift;
-    return data;
+    data['CompanyCode'] = companyCode;
+    data['DocumentNo'] = documentNo;
+    data['ScreenID'] = screenID;
     return data;
   }
 }

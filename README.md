@@ -21,5 +21,8 @@ For PeopleQlik: [ flutter run —profile -t lib/commonApps/peopleqlik.dart --fla
 
 For release bundle please use the following commands in terminal:
 
-For PeopleQlik: [ flutter build appbundle --flavor peopleqlik -t lib/commonApps/peopleqlik.dart ]
+flutter build apk --flavor peopleqlik -t lib/commonApps/peopleqlik.dart --debug
+
+For PeopleQlik Bundle run: [ flutter build appbundle --flavor peopleqlik -t lib/commonApps/peopleqlik.dart ]
+For PeopleQlik Apk run : [ flutter build apk --flavor peopleqlik -t lib/commonApps/peopleqlik.dart ]
 For Ojoor: [ flutter build appbundle --flavor ojoor -t lib/commonApps/ojoor.dart ]

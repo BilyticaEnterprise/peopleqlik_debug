@@ -69,6 +69,8 @@ class RequestSpecialDataList {
   int? approvalStatusID;
   String? statusName;
   String? modifiedDate;
+  String? documentNo;
+  int? screenID;
 
   RequestSpecialDataList(
       {this.iD,
@@ -82,7 +84,10 @@ class RequestSpecialDataList {
         this.leaveTypeTitle,
         this.approvalStatusID,
         this.statusName,
-        this.modifiedDate});
+        this.modifiedDate,
+        this.documentNo,
+        this.screenID
+      });
 
   RequestSpecialDataList.fromJson(Map<String, dynamic> json) {
     iD = json['ID'];
@@ -97,6 +102,8 @@ class RequestSpecialDataList {
     approvalStatusID = json['ApprovalStatusID'];
     statusName = json['StatusName'];
     modifiedDate = json['ModifiedDate'];
+    documentNo = json['DocumentNo'];
+    screenID = json['ScreenID'];
   }
 
   Map<String, dynamic> toJson() {
@@ -113,6 +120,8 @@ class RequestSpecialDataList {
     data['ApprovalStatusID'] = this.approvalStatusID;
     data['StatusName'] = this.statusName;
     data['ModifiedDate'] = this.modifiedDate;
+    data['DocumentNo'] = documentNo;
+    data['ScreenID'] = screenID;
     return data;
   }
 }

@@ -9,8 +9,8 @@ import 'package:peopleqlik_debug/Version1/viewModel/EmployeeSearchController/glo
 import 'package:peopleqlik_debug/configs/prints_logs.dart';
 import 'package:provider/provider.dart';
 
-import '../../../Models/AuthModels/login_model.dart';
-import '../../../Models/TeamModel/get_team_model.dart';
+import '../../../models/AuthModels/login_model.dart';
+import '../../../models/TeamModel/get_team_model.dart';
 import '../../../../Version2/Modules/ModuleSetting/domain/model/settings_model.dart';
 
 

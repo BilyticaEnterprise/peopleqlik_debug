@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:peopleqlik_debug/utils/dividers_screen/dividers.dart';
-import '../../../../../../../../utils/CommonUis/common_container.dart';
+import '../../../../../../../../utils/commonUis/common_container.dart';
 import '../../../../../../../../utils/screen_sizes.dart';
 import '../../../utils/profile_header_value_text.dart';
 

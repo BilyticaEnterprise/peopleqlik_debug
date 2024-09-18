@@ -4,7 +4,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/model/api_global_model.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
-import 'package:peopleqlik_debug/Version1/Models/RequestsModel/get_request_separation_list_model.dart';
+import 'package:peopleqlik_debug/Version1/models/RequestsModel/get_request_separation_list_model.dart';
 import 'package:peopleqlik_debug/utils/provider_logic_utils/overrided_change_notifier.dart';
 import 'package:provider/provider.dart';
 
@@ -104,4 +104,12 @@ class GetSeparationRequestListListener extends GetChangeNotifier
     }
   }
 }
+class RequestSeparationDetailData
+{
+  dynamic id;
+  dynamic lastWorkingDate;
+  dynamic remarks;
+  RequestSeparationDetailData(this.id,{this.lastWorkingDate,this.remarks});
+}
+
 

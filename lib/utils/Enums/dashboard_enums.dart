@@ -1,4 +1,4 @@
 enum DashboardEnum
 {
-  timesheet,overtimeEmployee, leaveBalanceCurrentEmployee
+  timesheet,overtimeEmployee, leaveBalanceCurrentEmployee, organizationChart
 }

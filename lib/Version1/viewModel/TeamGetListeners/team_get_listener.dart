@@ -7,7 +7,7 @@ import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/usecase/apis_
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/model/show_error.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/model/api_global_model.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
-import 'package:peopleqlik_debug/Version1/Models/TeamModel/get_team_model.dart';
+import 'package:peopleqlik_debug/Version1/models/TeamModel/get_team_model.dart';
 import 'package:peopleqlik_debug/utils/provider_logic_utils/overrided_change_notifier.dart';
 
 

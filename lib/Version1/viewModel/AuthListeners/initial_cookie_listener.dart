@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/AuthListeners/save_cookie_globally.dart';
-import 'package:peopleqlik_debug/Version1/Models/AuthModels/cookie_model.dart';
+import 'package:peopleqlik_debug/Version1/models/AuthModels/cookie_model.dart';
 import 'package:provider/provider.dart';
 
 import '../../../Version2/Modules/ApiModule/domain/usecase/apis_url_caller.dart';

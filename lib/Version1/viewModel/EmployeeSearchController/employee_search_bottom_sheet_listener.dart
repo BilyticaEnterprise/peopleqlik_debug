@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
-import 'package:peopleqlik_debug/Version1/Models/TeamModel/get_team_model.dart';
+import 'package:peopleqlik_debug/Version1/models/TeamModel/get_team_model.dart';
 
 import 'package:peopleqlik_debug/utils/provider_logic_utils/overrided_change_notifier.dart';
 import '../../../Version2/Modules/ApiModule/domain/usecase/apis_url_caller.dart';

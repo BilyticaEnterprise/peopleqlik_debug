@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/usecase/apis_url_caller.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/model/api_global_model.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
-import 'package:peopleqlik_debug/Version1/Models/RequestsModel/EncashmentsModels/get_request_encashment_list_model.dart';
+import 'package:peopleqlik_debug/Version1/models/RequestsModel/EncashmentsModels/get_request_encashment_list_model.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/configs/routing/pages_name.dart';
 import 'package:peopleqlik_debug/utils/snackbar_design.dart';

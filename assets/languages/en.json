@@ -562,5 +562,19 @@
   "earlyOut": "Early Out",
   "missed": "Missed",
   "present": "Present",
-  "leave": "Leave"
+  "leave": "Leave",
+  "organizationChartHeader": "Organization Hierarchy",
+  "organizationChartValue": "Click here to see your overall organization hierarchy",
+  "organizationChart": "Organization Chart",
+  "noData": "No data is available to show at this time",
+  "directoryPermissionDenied": "In order to download please give us your directory permission",
+  "noDocumentHeader": "No Documents Available",
+  "noDocumentValue": "Looks like currently there is no Documents available to show right now.",
+  "globalErrorHeader": "Something went wrong",
+  "globalErrorValue":"We are really sorry for this. Please try again later",
+  "allDocumentPolicy": "All",
+  "documentsDetailPage": "Document Policy",
+  "iAgree": "I Agree",
+  "iAgreeText": "I hereby confirm that I have read and understood the contents of this ",
+  "unSupportedMediaType": "This media type cannot be open. You can only download to view this file. Only PDF,png,jpg and jpep is allowed to view."
 }

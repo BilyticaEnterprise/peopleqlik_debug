@@ -4,12 +4,12 @@ import 'package:peopleqlik_debug/Version2/Modules/ApiModule/utils/Urls/urls.dart
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
 import 'package:peopleqlik_debug/utils/Enums/request_enums.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/Requests/request_name_listener.dart';
-import 'package:peopleqlik_debug/Version1/Models/RequestsModel/get_request_name_model.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
+import 'package:peopleqlik_debug/Version1/models/RequestsModel/get_request_name_model.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
 
 import 'package:peopleqlik_debug/utils/internetConnectionChecker/internet_connection.dart';
-import 'package:peopleqlik_debug/utils/ScreenLoader/circular_indicator_customized.dart';
-import 'package:peopleqlik_debug/utils/ErrorsUi/not_available.dart';
+import 'package:peopleqlik_debug/utils/screenLoader/circular_indicator_customized.dart';
+import 'package:peopleqlik_debug/utils/errorsUi/not_available.dart';
 import 'package:peopleqlik_debug/mainCommon.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/configs/fonts.dart';
@@ -22,7 +22,7 @@ import 'package:provider/provider.dart';
 
 import 'package:peopleqlik_debug/utils/AppConstants/app_constants.dart';
 import '../../../../../Version1/viewModel/EmployeeSearchController/global_selected_employee/global_selected_employee_controller.dart';
-import '../../../../../Version1/Models/RequestsModel/request_data_taker.dart';
+import '../../../../../Version1/models/RequestsModel/request_data_taker.dart';
 import '../../../../../configs/get_assets.dart';
 import '../../../../../utils/Appbars/app_bar.dart';
 

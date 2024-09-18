@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:peopleqlik_debug/Version2/Modules/DashBoardModule/presentation/listeners/attendance_listener.dart';
 import 'package:peopleqlik_debug/Version2/Modules/DashBoardModule/presentation/listeners/attendance_types_collector.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/sliding_up_panel.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ModuleSetting/domain/model/settings_model.dart';
 import 'package:peopleqlik_debug/utils/SharedPrefs/settings_pref.dart';
 import 'package:peopleqlik_debug/utils/UserLocation/get_user_location.dart';

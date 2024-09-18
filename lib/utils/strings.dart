@@ -86,6 +86,44 @@ class GetVariable
 
   static var testPic = 'https://media.licdn.com/dms/image/D4D03AQGyA8TuAL95XQ/profile-displayphoto-shrink_200_200/0/1692188087664?e=2147483647&v=beta&t=SxB69LHW1iLUQf8de0O8KyhuSreeraA5cawy2Qsz4Ug';
   //static String PDL = 'PDL';
+  static var htmlcode = """
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Blog Post</title>
+</head>
+<body>
+    <h1>Welcome to My Blog</h1>
+    <p>Welcome to my blog! This is a sample blog post to demonstrate how HTML content can be rendered in a Flutter app using the flutter_html widget.</p>
+    
+    <h2>Getting Started</h2>
+    <p>To get started with Flutter and the flutter_html package, you'll need to add the package to your pubspec.yaml file:</p>
+    <pre><code>dependencies:
+  flutter:
+    sdk: flutter
+  flutter_html: ^2.1.1</code></pre>
+    <p>Once you have added the package, you can use the <code>Html</code> widget to render HTML content. Here's an example:</p>
+    <pre><code>Html(
+  data: 
+  &lt;h1&gt;Hello, Flutter!&lt;/h1&gt;
+  &lt;p&gt;This is a paragraph.&lt;/p&gt;
+  ,
+)</code></pre>
+    
+    <h2>Features</h2>
+    <p>The flutter_html package supports various HTML tags, including:</p>
+    <ul>
+        <li><strong>Headings:</strong> &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, etc.</li>
+        <li><strong>Paragraphs:</strong> &lt;p&gt;</li>
+        <li><strong>Links:</strong> &lt;a href="..."&gt;</li>
+        <li><strong>Lists:</strong> &lt;ul&gt;, &lt;ol&gt;</li>
+        <li><strong>Images:</strong> &lt;img&gt;</li>
+    </ul>
+    <p>For more information, check out the <a href="https://pub.dev/packages/flutter_html">flutter_html package documentation</a>.</p>
+</body>
+</html>
 
-
+  """;
 }

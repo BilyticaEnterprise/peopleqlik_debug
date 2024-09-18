@@ -5,8 +5,8 @@ import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/usecase/apis_
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/model/show_error.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/model/api_global_model.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
-import 'package:peopleqlik_debug/Version1/Models/AuthModels/login_model.dart';
-import 'package:peopleqlik_debug/Version1/Models/RequestsModel/EncashmentsModels/get_request_encashment_balance_model.dart';
+import 'package:peopleqlik_debug/Version1/models/AuthModels/login_model.dart';
+import 'package:peopleqlik_debug/Version1/models/RequestsModel/EncashmentsModels/get_request_encashment_balance_model.dart';
 import 'package:peopleqlik_debug/utils/SharedPrefs/login_prefs.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/configs/routing/pages_name.dart';

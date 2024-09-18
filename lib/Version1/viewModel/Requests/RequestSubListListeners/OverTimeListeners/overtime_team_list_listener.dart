@@ -8,7 +8,7 @@ import '../../../../../utils/pagination_logic_utils/pagination_classes.dart';
 import '../../../../../Version2/Modules/ApiModule/domain/usecase/apis_url_caller.dart';
 import '../../../../../Version2/Modules/ApiModule/domain/model/show_error.dart';
 import '../../../../../Version2/Modules/ApiModule/domain/model/api_global_model.dart';
-import '../../../../Models/TimeOffAndEnCashModel/overtime_team_model.dart';
+import '../../../../models/TimeOffAndEnCashModel/overtime_team_model.dart';
 import '../../../EmployeeSearchController/global_selected_employee/employee_info_mapper.dart';
 import '../../../EmployeeSearchController/global_selected_employee/global_selected_employee_controller.dart';
 
@@ -21,6 +21,7 @@ class OvertimeTeamListListener extends GetChangeNotifier with GetPaginationClass
   {
     selectedDate = GetDateFormats().getMonthFormatDay(DateTime.now())!;
   }
+
   onDateReceived(DateTime dateTime)
   {
     selectedDate = GetDateFormats().getMonthFormatDay(dateTime)!;
@@ -28,7 +29,7 @@ class OvertimeTeamListListener extends GetChangeNotifier with GetPaginationClass
 
 
   @override
-  passInitialData() {
+  resetInitialData() {
     /// This method get called from start method
     dataList ??= List<OvertimeTeamListDataList>.empty(growable: true); /// If list null then create list
     receiveInitialData(dataList,OvertimeTeamListDataList()); /// pass this list to Pagination Mixin class
@@ -36,7 +37,7 @@ class OvertimeTeamListListener extends GetChangeNotifier with GetPaginationClass
 
   @override
   start(BuildContext context, ApiStatus status) async {
-    passInitialData();
+    resetInitialData();
 
     //print('calleddd $status');
     apiStatus = status;

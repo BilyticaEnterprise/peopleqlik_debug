@@ -16,7 +16,7 @@ class MakeUrls
     RequestType.attachmentsUrl = '${companyJson.instanceFileServerURL}${RequestType.documentNames}';
     RequestType.fileUrl = '${companyJson.instanceFileServerURL}${RequestType.fileName}';
     RequestType.requestUrl = '${companyJson.instanceFileServerURL}${RequestType.requestName}';
-
+    RequestType.documentUrl = '${companyJson.instanceFileServerURL}${RequestType.documentPolicy}';
     // PrintLogs.printLogs('fileeeeurl ${RequestType.fileUrl}');
   }
 }

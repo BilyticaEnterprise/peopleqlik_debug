@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ModuleSetting/domain/repoImpl/settings_listeners.dart';
+import 'package:peopleqlik_debug/configs/prints_logs.dart';
 import 'package:peopleqlik_debug/utils/internetConnectionChecker/internet_connection.dart';
 import 'package:peopleqlik_debug/mainCommon.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/configs/routing/pages_name.dart';
 import 'package:peopleqlik_debug/utils/screen_sizes.dart';
+import 'package:peopleqlik_debug/utils/size_configs/size_config.dart';
 import 'package:provider/provider.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -42,7 +44,8 @@ class _SplashScreenState extends State<SplashScreen> {
   }
   @override
   Widget build(BuildContext context) {
-
+    SizeConfig.instance.config(context);
+    PrintLogs.printLogs('totalheigh ${SizeConfig.instance.getHeightWithSafe(2)}');
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.dark,
       child: Scaffold(
@@ -81,6 +84,7 @@ class _SplashScreenState extends State<SplashScreen> {
       ),
     );
   }
+
   void startNextStep() async {
     await Provider.of<SettingsModelListener>(context,listen: false).getSettingsData();
     Future.delayed(const Duration(milliseconds: 2500),(){

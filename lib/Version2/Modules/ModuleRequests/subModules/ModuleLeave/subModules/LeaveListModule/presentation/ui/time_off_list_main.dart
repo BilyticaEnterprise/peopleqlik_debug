@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/domain/models/all_requests_detail_mapper.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/subModules/ModuleLeave/subModules/LeaveListModule/presentation/listener/time_off_list_collector.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/TimeOffEnCashListners/ui_time_off_clicks.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/subModules/ModuleLeave/subModules/LeaveApplyFormModule/domain/models/time_off_model.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/subModules/ModuleLeave/subModules/LeaveDetailModule/domain/models/time_off_detail_mapper.dart';
 import 'package:peopleqlik_debug/utils/Reuse_LogicalWidgets/approve_reject_pending_text_widget.dart';
-import 'package:peopleqlik_debug/utils/ScreenLoader/circular_indicator_customized.dart';
-import 'package:peopleqlik_debug/utils/ErrorsUi/not_available.dart';
+import 'package:peopleqlik_debug/utils/screenLoader/circular_indicator_customized.dart';
+import 'package:peopleqlik_debug/utils/errorsUi/not_available.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/utils/date_formats.dart';
 import 'package:peopleqlik_debug/configs/fonts.dart';
@@ -126,7 +127,9 @@ class ListWidget extends StatelessWidget {
           child: InkWell(
             splashColor: const Color(MyColor.colorBackgroundDark),
             onTap: (){
-              Navigator.pushNamed(context, CurrentPage.TimeOffDetailPage,arguments: TimeOffDetailMapper(id: data?.iD.toString(),companyCode: data?.companyCode,employeeCode: data?.employeeCode)).then((value){
+              Navigator.pushNamed(context, CurrentPage.TimeOffDetailPage,
+                  arguments: AllRequestDetailMapper(documentNumber: data?.documentNo.toString(),companyCode: data?.companyCode.toString(),screenID: data?.screenID.toString(),isApprovalScreen: false)
+              ).then((value){
                 if(value != null && value is bool&& value ==true)
                   {
                     Provider.of<TimeOffModelListener>(context,listen: false).start(context,ApiStatus.started);

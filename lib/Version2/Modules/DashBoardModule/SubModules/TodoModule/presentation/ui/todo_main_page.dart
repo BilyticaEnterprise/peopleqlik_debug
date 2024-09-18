@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
 import 'package:peopleqlik_debug/Version2/Modules/DashBoardModule/SubModules/TodoModule/presentation/ui/widget/tab_bar_todo.dart';
 import 'package:peopleqlik_debug/configs/language_codes.dart';
-import 'package:peopleqlik_debug/utils/Default_Screens/scafold_screens/default_screens.dart';
+import 'package:peopleqlik_debug/utils/default_Screens/scafold_screens/default_screens.dart';
 
 import '../../../../../../../utils/dividers_screen/dividers.dart';
 import '../../../../../../../utils/screen_sizes.dart';

@@ -7,5 +7,6 @@ import 'package:peopleqlik_debug/utils/States/app_state.dart';
 abstract class GetLeaveDetailRepo extends GetApprovalListForViewRepo
 {
   Future<AppState> fetchLeaveDetail(BuildContext context,AllRequestDetailMapper allRequestDetailMapper);
+  Future<AppState> approveRejectRequest(BuildContext context, {required AllRequestDetailMapper allRequestDetailMapper,required String remarks,required int approveOrReject});
   LeaveDetailResult? getLeaveDetailResult();
 }

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/AuthListeners/log_out_listener.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
-import 'package:peopleqlik_debug/utils/Default_Screens/scafold_screens/default_screens.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
+import 'package:peopleqlik_debug/utils/default_Screens/scafold_screens/default_screens.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/configs/language_codes.dart';
 import 'package:peopleqlik_debug/configs/prints_logs.dart';
 
-import 'package:peopleqlik_debug/utils/Buttons/bottom_twin_buttons.dart';
+import 'package:peopleqlik_debug/utils/buttons/bottom_twin_buttons.dart';
 import '../../../../../utils/lottie_anims_utils/lottie_string.dart';
 import '../../../../../configs/routing/pages_name.dart';
 import '../../../../../mainCommon.dart';

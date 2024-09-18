@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/Requests/RequestSubListListeners/request_list_listener.dart';
+import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/domain/models/all_requests_detail_mapper.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
 
-import 'package:peopleqlik_debug/Version1/Models/RequestsModel/get_request_list_model.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
-import 'package:peopleqlik_debug/utils/ScreenLoader/circular_indicator_customized.dart';
-import 'package:peopleqlik_debug/utils/ErrorsUi/not_available.dart';
+import 'package:peopleqlik_debug/Version1/models/RequestsModel/get_request_list_model.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
+import 'package:peopleqlik_debug/utils/screenLoader/circular_indicator_customized.dart';
+import 'package:peopleqlik_debug/utils/errorsUi/not_available.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/utils/date_formats.dart';
 import 'package:peopleqlik_debug/configs/fonts.dart';
@@ -14,7 +15,7 @@ import 'package:peopleqlik_debug/configs/routing/pages_name.dart';
 import 'package:peopleqlik_debug/utils/screen_sizes.dart';
 import 'package:peopleqlik_debug/utils/strings.dart';
 import 'package:provider/provider.dart';
-import '../../../../../../Version1/Models/RequestsModel/request_data_taker.dart';
+import '../../../../../../Version1/models/RequestsModel/request_data_taker.dart';
 import '../../../../../../utils/Appbars/generic_app_bar.dart';
 import 'package:peopleqlik_debug/utils/SkeletetonAnimation/skeleton_text.dart';
 
@@ -188,7 +189,7 @@ class RequestListWidget extends StatelessWidget {
           child: InkWell(
             splashColor: const Color(MyColor.colorGrey0),
             onTap: (){
-              Navigator.pushNamed(context, CurrentPage.RequestDetailPage,arguments: RequestDetailData(requestListDataList?.requestCode,requestDataTaker?.id));
+              Navigator.pushNamed(context, CurrentPage.RequestDetailPage,arguments: AllRequestDetailMapper(documentNumber: requestListDataList?.documentNo,companyCode: requestListDataList?.companyCode.toString(),screenID: requestListDataList?.screenID.toString(),isApprovalScreen: false));
             },
             child: Padding(
               padding: EdgeInsets.all(ScreenSize(context).heightOnly( 1.5)),

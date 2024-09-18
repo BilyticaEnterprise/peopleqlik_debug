@@ -9,7 +9,7 @@ import '../../../../../../../../Version1/viewModel/LanguageListeners/language_li
 import '../../../../../../../../configs/colors.dart';
 import '../../../../../../../../configs/fonts.dart';
 import '../../../../../../../../configs/icons.dart';
-import '../../../../../../../../utils/cached_image_getter/cache_image.dart';
+import '../../../../../../../../utils/image_getter/cache_image.dart';
 import '../../../../../../../../utils/date_formats.dart';
 import '../../../../../../../../utils/screen_sizes.dart';
 import '../../../../../../../../utils/wave_clipper.dart';

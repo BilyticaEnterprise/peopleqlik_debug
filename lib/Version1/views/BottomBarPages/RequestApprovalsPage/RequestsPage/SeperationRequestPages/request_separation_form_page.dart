@@ -5,14 +5,14 @@ import 'package:peopleqlik_debug/Version1/viewModel/Requests/RequestSubListListe
 import 'package:peopleqlik_debug/Version1/viewModel/Requests/RequestSubListListeners/RequestSeparationListener/request_separation_save_form_listener.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
 
-import 'package:peopleqlik_debug/Version1/Models/RequestsModel/get_request_separation_form_model.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
+import 'package:peopleqlik_debug/Version1/models/RequestsModel/get_request_separation_form_model.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
 import 'package:peopleqlik_debug/utils/internetConnectionChecker/internet_connection.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/subModules/ModuleEncashment/subModules/encashmentFormModule/utils/special_textfield_widget.dart';
 import 'package:peopleqlik_debug/Version1/views/BottomBarPages/RequestApprovalsPage/RequestsPage/SeperationRequestPages/SeparationFormWidgets/datepicker_widget.dart';
-import 'package:peopleqlik_debug/utils/Buttons/buttons.dart';
-import 'package:peopleqlik_debug/utils/ScreenLoader/circular_indicator_customized.dart';
-import 'package:peopleqlik_debug/utils/ErrorsUi/not_available.dart';
+import 'package:peopleqlik_debug/utils/buttons/buttons.dart';
+import 'package:peopleqlik_debug/utils/screenLoader/circular_indicator_customized.dart';
+import 'package:peopleqlik_debug/utils/errorsUi/not_available.dart';
 import 'package:peopleqlik_debug/utils/TextFieldRemarks/text_remarks_header.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/utils/date_formats.dart';
@@ -26,7 +26,7 @@ import 'package:provider/provider.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 import '../../../../../../Version1/viewModel/EmployeeSearchController/global_selected_employee/global_selected_employee_controller.dart';
-import '../../../../../../Version1/Models/RequestsModel/request_data_taker.dart';
+import '../../../../../../Version1/models/RequestsModel/request_data_taker.dart';
 import '../../../../../../utils/Appbars/generic_app_bar.dart';
 import '../../../../../../../../utils/Default_Screens/scafold_screens/default_screens.dart';
 import '../../../../../../utils/Reuse_LogicalWidgets/current_employee_name_note.dart';

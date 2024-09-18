@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:peopleqlik_debug/configs/prints_logs.dart';
 
 import '../mainCommon.dart';
 
@@ -11,11 +12,19 @@ class ScreenSize {
     _queryData = MediaQuery.of(context);
   }
 
+  dynamic textHeightOnly(double percent) {
+
+    PrintLogs.printLogs('textsizee1 ${_queryData?.textScaler.scale(percent)}');
+    dynamic size = (_queryData!.size.height-((_queryData?.padding.top??0)+(_queryData?.padding.bottom??0)))/100*percent;
+    return size;
+  }
+  
   dynamic heightOnly(dynamic percent) {
 
     dynamic size = (_queryData!.size.height-((_queryData?.padding.top??0)+(_queryData?.padding.bottom??0)))/100*percent;
     return size;
   }
+
   dynamic completeHeightOnly(dynamic percent) {
     dynamic size = (_queryData!.size.height)/100*percent;
     return size;

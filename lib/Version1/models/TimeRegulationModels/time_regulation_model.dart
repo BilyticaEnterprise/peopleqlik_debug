@@ -82,6 +82,9 @@ class TimeRegulationDataList {
   int? approvalStatusID;
   int? approvedBy;
   String? waiveOffRemarks;
+  String? documentNo;
+  int? companyCode;
+  int? screenID;
 
   TimeRegulationDataList(
       {this.requestMID,
@@ -99,7 +102,11 @@ class TimeRegulationDataList {
         this.waiveOffRemarks,
         this.entryID,
         this.approvalStatusID,
-        this.approvedBy});
+        this.approvedBy,
+        this.documentNo,
+        this.companyCode,
+        this.screenID
+      });
 
   TimeRegulationDataList.fromJson(Map<String, dynamic> json) {
     requestMID = json['RequestMID'];
@@ -118,6 +125,9 @@ class TimeRegulationDataList {
     entryID = json['EntryID'];
     approvalStatusID = json['ApprovalStatusID'];
     approvedBy = json['ApprovedBy'];
+    documentNo = json['DocumentNo'];
+    companyCode = json['CompanyCode'];
+    screenID = json['ScreenID'];
   }
 
   Map<String, dynamic> toJson() {
@@ -138,6 +148,9 @@ class TimeRegulationDataList {
     data['EntryID'] = this.entryID;
     data['ApprovalStatusID'] = this.approvalStatusID;
     data['ApprovedBy'] = this.approvedBy;
+    data['DocumentNo'] = documentNo;
+    data['CompanyCode'] = companyCode;
+    data['ScreenID'] = screenID;
     return data;
   }
 }

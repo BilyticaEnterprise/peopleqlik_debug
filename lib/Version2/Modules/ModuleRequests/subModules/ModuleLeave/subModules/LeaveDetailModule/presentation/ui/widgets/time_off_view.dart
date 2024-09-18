@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/subModules/ModuleLeave/subModules/LeaveDetailModule/domain/models/leave_detail_model.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/subModules/ModuleLeave/subModules/LeaveDetailModule/presentation/listener/get_leave_detail_bloc.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ModuleRequests/subModules/ModuleLeave/subModules/LeaveDetailModule/presentation/ui/time_off_detail_page.dart';
@@ -9,6 +9,7 @@ import 'package:peopleqlik_debug/Version2/Modules/ModuleSetting/domain/repoImpl/
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/configs/fonts.dart';
 import 'package:peopleqlik_debug/configs/language_codes.dart';
+import 'package:peopleqlik_debug/configs/prints_logs.dart';
 import 'package:peopleqlik_debug/utils/date_formats.dart';
 import 'package:peopleqlik_debug/utils/screen_sizes.dart';
 import 'package:peopleqlik_debug/utils/strings.dart';
@@ -21,6 +22,7 @@ class TimeOffViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<AllApprovalTypes>? allApprovalTypesList = Provider.of<SettingsModelListener>(context,listen: false).settingsResultSet?.allApprovalTypesList;
+    PrintLogs.printLogs('accpeteasds ${ data.useCase.getLeaveDetailResult()?.approvalStatusID}');
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,13 +1,15 @@
 import 'dart:convert';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:peopleqlik_debug/Version2/Modules/AccountModule/utils/account_enums.dart';
+import 'package:peopleqlik_debug/Version2/Modules/AccountModule/utils/account_list_generator.dart';
 import 'package:peopleqlik_debug/utils/provider_logic_utils/overrided_change_notifier.dart';
 
 import 'package:flutter/material.dart';
 import 'package:peopleqlik_debug/Version2/Modules/ApiModule/domain/model/show_error.dart';
 import 'package:peopleqlik_debug/utils/Enums/apistatus_enum.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/AuthListeners/log_out_listener.dart';
-import 'package:peopleqlik_debug/Version1/Models/AuthModels/login_model.dart';
-import 'package:peopleqlik_debug/Version1/Models/call_setting_data.dart';
+import 'package:peopleqlik_debug/Version1/models/AuthModels/login_model.dart';
+import 'package:peopleqlik_debug/Version1/models/call_setting_data.dart';
 import 'package:peopleqlik_debug/utils/SharedPrefs/login_prefs.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/configs/language_codes.dart';
@@ -26,48 +28,7 @@ class AccountPageInfoListener extends GetChangeNotifier
   String? userName,email,designation,image;
   ApiStatus apiStatus = ApiStatus.nothing;
   List<AccountModel> accountModel = [];
-  final colors = [
-    MyColor.colorA1,
-    MyColor.colorA2,
-    MyColor.colorA3,
-    MyColor.colorA4,
-    MyColor.colorA1,
-    MyColor.colorA5,
-    MyColor.colorA2,
-    MyColor.colorT5,
-    // ,0xffF1F1F3
-  ];
-  final icons = [
-    MdiIcons.faceManProfile,
-    MdiIcons.lock,
-    MdiIcons.alphabetical,
-    MdiIcons.accountSettingsOutline,
-    MdiIcons.noteOutline,
-    MdiIcons.noteOutline,
-    MdiIcons.phoneOutline,
-    MdiIcons.toggleSwitchOffOutline
-  ];
 
-  final header = [
-    (LanguageCodes.profile),
-    LanguageCodes.changePassword,
-    (LanguageCodes.accountLanguageHeader),
-    (LanguageCodes.accountSettingHeader),
-    (LanguageCodes.accountAboutHeader),
-    (LanguageCodes.accountTermsHeader),
-    (LanguageCodes.accountSupportHeader),
-    (LanguageCodes.accountLogOut)];
-
-  final answer = [
-    LanguageCodes.seeProfile,
-    LanguageCodes.changePasswordDesc,
-    LanguageCodes.accountLanguageAnswer,
-    LanguageCodes.accountSettingAnswer,
-    LanguageCodes.accountAboutAnswer,
-    LanguageCodes.accountTermsAnswer,
-    LanguageCodes.accountSupportAnswer,
-    '',
-  ];
 
   Future<void> start(BuildContext context)
   async {
@@ -80,7 +41,7 @@ class AccountPageInfoListener extends GetChangeNotifier
         email = loginResultSet.myProfile?.email;
         designation = loginResultSet.myProfile?.jobTitle;
         image = loginResultSet.myProfile?.picture;
-        accountModel = createAccountList(context);
+        accountModel = GenerateAccountPageList.getAccountPageList(context);
        // PrintLogs.print('imageeeee $image');
         apiStatus = ApiStatus.done;
         notifyListeners();
@@ -91,9 +52,6 @@ class AccountPageInfoListener extends GetChangeNotifier
       }
   }
 
-  List<AccountModel> createAccountList(BuildContext context){
-    return List<AccountModel>.generate(icons.length, (index) => AccountModel(header: CallLanguageKeyWords.get(context, header[index])??'', desc: CallLanguageKeyWords.get(context, answer[index])??'', icon: icons[index], color: colors[index]));
-  }
 
   void contactUs(BuildContext context) async
   {
@@ -126,32 +84,32 @@ class AccountPageInfoListener extends GetChangeNotifier
   }
 
   Future<void> clickedIndex(BuildContext context, int index) async {
-    switch(index)
+    switch(accountModel[index].accountPageType)
     {
-      case 0:
+      case AccountPageType.profile:
         Navigator.pushNamed(context, CurrentPage.userProfilePage);
         break;
-      case 1:
+      case AccountPageType.changePassword:
         Navigator.pushNamed(context, CurrentPage.checkCurrentPasswordPage);
         break;
-      case 2:
+      case AccountPageType.language:
         Navigator.pushNamed(context, CurrentPage.LanguagePage).then((value){
           start(context);
         });
         break;
-      case 3:
+      case AccountPageType.setting:
         Navigator.pushNamed(context, CurrentPage.AccountSettingPage);
         break;
-      case 4:
+      case AccountPageType.about:
         Navigator.pushNamed(context, CurrentPage.PolicyPage,arguments: PolicyPageData('About', RequestType.privacyPolicy));
         break;
-      case 5:
+      case AccountPageType.terms:
         Navigator.pushNamed(context, CurrentPage.PolicyPage,arguments: PolicyPageData('About', RequestType.termsOfUse));
         break;
-      case 6:
+      case AccountPageType.support:
         Provider.of<AccountPageInfoListener>(context,listen: false).contactUs(context);
         break;
-      case 7:
+      case AccountPageType.logOut:
         bool check = await AlertYesNo().show(context, AlertModel(
           header: CallLanguageKeyWords.get(context, LanguageCodes.logOutHeader)??'',
           description: CallLanguageKeyWords.get(context, LanguageCodes.logOutValue)??'',

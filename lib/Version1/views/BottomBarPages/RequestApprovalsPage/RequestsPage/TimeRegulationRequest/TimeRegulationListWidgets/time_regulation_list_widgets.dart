@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:peopleqlik_debug/Version1/viewModel/Requests/RequestSubListListeners/TimeRegulationListener/time_regulation_list_listener.dart';
 import 'package:peopleqlik_debug/utils/AppConstants/app_constants.dart';
-import 'package:peopleqlik_debug/Version1/Models/TimeRegulationModels/time_regulation_model.dart';
+import 'package:peopleqlik_debug/Version1/models/TimeRegulationModels/time_regulation_model.dart';
 import 'package:peopleqlik_debug/configs/colors.dart';
 import 'package:peopleqlik_debug/utils/screen_sizes.dart';
 import 'package:provider/provider.dart';
 import 'package:timelines/timelines.dart';
 
-import '../../../../../../../../../Version1/Models/call_setting_data.dart';
+import '../../../../../../../../../Version1/models/call_setting_data.dart';
 import '../../../../../../../../../utils/date_formats.dart';
 import '../../../../../../../../../../configs/fonts.dart';
 import '../../../../../../../../../configs/language_codes.dart';
